@@ -31,6 +31,11 @@ spec:
             - name: http-api
               containerPort: 5000
               protocol: TCP
+          env:
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5432"
           envFrom:
             - configMapRef:
                 name: {{ include "understory.fullname" . }}-config

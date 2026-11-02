@@ -121,7 +121,48 @@ frontend:
     runAsNonRoot: false
 
 # ==============================================================================
-# 3. Ingress Configuration
+# 3. PostgreSQL Database Configuration
+# ==============================================================================
+postgresql:
+  enabled: true
+  image:
+    repository: postgres
+    tag: "16-alpine"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5432
+    targetPort: 5432
+  auth:
+    database: understory_db
+    username: understory_user
+    password: UnderstoryDBPass2026!
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  persistence:
+    enabled: true
+    storageClass: ""
+    size: 2Gi
+    mountPath: /var/lib/postgresql/data
+  probes:
+    liveness:
+      enabled: true
+      initialDelaySeconds: 15
+      periodSeconds: 15
+      timeoutSeconds: 5
+    readiness:
+      enabled: true
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 5
+
+# ==============================================================================
+# 4. Ingress Configuration
 # ==============================================================================
 ingress:
   enabled: false

@@ -27,22 +27,28 @@ try {
   // 1. Pods Running & Ready
   const podStatusJson = run("kubectl get pods -n understory -o json");
   const pods = JSON.parse(podStatusJson).items;
-  const allReady = pods.length >= 2 && pods.every(p => {
+  const allReady = pods.length >= 3 && pods.every(p => {
     const isRunning = p.status.phase === 'Running';
     const isReady = p.status.containerStatuses?.every(c => c.ready);
     return isRunning && isReady;
   });
-  assert(allReady, 'Kubernetes pods reach Running and Ready states', `Found ${pods.length} healthy running pods`);
+  assert(allReady, 'Kubernetes pods reach Running and Ready states', `Found ${pods.length} healthy running pods (Frontend, Backend, PostgreSQL)`);
 
   // 2. Services Configuration & Internal Networking
   const svcJson = run("kubectl get svc -n understory -o json");
   const svcs = JSON.parse(svcJson).items;
   const backendSvc = svcs.find(s => s.metadata.name === 'backend');
   const frontendSvc = svcs.find(s => s.metadata.name.includes('frontend'));
+  const postgresSvc = svcs.find(s => s.metadata.name === 'postgres');
   assert(
     backendSvc && backendSvc.spec.type === 'ClusterIP' && backendSvc.spec.ports[0].port === 5000,
     'Backend Service is internal ClusterIP on port 5000 (not exposed publicly)',
     `ClusterIP: ${backendSvc?.spec.clusterIP}:5000`
+  );
+  assert(
+    postgresSvc && postgresSvc.spec.type === 'ClusterIP' && postgresSvc.spec.ports[0].port === 5432,
+    'PostgreSQL Service is internal ClusterIP on port 5432 (not exposed publicly)',
+    `ClusterIP: ${postgresSvc?.spec.clusterIP}:5432`
   );
   assert(
     frontendSvc && frontendSvc.spec.type === 'NodePort' && frontendSvc.spec.ports[0].nodePort === 30080,
@@ -53,12 +59,21 @@ try {
   // 3. Persistent Volume Claims
   const pvcJson = run("kubectl get pvc -n understory -o json");
   const pvcs = JSON.parse(pvcJson).items;
-  const dataPvc = pvcs.find(p => p.metadata.name.includes('data'));
+  const dataPvc = pvcs.find(p => p.metadata.name.includes('backend-data'));
   const manuscriptsPvc = pvcs.find(p => p.metadata.name.includes('manuscripts'));
+  const postgresPvc = pvcs.find(p => p.metadata.name.includes('postgres-data'));
   assert(
-    dataPvc?.status?.phase === 'Bound' && manuscriptsPvc?.status?.phase === 'Bound',
+    dataPvc?.status?.phase === 'Bound' && manuscriptsPvc?.status?.phase === 'Bound' && postgresPvc?.status?.phase === 'Bound',
     'PersistentVolumeClaims are Bound and using standard StorageClass',
-    `Data PVC: ${dataPvc?.status?.phase}, Manuscripts PVC: ${manuscriptsPvc?.status?.phase}`
+    `Data: ${dataPvc?.status?.phase}, Manuscripts: ${manuscriptsPvc?.status?.phase}, Postgres: ${postgresPvc?.status?.phase}`
+  );
+
+  // 4. Backend can connect to PostgreSQL
+  const pgCheck = run("kubectl exec -n understory deployment/understory-backend -- nc -zv postgres 5432 2>&1");
+  assert(
+    pgCheck.includes('open'),
+    'Backend pod connects directly to PostgreSQL service over internal DNS on port 5432',
+    `Output: ${pgCheck}`
   );
 
   // 4. Frontend communicates with backend via internal DNS
