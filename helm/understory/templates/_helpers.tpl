@@ -1,14 +1,14 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "smartstock.name" -}}
+{{- define "understory.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Create a default fully qualified app name.
 */}}
-{{- define "smartstock.fullname" -}}
+{{- define "understory.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -24,9 +24,9 @@ Create a default fully qualified app name.
 {{/*
 Common labels
 */}}
-{{- define "smartstock.labels" -}}
+{{- define "understory.labels" -}}
 helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
-{{ include "smartstock.selectorLabels" . }}
+{{ include "understory.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -36,16 +36,16 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "smartstock.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "smartstock.name" . }}
+{{- define "understory.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "understory.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Backend selector labels
 */}}
-{{- define "smartstock.backendSelectorLabels" -}}
-app.kubernetes.io/name: {{ include "smartstock.name" . }}-backend
+{{- define "understory.backendSelectorLabels" -}}
+app.kubernetes.io/name: {{ include "understory.name" . }}-backend
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: backend
 {{- end }}
@@ -53,8 +53,8 @@ app.kubernetes.io/component: backend
 {{/*
 Frontend selector labels
 */}}
-{{- define "smartstock.frontendSelectorLabels" -}}
-app.kubernetes.io/name: {{ include "smartstock.name" . }}-frontend
+{{- define "understory.frontendSelectorLabels" -}}
+app.kubernetes.io/name: {{ include "understory.name" . }}-frontend
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/component: frontend
 {{- end }}

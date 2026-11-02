@@ -1,18 +1,18 @@
-# SmartStock (eBaro) Kubernetes & Helm Operations Guide
+# Understory (eBaro) Kubernetes & Helm Operations Guide
 
-This guide details the production-ready Kubernetes deployment architecture, Helm chart configuration, and operations workflows for running the SmartStock Inventory & BI / eBaro platform on local Minikube or managed cloud clusters.
+This guide details the production-ready Kubernetes deployment architecture, Helm chart configuration, and operations workflows for running the **Understory** Ebook Platform (eBaro) on local Minikube or managed cloud clusters.
 
 ---
 
 ## 1. Architecture Overview
 
-The system is deployed into a dedicated `smartstock` namespace with separated frontend, backend, configuration, and persistent storage tiers:
+The system is deployed into a dedicated `understory` namespace with separated frontend, backend, configuration, and persistent storage tiers:
 
 ```
 [ Ingress / NodePort 30080 ]
              │
              ▼
-    [ Frontend Pods (NGINX) ]  ◄── Service: smartstock-frontend (NodePort: 30080)
+    [ Frontend Pods (NGINX) ]  ◄── Service: understory-frontend (NodePort: 30080)
              │
      /api/* proxy pass
              │
@@ -20,8 +20,8 @@ The system is deployed into a dedicated `smartstock` namespace with separated fr
     [ Backend Pod (Node 22) ]  ◄── Service: backend (ClusterIP: 5000, Internal Only)
              │
      Mounted PVC Volumes
-             ├── /app/server/data                (folio.sqlite via smartstock-backend-data PVC)
-             └── /app/server/storage/manuscripts (PDF/EPUB files via smartstock-backend-manuscripts PVC)
+             ├── /app/server/data                (folio.sqlite via understory-backend-data PVC)
+             └── /app/server/storage/manuscripts (PDF/EPUB files via understory-backend-manuscripts PVC)
 ```
 
 ### Architectural Safeguards:
@@ -34,10 +34,10 @@ The system is deployed into a dedicated `smartstock` namespace with separated fr
 
 ## 2. Helm Chart Structure
 
-The chart is located at `helm/smartstock/`:
+The chart is located at `helm/understory/`:
 
 ```
-helm/smartstock/
+helm/understory/
 ├── Chart.yaml                  # Chart metadata and app version
 ├── values.yaml                 # Base defaults and production references
 ├── values-minikube.yaml        # Local Minikube overrides (IfNotPresent, NodePort 30080)
@@ -46,8 +46,8 @@ helm/smartstock/
     ├── _helpers.tpl            # Standard Helm label and name generators
     ├── configmap.yaml          # Non-sensitive runtime variables
     ├── secret.yaml             # Base64-encoded credentials and secrets
-    ├── pvc-data.yaml           # SQLite storage claim (smartstock-backend-data)
-    ├── pvc-manuscripts.yaml    # Manuscript storage claim (smartstock-backend-manuscripts)
+    ├── pvc-data.yaml           # SQLite storage claim (understory-backend-data)
+    ├── pvc-manuscripts.yaml    # Manuscript storage claim (understory-backend-manuscripts)
     ├── backend-deployment.yaml # Backend pod specification, mounts & probes
     ├── backend-service.yaml    # Internal ClusterIP service on port 5000
     ├── frontend-deployment.yaml# NGINX frontend deployment with rolling update
@@ -69,7 +69,7 @@ helm/smartstock/
 minikube start --driver=docker
 ```
 
-### Step 2: Load Local Container Images into Minikube (If not pulling from registry)
+### Step 2: Load Local Container Images into Minikube
 ```bash
 minikube image load khalilart/ebaro-backend:v1.0.1
 minikube image load khalilart/ebaro-frontend:latest
@@ -77,14 +77,14 @@ minikube image load khalilart/ebaro-frontend:latest
 
 ### Step 3: Lint Helm Chart
 ```bash
-helm lint ./helm/smartstock
+helm lint ./helm/understory
 ```
 
 ### Step 4: Install or Upgrade Release
 ```bash
-helm upgrade --install smartstock ./helm/smartstock \
-  -f ./helm/smartstock/values-minikube.yaml \
-  -n smartstock \
+helm upgrade --install understory ./helm/understory \
+  -f ./helm/understory/values-minikube.yaml \
+  -n understory \
   --create-namespace
 ```
 
@@ -94,17 +94,17 @@ helm upgrade --install smartstock ./helm/smartstock \
 
 ### Inspect Pods & Services
 ```bash
-kubectl get all,pvc -n smartstock
+kubectl get all,pvc
 ```
 
 ### Check Backend Logs
 ```bash
-kubectl logs -n smartstock deployment/smartstock-backend -f
+kubectl logs deployment/understory-backend -f
 ```
 
 ### Check Frontend NGINX Logs
 ```bash
-kubectl logs -n smartstock deployment/smartstock-frontend -f
+kubectl logs deployment/understory-frontend -f
 ```
 
 ### Verify End-to-End Cluster Communication
@@ -129,15 +129,15 @@ curl -I http://${MINIKUBE_IP}:30080
 curl -s http://${MINIKUBE_IP}:30080/api/health
 ```
 
-### Option B: Via Minikube Tunnel / Service URL (Interactive)
+### Option B: Via Minikube Tunnel / Service URL
 ```bash
-minikube service smartstock-frontend -n smartstock --url
+minikube service understory-frontend --url
 ```
 
 ### Option C: Via Port-Forwarding (Direct localhost access)
 ```bash
-kubectl port-forward -n smartstock svc/smartstock-frontend 8080:80
-# Visit http://localhost:8080 in your browser
+kubectl port-forward svc/understory-frontend 8089:80
+# Visit http://localhost:8089 in your browser
 ```
 
 ---
@@ -147,21 +147,19 @@ kubectl port-forward -n smartstock svc/smartstock-frontend 8080:80
 ### Upgrading an Image Tag
 To deploy a new backend version (e.g. `v1.0.2` or commit SHA):
 ```bash
-helm upgrade smartstock ./helm/smartstock \
-  -f ./helm/smartstock/values-minikube.yaml \
-  --set backend.image.tag=v1.0.2 \
-  -n smartstock
+helm upgrade understory ./helm/understory \
+  -f ./helm/understory/values-minikube.yaml \
+  --set backend.image.tag=v1.0.2
 ```
 
 ### Viewing Release History
 ```bash
-helm history smartstock -n smartstock
+helm history understory
 ```
 
 ### Rolling Back to a Previous Revision
 ```bash
-# Roll back to revision 1
-helm rollback smartstock 1 -n smartstock
+helm rollback understory 1
 ```
 
 ---
@@ -170,10 +168,10 @@ helm rollback smartstock 1 -n smartstock
 
 To remove all application deployments, services, configmaps, and secrets:
 ```bash
-helm uninstall smartstock -n smartstock
+helm uninstall understory -n understory
 ```
 
 To also delete persistent data volumes and namespace:
 ```bash
-kubectl delete namespace smartstock
+kubectl delete namespace understory
 ```

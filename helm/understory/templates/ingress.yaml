@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "smartstock.fullname" . }}
+  name: {{ include "understory.fullname" . }}
   labels:
-    {{- include "smartstock.labels" . | nindent 4 }}
+    {{- include "understory.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -33,7 +33,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ include "smartstock.fullname" $ }}-frontend
+                name: {{ include "understory.fullname" $ }}-frontend
                 port:
                   number: {{ $.Values.frontend.service.port | default 80 }}
           {{- end }}

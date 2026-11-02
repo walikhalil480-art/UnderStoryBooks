@@ -1,0 +1,15 @@
+apiVersion: v2
+name: understory
+description: Production-ready Helm chart for Understory Ebook Platform (eBaro)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - understory
+  - ebaro
+  - ebook
+  - reader
+  - publishing
+maintainers:
+  - name: Understory DevOps Team
+    email: devops@understory.io

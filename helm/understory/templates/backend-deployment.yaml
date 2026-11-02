@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "smartstock.fullname" . }}-backend
+  name: {{ include "understory.fullname" . }}-backend
   labels:
-    {{- include "smartstock.labels" . | nindent 4 }}
+    {{- include "understory.labels" . | nindent 4 }}
     app.kubernetes.io/component: backend
 spec:
   replicas: {{ .Values.backend.replicaCount | default 1 }}
@@ -11,11 +11,11 @@ spec:
     type: Recreate
   selector:
     matchLabels:
-      {{- include "smartstock.backendSelectorLabels" . | nindent 6 }}
+      {{- include "understory.backendSelectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "smartstock.backendSelectorLabels" . | nindent 8 }}
+        {{- include "understory.backendSelectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.backend.imagePullSecrets }}
       imagePullSecrets:
@@ -33,9 +33,9 @@ spec:
               protocol: TCP
           envFrom:
             - configMapRef:
-                name: {{ include "smartstock.fullname" . }}-config
+                name: {{ include "understory.fullname" . }}-config
             - secretRef:
-                name: {{ include "smartstock.fullname" . }}-secret
+                name: {{ include "understory.fullname" . }}-secret
           {{- if .Values.backend.probes.liveness.enabled }}
           livenessProbe:
             httpGet:
@@ -71,10 +71,10 @@ spec:
         {{- if .Values.backend.persistence.data.enabled }}
         - name: backend-data
           persistentVolumeClaim:
-            claimName: {{ include "smartstock.fullname" . }}-backend-data
+            claimName: {{ include "understory.fullname" . }}-backend-data
         {{- end }}
         {{- if .Values.backend.persistence.manuscripts.enabled }}
         - name: backend-manuscripts
           persistentVolumeClaim:
-            claimName: {{ include "smartstock.fullname" . }}-backend-manuscripts
+            claimName: {{ include "understory.fullname" . }}-backend-manuscripts
         {{- end }}

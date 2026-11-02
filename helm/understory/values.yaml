@@ -1,5 +1,4 @@
-# Default values for smartstock.
-# Declare variables to be passed into your templates.
+# Default values for understory.
 
 global:
   environment: production
@@ -12,7 +11,7 @@ backend:
   image:
     repository: khalilart/ebaro-backend
     pullPolicy: IfNotPresent
-    tag: "latest"
+    tag: "v1.0.1"
   imagePullSecrets: []
   nameOverride: ""
   fullnameOverride: ""
@@ -30,7 +29,7 @@ backend:
     MPESA_SANDBOX: "true"
 
   secrets:
-    JWT_SECRET: "ebaro-prod-super-secret-jwt-key-change-me"
+    JWT_SECRET: "understory-prod-super-secret-jwt-key-change-me"
     ADMIN_DEFAULT_PASSWORD: "AdminPass2026!"
 
   resources:
@@ -129,7 +128,7 @@ ingress:
   className: "nginx"
   annotations: {}
   hosts:
-    - host: smartstock.local
+    - host: understory.local
       paths:
         - path: /
           pathType: Prefix

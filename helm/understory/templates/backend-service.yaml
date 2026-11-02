@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: backend
   labels:
-    {{- include "smartstock.labels" . | nindent 4 }}
+    {{- include "understory.labels" . | nindent 4 }}
     app.kubernetes.io/component: backend
 spec:
   type: {{ .Values.backend.service.type | default "ClusterIP" }}
@@ -13,4 +13,4 @@ spec:
       protocol: TCP
       name: http-api
   selector:
-    {{- include "smartstock.backendSelectorLabels" . | nindent 4 }}
+    {{- include "understory.backendSelectorLabels" . | nindent 4 }}

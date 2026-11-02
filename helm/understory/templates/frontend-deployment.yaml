@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "smartstock.fullname" . }}-frontend
+  name: {{ include "understory.fullname" . }}-frontend
   labels:
-    {{- include "smartstock.labels" . | nindent 4 }}
+    {{- include "understory.labels" . | nindent 4 }}
     app.kubernetes.io/component: frontend
 spec:
   replicas: {{ .Values.frontend.replicaCount | default 1 }}
@@ -14,11 +14,11 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      {{- include "smartstock.frontendSelectorLabels" . | nindent 6 }}
+      {{- include "understory.frontendSelectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "smartstock.frontendSelectorLabels" . | nindent 8 }}
+        {{- include "understory.frontendSelectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.frontend.imagePullSecrets }}
       imagePullSecrets:
