@@ -3,6 +3,7 @@ services:
   # 1. Backend API Service
   # ============================================================================
   backend:
+    image: khalilart/ebaro-backend:${TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile.backend
@@ -32,6 +33,7 @@ services:
   # 2. Frontend Web Server (Reverse Proxy + SPA)
   # ============================================================================
   frontend:
+    image: khalilart/ebaro-frontend:${TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile.frontend
