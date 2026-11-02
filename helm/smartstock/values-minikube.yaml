@@ -1,0 +1,47 @@
+# Environment-specific overrides for local Minikube deployment
+
+global:
+  environment: minikube
+
+backend:
+  replicaCount: 1
+  image:
+    repository: khalilart/ebaro-backend
+    pullPolicy: IfNotPresent
+    tag: "v1.0.1"
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  persistence:
+    data:
+      storageClass: "standard"
+      size: 1Gi
+    manuscripts:
+      storageClass: "standard"
+      size: 2Gi
+
+frontend:
+  replicaCount: 1  # 1 replica for lean local resource consumption in Minikube
+  image:
+    repository: khalilart/ebaro-frontend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 80
+    nodePort: 30080
+  resources:
+    limits:
+      cpu: 250m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+ingress:
+  enabled: false

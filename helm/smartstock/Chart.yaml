@@ -1,0 +1,15 @@
+apiVersion: v2
+name: smartstock
+description: Production-grade Helm chart for SmartStock Inventory & BI (eBaro Platform)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - smartstock
+  - ebaro
+  - inventory
+  - bi
+  - publishing
+maintainers:
+  - name: eBaro DevOps Team
+    email: devops@ebaro.com

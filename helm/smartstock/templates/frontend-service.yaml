@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "smartstock.fullname" . }}-frontend
+  labels:
+    {{- include "smartstock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frontend
+spec:
+  type: {{ .Values.frontend.service.type | default "NodePort" }}
+  ports:
+    - port: {{ .Values.frontend.service.port | default 80 }}
+      targetPort: {{ .Values.frontend.service.targetPort | default 80 }}
+      protocol: TCP
+      name: http-web
+      {{- if and (eq .Values.frontend.service.type "NodePort") .Values.frontend.service.nodePort }}
+      nodePort: {{ .Values.frontend.service.nodePort }}
+      {{- end }}
+  selector:
+    {{- include "smartstock.frontendSelectorLabels" . | nindent 4 }}

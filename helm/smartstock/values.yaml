@@ -1,0 +1,136 @@
+# Default values for smartstock.
+# Declare variables to be passed into your templates.
+
+global:
+  environment: production
+
+# ==============================================================================
+# 1. Backend Service Configuration
+# ==============================================================================
+backend:
+  replicaCount: 1  # 1 replica to prevent SQLite WAL concurrent multi-writer locks
+  image:
+    repository: khalilart/ebaro-backend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+  imagePullSecrets: []
+  nameOverride: ""
+  fullnameOverride: ""
+
+  service:
+    type: ClusterIP
+    port: 5000
+    targetPort: 5000
+
+  env:
+    NODE_ENV: production
+    PORT: "5000"
+    HOST: "0.0.0.0"
+    SIFALO_SANDBOX: "true"
+    MPESA_SANDBOX: "true"
+
+  secrets:
+    JWT_SECRET: "ebaro-prod-super-secret-jwt-key-change-me"
+    ADMIN_DEFAULT_PASSWORD: "AdminPass2026!"
+
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+  probes:
+    liveness:
+      enabled: true
+      path: /api/health
+      initialDelaySeconds: 15
+      periodSeconds: 15
+      timeoutSeconds: 5
+      failureThreshold: 3
+    readiness:
+      enabled: true
+      path: /api/health
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 3
+
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+
+  persistence:
+    data:
+      enabled: true
+      storageClass: ""
+      accessMode: ReadWriteOnce
+      size: 1Gi
+      mountPath: /app/server/data
+    manuscripts:
+      enabled: true
+      storageClass: ""
+      accessMode: ReadWriteOnce
+      size: 5Gi
+      mountPath: /app/server/storage/manuscripts
+
+# ==============================================================================
+# 2. Frontend Service Configuration (Reverse Proxy + SPA)
+# ==============================================================================
+frontend:
+  replicaCount: 2
+  image:
+    repository: khalilart/ebaro-frontend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+  imagePullSecrets: []
+
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 80
+    nodePort: 30080
+
+  resources:
+    limits:
+      cpu: 250m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+  probes:
+    liveness:
+      enabled: true
+      path: /healthz
+      initialDelaySeconds: 10
+      periodSeconds: 15
+      timeoutSeconds: 3
+      failureThreshold: 3
+    readiness:
+      enabled: true
+      path: /healthz
+      initialDelaySeconds: 5
+      periodSeconds: 10
+      timeoutSeconds: 3
+      failureThreshold: 3
+
+  securityContext:
+    runAsNonRoot: false
+
+# ==============================================================================
+# 3. Ingress Configuration
+# ==============================================================================
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: smartstock.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []

@@ -159,6 +159,10 @@ db.exec(`
     english_title TEXT NOT NULL,
     age_range TEXT NOT NULL,
     difficulty TEXT NOT NULL,
+    level_id TEXT NOT NULL DEFAULT 'level-1',
+    category_slug TEXT NOT NULL DEFAULT 'folktales',
+    learning_path_order INTEGER NOT NULL DEFAULT 1,
+    xp_reward INTEGER NOT NULL DEFAULT 50,
     somali_transcript TEXT NOT NULL,
     english_translation TEXT NOT NULL,
     default_language TEXT NOT NULL DEFAULT 'so',
@@ -422,6 +426,11 @@ ensureColumn('author_submissions', 'manuscript_filename', 'TEXT');
 ensureColumn('author_submissions', 'manuscript_format', 'TEXT');
 ensureColumn('author_submissions', 'manuscript_size', 'INTEGER');
 ensureColumn('author_submissions', 'manuscript_path', 'TEXT');
+
+ensureColumn('children_stories', 'level_id', "TEXT NOT NULL DEFAULT 'level-1'");
+ensureColumn('children_stories', 'category_slug', "TEXT NOT NULL DEFAULT 'folktales'");
+ensureColumn('children_stories', 'learning_path_order', "INTEGER NOT NULL DEFAULT 1");
+ensureColumn('children_stories', 'xp_reward', "INTEGER NOT NULL DEFAULT 50");
 
 // Ensure default administrator account exists
 try {

@@ -1,0 +1,18 @@
+{{- if .Values.backend.persistence.manuscripts.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "smartstock.fullname" . }}-backend-manuscripts
+  labels:
+    {{- include "smartstock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  accessModes:
+    - {{ .Values.backend.persistence.manuscripts.accessMode | default "ReadWriteOnce" | quote }}
+  {{- if .Values.backend.persistence.manuscripts.storageClass }}
+  storageClassName: {{ .Values.backend.persistence.manuscripts.storageClass | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.backend.persistence.manuscripts.size | default "5Gi" | quote }}
+{{- end }}

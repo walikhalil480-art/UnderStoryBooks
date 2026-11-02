@@ -1,0 +1,58 @@
+# Environment-specific overrides for Production deployment
+
+global:
+  environment: production
+
+backend:
+  replicaCount: 1
+  image:
+    repository: khalilart/ebaro-backend
+    pullPolicy: Always
+    tag: "latest"
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  persistence:
+    data:
+      storageClass: "gp3"
+      size: 10Gi
+    manuscripts:
+      storageClass: "gp3"
+      size: 50Gi
+
+frontend:
+  replicaCount: 3
+  image:
+    repository: khalilart/ebaro-frontend
+    pullPolicy: Always
+    tag: "latest"
+  service:
+    type: ClusterIP
+    port: 80
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: "nginx"
+  hosts:
+    - host: app.smartstock.io
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: smartstock-tls-cert
+      hosts:
+        - app.smartstock.io
