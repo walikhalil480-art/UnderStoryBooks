@@ -311,7 +311,7 @@ export const PdfReaderView: React.FC<PdfReaderViewProps> = ({
         ? `KES ${book.price}`
         : book.currency === 'SOS'
         ? `SOS ${book.price}`
-        : `$${book.price ? book.price.toFixed(2) : '4.99'} USD`);
+        : `$${Number(book.price || 0).toFixed(2)} USD`);
 
     return (
       <div

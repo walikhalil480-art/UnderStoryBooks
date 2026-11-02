@@ -1127,7 +1127,7 @@ export const ReaderPage: React.FC<ReaderPageProps> = ({
                 style={{ background: '#173D2D', color: '#fff', border: 'none', padding: '0.8rem 1.6rem', borderRadius: '8px', cursor: 'pointer', fontWeight: 700, fontSize: '0.98rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
                 <DollarSign size={17} />
-                <span>Buy eBook Now ({book.priceDisplay || `$${book.price ? book.price.toFixed(2) : '4.99'}`})</span>
+                <span>Buy eBook Now ({book.priceDisplay || `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${Number(book.price || 0).toFixed(2)}`})</span>
               </button>
               <button
                 type="button"

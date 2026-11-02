@@ -351,10 +351,23 @@ export function publishSubmissionToBooks(sub: any) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '') || `book-${sub.id.slice(0, 8)}`;
-  const isFree = sub.access_preference !== 'paid';
-  const accessStatus: EbookAccessStatus = isFree ? 'free_full_text' : 'paid_purchase';
+  let isFree = sub.access_preference !== 'paid';
+  let price = sub.price ? Number(sub.price) : 0;
+  let currency = (sub.currency || 'USD').toUpperCase();
+  let accessStatus: EbookAccessStatus = isFree ? 'free_full_text' : 'paid_purchase';
+
+  // Check if SQLite books table already has an admin-configured price or access status
+  try {
+    const existingDb = db.prepare('SELECT price, currency, access_status FROM books WHERE id = ?').get(slug) as any;
+    if (existingDb && existingDb.price !== undefined && existingDb.price !== null && Number(existingDb.price) > 0) {
+      price = Number(existingDb.price);
+      currency = existingDb.currency || currency;
+      isFree = false;
+      accessStatus = 'paid_purchase';
+    }
+  } catch {}
+
   const categorySlug = sub.category_slug || 'islamic-studies';
-  const price = sub.price ? Number(sub.price) : 0;
   const now = new Date().toISOString();
 
   let coverUrl = sub.cover_url;
@@ -414,7 +427,8 @@ export function publishSubmissionToBooks(sub: any) {
     requiresAuthForFullText: false,
     isFree,
     price,
-    priceDisplay: isFree ? 'Free Open Access' : `$${price.toFixed(2)} USD`,
+    currency,
+    priceDisplay: isFree ? 'Free Open Access' : `$${price.toFixed(2)} ${currency}`,
     rightsHolder: sub.author,
     licenceEvidence: sub.rights_declaration || 'Approved Author Publishing Declaration',
     distributionPermissions: 'Authorized worldwide digital reading on eBaro',
@@ -567,17 +581,30 @@ export function findBookById(bookId: string): Book | undefined {
     book = BOOKS.find((b) => b.id === bookId);
   }
 
-  // Synchronize genuine manuscript link directly from relational SQLite database
+  // Synchronize genuine manuscript link and pricing directly from relational SQLite database
   if (book) {
     try {
-      const dbBook = db.prepare('SELECT manuscript_path, manuscript_format, manuscript_filename, manuscript_size FROM books WHERE id = ?').get(book.id) as any;
-      if (dbBook?.manuscript_path && fs.existsSync(dbBook.manuscript_path)) {
-        book.manuscriptPath = dbBook.manuscript_path;
-        book.manuscriptFormat = dbBook.manuscript_format || (dbBook.manuscript_path.endsWith('.epub') ? 'EPUB' : 'PDF');
-        book.provenance.manuscriptPath = dbBook.manuscript_path;
-        book.provenance.manuscriptFormat = book.manuscriptFormat;
-        if (dbBook.manuscript_filename) book.provenance.manuscriptFilename = dbBook.manuscript_filename;
-        if (dbBook.manuscript_size) book.provenance.manuscriptSize = dbBook.manuscript_size;
+      const dbBook = db.prepare('SELECT manuscript_path, manuscript_format, manuscript_filename, manuscript_size, price, currency, access_status FROM books WHERE id = ?').get(book.id) as any;
+      if (dbBook) {
+        if (dbBook.price !== undefined && dbBook.price !== null) {
+          book.price = Number(dbBook.price);
+          book.currency = dbBook.currency || book.currency || 'USD';
+          book.isFree = book.price === 0;
+          book.priceDisplay = book.isFree
+            ? 'Free Open Access'
+            : `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${book.price.toFixed(2)}${book.currency === 'USD' ? ' USD' : ''}`;
+        }
+        if (dbBook.access_status) {
+          book.accessStatus = dbBook.access_status;
+        }
+        if (dbBook.manuscript_path && fs.existsSync(dbBook.manuscript_path)) {
+          book.manuscriptPath = dbBook.manuscript_path;
+          book.manuscriptFormat = dbBook.manuscript_format || (dbBook.manuscript_path.endsWith('.epub') ? 'EPUB' : 'PDF');
+          book.provenance.manuscriptPath = dbBook.manuscript_path;
+          book.provenance.manuscriptFormat = book.manuscriptFormat;
+          if (dbBook.manuscript_filename) book.provenance.manuscriptFilename = dbBook.manuscript_filename;
+          if (dbBook.manuscript_size) book.provenance.manuscriptSize = dbBook.manuscript_size;
+        }
       }
     } catch {}
   }
@@ -1907,9 +1934,9 @@ export async function handleApiMiddleware(
                 if (!existing) {
                   const newUserId = `usr_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
                   db.prepare(`
-                    INSERT INTO users (id, email, password_hash, full_name, role, created_at)
-                    VALUES (?, ?, ?, ?, 'reader', datetime('now'))
-                  `).run(newUserId, guestEmail, 'GUEST_PURCHASER', guestName);
+                    INSERT INTO users (id, email, password_hash, password_salt, full_name, role, created_at)
+                    VALUES (?, ?, ?, ?, ?, 'reader', datetime('now'))
+                  `).run(newUserId, guestEmail, 'GUEST_PURCHASER', 'guest_salt', guestName);
                   existing = { id: newUserId, full_name: guestName, email: guestEmail, role: 'reader', created_at: new Date().toISOString() };
                 }
                 user = {
@@ -1954,8 +1981,28 @@ export async function handleApiMiddleware(
               });
             }
 
-            const amount = Number(book.price || 4.99);
-            const currency = (book.currency || 'USD') as PaymentCurrency;
+            let amount = Number(book.price ?? 0);
+            let currency = (book.currency || 'USD') as PaymentCurrency;
+
+            // Ensure amount is synchronized from persistent SQLite record if not present in memory
+            if (amount <= 0) {
+              try {
+                const dbBook = db.prepare('SELECT price, currency FROM books WHERE id = ?').get(book.id) as any;
+                if (dbBook && dbBook.price > 0) {
+                  amount = Number(dbBook.price);
+                  currency = (dbBook.currency || currency) as PaymentCurrency;
+                  book.price = amount;
+                  book.currency = currency;
+                }
+              } catch {}
+            }
+
+            if (amount <= 0 && (book.accessStatus === 'paid_purchase' || !book.isFree)) {
+              return sendJson(res, 400, {
+                error: 'INVALID_PRICE',
+                message: 'This book has an unconfigured retail price. Please contact the publisher.'
+              });
+            }
 
             try {
               const { order, alreadyPurchased } = await paymentService.createOrder({
@@ -2763,6 +2810,20 @@ export async function handleApiMiddleware(
             }
 
             const existingBook = BOOKS[memBookIdx];
+            const updatedPrice = body.price !== undefined ? Number(body.price) : (existingBook.price || 0);
+            const updatedCurrency = (body.currency || existingBook.currency || 'USD').toUpperCase() as PaymentCurrency;
+            const updatedIsFree = body.isFree !== undefined ? Boolean(body.isFree) : (updatedPrice === 0);
+            const updatedAccessStatus = body.accessStatus !== undefined
+              ? body.accessStatus
+              : updatedPrice > 0
+              ? 'paid_purchase'
+              : 'free_full_text';
+            const updatedPriceDisplay = body.priceDisplay !== undefined
+              ? String(body.priceDisplay)
+              : updatedIsFree
+              ? 'Free Open Access'
+              : `${updatedCurrency === 'KES' ? 'KES ' : updatedCurrency === 'SOS' ? 'SOS ' : '$'}${updatedPrice.toFixed(2)}${updatedCurrency === 'USD' ? ' USD' : ''}`;
+
             const updatedBook: Book = {
               ...existingBook,
               title: body.title !== undefined ? String(body.title).trim() : existingBook.title,
@@ -2773,11 +2834,12 @@ export async function handleApiMiddleware(
               genre: body.genre !== undefined ? String(body.genre).trim() : existingBook.genre,
               publishedYear: body.publishedYear !== undefined ? Number(body.publishedYear) : existingBook.publishedYear,
               pages: body.pages !== undefined ? Number(body.pages) : existingBook.pages,
-              price: body.price !== undefined ? Number(body.price) : existingBook.price,
-              priceDisplay: body.priceDisplay !== undefined ? String(body.priceDisplay) : existingBook.priceDisplay,
-              isFree: body.isFree !== undefined ? Boolean(body.isFree) : existingBook.isFree,
+              price: updatedPrice,
+              currency: updatedCurrency,
+              priceDisplay: updatedPriceDisplay,
+              isFree: updatedIsFree,
               accessType: body.accessType !== undefined ? body.accessType : existingBook.accessType,
-              accessStatus: body.accessStatus !== undefined ? body.accessStatus : existingBook.accessStatus,
+              accessStatus: updatedAccessStatus,
               coverUrl: body.coverUrl !== undefined ? String(body.coverUrl).trim() : existingBook.coverUrl,
               shortSynopsis: body.shortSynopsis !== undefined ? String(body.shortSynopsis).trim() : existingBook.shortSynopsis,
               description: body.description !== undefined ? (Array.isArray(body.description) ? body.description : [String(body.description)]) : existingBook.description,
@@ -2788,14 +2850,15 @@ export async function handleApiMiddleware(
             };
 
             BOOKS[memBookIdx] = updatedBook;
+            dynamicBooksCache.set(updatedBook.id, updatedBook);
 
-            // Persist to SQLite
+            // Persist price, currency, access status and metadata to SQLite books table
             try {
               db.prepare(`
                 UPDATE books SET
                   title = ?, author = ?, category_slug = ?, published_year = ?,
                   cover_url = ?, access_type = ?, access_status = ?, rights_note = ?,
-                  isbn = ?, updated_at = ?
+                  isbn = ?, price = ?, currency = ?, updated_at = ?
                 WHERE id = ?
               `).run(
                 updatedBook.title,
@@ -2807,6 +2870,8 @@ export async function handleApiMiddleware(
                 updatedBook.accessStatus,
                 updatedBook.rightsNote,
                 updatedBook.isbn,
+                updatedPrice,
+                updatedCurrency,
                 now,
                 bookId
               );
@@ -2815,8 +2880,8 @@ export async function handleApiMiddleware(
                 db.prepare(`
                   INSERT OR REPLACE INTO books (
                     id, title, author, isbn, open_library_work_id, access_type, access_status,
-                    category_slug, published_year, cover_url, rights_note, updated_at
-                  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    category_slug, published_year, cover_url, rights_note, price, currency, updated_at
+                  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 `).run(
                   updatedBook.id,
                   updatedBook.title,
@@ -2829,10 +2894,31 @@ export async function handleApiMiddleware(
                   updatedBook.publishedYear,
                   updatedBook.coverUrl,
                   updatedBook.rightsNote || '',
+                  updatedPrice,
+                  updatedCurrency,
                   now
                 );
               } catch {}
             }
+
+            // Also update any matching author_submissions so server reboot doesn't revert price
+            try {
+              db.prepare(`
+                UPDATE author_submissions SET
+                  price = ?,
+                  access_preference = ?,
+                  currency = ?,
+                  updated_at = ?
+                WHERE id = ? OR LOWER(REPLACE(title, ' ', '-')) = ?
+              `).run(
+                updatedPrice,
+                updatedIsFree ? 'free' : 'paid',
+                updatedCurrency,
+                now,
+                bookId,
+                bookId
+              );
+            } catch {}
 
             db.prepare(
               `INSERT INTO verification_audit_log (id, book_id, check_type, status, details, checked_at)

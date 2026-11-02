@@ -210,7 +210,7 @@ export const BookDetailsPage: React.FC<BookDetailsPageProps> = ({
     hasPurchased
       ? 'Purchased Edition — Full Access Unlocked'
       : isPaid
-      ? `Paid Author Edition (${book.priceDisplay || '$4.99 USD'})`
+      ? `Paid Author Edition (${book.priceDisplay || `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${Number(book.price).toFixed(2)}`})`
       : book.accessStatus === 'free_full_text'
       ? 'Free Authorised Full-Text'
       : book.accessStatus === 'free_download' || book.accessStatus === 'full_download_available'
@@ -475,14 +475,12 @@ export const BookDetailsPage: React.FC<BookDetailsPageProps> = ({
             <div className="purchase-top-pricing-row">
               <div className="purchase-price-group">
                 <span className="purchase-main-price">
-                  {isPaid && !hasPurchased
-                    ? (book.priceDisplay || `$${book.price || '4.99'}`)
-                    : book.isFree
-                    ? 'Free Full-Text'
-                    : '$14.99'}
+                  {isPaid
+                    ? (book.priceDisplay || `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${Number(book.price).toFixed(2)}`)
+                    : 'Free Full-Text'}
                 </span>
                 <span className="purchase-save-pill" style={{ backgroundColor: '#DCE6DC', color: '#173D2D', borderColor: '#CBD5CB' }}>
-                  {isPaid ? 'Digital Edition' : 'Open Access Edition'}
+                  {hasPurchased ? 'Owned' : isPaid ? 'Digital Edition' : 'Open Access Edition'}
                 </span>
               </div>
               <div className="purchase-instant-sync-note">
@@ -500,7 +498,7 @@ export const BookDetailsPage: React.FC<BookDetailsPageProps> = ({
                   onClick={() => setIsPurchaseModalOpen(true)}
                 >
                   <DollarSign size={18} />
-                  <span>Buy eBook Now ({book.priceDisplay || `$${book.price || '4.99'}`})</span>
+                  <span>Buy eBook Now ({book.priceDisplay || `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${Number(book.price).toFixed(2)}`})</span>
                 </button>
               ) : (
                 <button
@@ -629,11 +627,9 @@ export const BookDetailsPage: React.FC<BookDetailsPageProps> = ({
                   <span>Digital eBook</span>
                 </div>
                 <div className="edition-format-price">
-                  {isPaid && !hasPurchased
-                    ? (book.priceDisplay || `$${book.price || '4.99'}`)
-                    : book.isFree
-                    ? 'Free'
-                    : '$14.99'}
+                  {isPaid
+                    ? (book.priceDisplay || `${book.currency === 'KES' ? 'KES ' : book.currency === 'SOS' ? 'SOS ' : '$'}${Number(book.price).toFixed(2)}`)
+                    : 'Free'}
                 </div>
                 <div className="edition-format-sub">Includes ePub + In-Browser Reader</div>
               </div>

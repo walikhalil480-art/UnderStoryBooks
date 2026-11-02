@@ -90,7 +90,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   if (!isOpen) return null;
 
   const currency = (book.currency || 'USD') as PaymentCurrency;
-  const price = book.price || 4.99;
+  const price = Number(book.price ?? 0);
   const priceDisplay =
     book.priceDisplay ||
     `${currency === 'KES' ? 'KES ' : currency === 'SOS' ? 'SOS ' : '$'}${price.toFixed(2)}`;

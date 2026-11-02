@@ -356,6 +356,16 @@ export const AdminPage: React.FC<AdminPageProps> = ({
 
     setIsSaving(true);
     try {
+      const isFree = Boolean(formData.isFree && Number(formData.price || 0) === 0);
+      const price = isFree ? 0 : Number(formData.price || 0);
+      const currency = (formData.currency || 'USD').toUpperCase();
+      const accessStatus = isFree
+        ? (formData.accessStatus === 'paid_purchase' ? 'free_full_text' : formData.accessStatus)
+        : (formData.accessStatus === 'free_full_text' || formData.accessStatus === 'free_download' ? 'paid_purchase' : formData.accessStatus);
+      const priceDisplay = isFree
+        ? 'Free Open Access'
+        : `${currency === 'KES' ? 'KES ' : currency === 'SOS' ? 'SOS ' : '$'}${price.toFixed(2)}${currency === 'USD' ? ' USD' : ''}`;
+
       if (editingBook) {
         // Edit existing book
         const res = await folioApi.updateAdminBook(editingBook.id, {
@@ -367,11 +377,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({
           genre: formData.genre,
           publishedYear: Number(formData.publishedYear),
           pages: Number(formData.pages),
-          isFree: formData.isFree,
-          price: formData.isFree ? 0 : Number(formData.price),
-          priceDisplay: formData.isFree ? 'Free Open Access' : `$${Number(formData.price).toFixed(2)} USD`,
+          isFree,
+          price,
+          currency: currency as any,
+          priceDisplay,
           accessType: formData.accessType,
-          accessStatus: formData.accessStatus,
+          accessStatus,
           coverUrl: formData.coverUrl,
           shortSynopsis: formData.shortSynopsis,
           description: [formData.shortSynopsis || formData.title],
@@ -380,10 +391,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({
           isbn: formData.isbn
         });
 
-        const updated = res.book || { ...editingBook, ...formData };
+        const updated = res.book || { ...editingBook, ...formData, price, currency, priceDisplay, isFree, accessStatus };
         setBooksList((prev) => prev.map((b) => (b.id === editingBook.id ? updated : b)));
         syncBookUpdate(updated);
-        showToast(`Book "${updated.title}" updated successfully.`);
+        showToast(`Book "${updated.title}" updated successfully (${priceDisplay}).`);
       } else {
         // Create new book
         const res = await folioApi.createAdminBook({
@@ -395,11 +406,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({
           genre: formData.genre,
           publishedYear: Number(formData.publishedYear),
           pages: Number(formData.pages),
-          isFree: formData.isFree,
-          price: formData.isFree ? 0 : Number(formData.price),
-          priceDisplay: formData.isFree ? 'Free Open Access' : `$${Number(formData.price).toFixed(2)} USD`,
+          isFree,
+          price,
+          currency: currency as any,
+          priceDisplay,
           accessType: formData.accessType,
-          accessStatus: formData.accessStatus,
+          accessStatus,
           coverUrl: formData.coverUrl || '/covers/real/pride-and-prejudice.jpg',
           shortSynopsis: formData.shortSynopsis,
           description: [formData.shortSynopsis || formData.title],
@@ -858,7 +870,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({
                         {/* Price Column */}
                         <td>
                           <span className={`understory-price-badge ${b.isFree || b.price === 0 ? 'free' : 'paid'}`}>
-                            {b.isFree || b.price === 0 ? 'Free' : `$${(b.price || 4.99).toFixed(2)}`}
+                            {b.isFree || b.price === 0 ? 'Free' : (b.priceDisplay || `$${Number(b.price).toFixed(2)}`)}
                           </span>
                         </td>
 
