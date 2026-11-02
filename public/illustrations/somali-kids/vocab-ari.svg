@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background morning sun glow -->
+    <radialGradient id="goatBgGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.8"/>
+      <stop offset="65%" stop-color="#FFFBEB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- White coat gradient with soft shadow -->
+    <linearGradient id="whiteCoat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Somali Blackhead goat head gradient -->
+    <linearGradient id="blackHead" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <!-- Horns Gradient (ridged keratin) -->
+    <linearGradient id="hornGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="50%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="goatShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#451A03" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <ellipse cx="200" cy="165" rx="170" ry="110" fill="url(#goatBgGlow)"/>
+
+  <!-- Ground Plane Shadow & Savanna Bush -->
+  <ellipse cx="200" cy="272" rx="155" ry="22" fill="#FDE68A" opacity="0.6"/>
+  <ellipse cx="200" cy="274" rx="140" ry="16" fill="#78350F" opacity="0.16"/>
+
+  <g filter="url(#goatShadow)">
+    <!-- Small Upright Tail -->
+    <path d="M 105,160 Q 90,140 98,125 Q 106,128 112,150 Z" fill="url(#whiteCoat)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+    <!-- Hind Left Leg (Far side) -->
+    <path d="M 120,180 L 125,230 L 128,268 L 136,268 L 138,235 L 140,180 Z" fill="#94A3B8"/>
+    <!-- Hoof -->
+    <rect x="127" y="265" width="10" height="5" rx="2" fill="#0F172A"/>
+
+    <!-- Front Left Leg (Far side) -->
+    <path d="M 225,185 L 228,230 L 230,268 L 238,268 L 240,230 L 242,185 Z" fill="#94A3B8"/>
+    <!-- Hoof -->
+    <rect x="229" y="265" width="10" height="5" rx="2" fill="#0F172A"/>
+
+    <!-- Main Torso & Belly (Pure White Somali Breed) -->
+    <path d="M 110,165 C 110,140 140,135 185,138 C 220,140 245,155 248,185 C 248,225 210,232 175,230 C 130,228 110,205 110,165 Z" 
+          fill="url(#whiteCoat)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+    <!-- Hind Right Leg (Near side) -->
+    <path d="M 132,175 C 132,175 148,205 142,235 L 144,270 L 154,270 L 158,235 C 165,200 162,180 155,175 Z" 
+          fill="url(#whiteCoat)" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Hoof -->
+    <rect x="143" y="267" width="12" height="5" rx="2" fill="#1E293B"/>
+
+    <!-- Front Right Leg (Near side) -->
+    <path d="M 238,180 L 242,230 L 244,270 L 254,270 L 256,230 L 258,180 Z" 
+          fill="url(#whiteCoat)" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Hoof -->
+    <rect x="243" y="267" width="12" height="5" rx="2" fill="#1E293B"/>
+
+    <!-- DISTINCTIVE SOMALI BLACKHEAD & NECK -->
+    <!-- The neck transitions sharply from white body into lustrous jet-black -->
+    <path d="M 230,175 C 235,160 250,130 262,110 C 275,120 282,145 280,175 C 278,190 265,195 248,188 Z" 
+          fill="url(#blackHead)"/>
+
+    <!-- Goat Head -->
+    <path d="M 255,115 C 255,85 285,75 305,95 C 322,110 328,125 318,140 C 305,155 275,150 255,115 Z" 
+          fill="url(#blackHead)" stroke="#0F172A" stroke-width="1"/>
+
+    <!-- Muzzle & Gentle Chin Beard -->
+    <path d="M 312,125 C 322,128 326,134 322,142 C 316,146 308,145 304,140 Z" fill="#1E293B"/>
+    <!-- Chin Beard tuft -->
+    <path d="M 310,142 Q 315,158 318,162 Q 312,156 306,145 Z" fill="#0F172A"/>
+
+    <!-- ELEGANT BACKWARD-CURVING HORNS -->
+    <!-- Far Horn -->
+    <path d="M 270,82 C 265,55 245,40 230,35 C 242,48 255,68 262,85 Z" fill="url(#hornGrad)" stroke="#451A03" stroke-width="1"/>
+    <!-- Near Horn (Prominent, ridged) -->
+    <path d="M 282,85 C 278,50 255,30 235,24 C 252,42 270,66 274,90 Z" fill="url(#hornGrad)" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Horn Ridges -->
+    <line x1="262" y1="42" x2="256" y2="46" stroke="#FEF3C7" stroke-width="1.5" opacity="0.6"/>
+    <line x1="268" y1="55" x2="263" y2="60" stroke="#FEF3C7" stroke-width="1.5" opacity="0.6"/>
+    <line x1="274" y1="68" x2="270" y2="73" stroke="#FEF3C7" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Drooping Soft Ear (Characteristic of Somali goat) -->
+    <path d="M 264,105 C 250,115 240,135 242,148 C 246,148 255,135 264,120 Z" fill="#1E293B" stroke="#0F172A" stroke-width="1"/>
+    <path d="M 246,122 C 243,132 244,142 245,145 C 248,144 252,135 256,126 Z" fill="#F472B6" opacity="0.4"/>
+
+    <!-- Inquisitive Eye with horizontal pupil -->
+    <ellipse cx="288" cy="105" rx="6.5" ry="5.5" fill="#F59E0B"/>
+    <ellipse cx="288" cy="105" rx="4.5" ry="2" fill="#0F172A"/>
+    <circle cx="286" cy="103" r="1.5" fill="#FFFFFF"/>
+  </g>
+</svg>

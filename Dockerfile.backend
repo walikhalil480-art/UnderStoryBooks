@@ -1,0 +1,37 @@
+# ==============================================================================
+# eBaro Backend API Server (Node.js 22 Alpine)
+# ==============================================================================
+FROM node:22-alpine
+
+WORKDIR /app
+
+# Set production environment defaults
+ENV NODE_ENV=production \
+    PORT=5000 \
+    HOST=0.0.0.0
+
+# Install dependencies using lockfile
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy server logic, books data and shared types
+COPY tsconfig.json ./
+COPY server/ ./server/
+COPY src/ ./src/
+
+# Ensure runtime persistence directories exist with non-root ownership
+RUN mkdir -p /app/server/data /app/server/storage/manuscripts \
+    && chown -R node:node /app
+
+# Run as unprivileged non-root user
+USER node
+
+# Expose internal API port
+EXPOSE 5000
+
+# Container liveness health check
+HEALTHCHECK --interval=20s --timeout=5s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:5000/api/health || exit 1
+
+# Start standalone production HTTP server
+CMD ["npm", "run", "server"]

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="100%" height="100%">
+  
+    <defs>
+      <!-- Shadow Filters -->
+      <filter id="storyDropShadow" x="-10%" y="-10%" width="125%" height="125%">
+        <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.22"/>
+      </filter>
+      <filter id="sunHaloGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+
+      <!-- Skies -->
+      <linearGradient id="skyDawn" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FED7AA"/>
+        <stop offset="35%" stop-color="#FEF08A"/>
+        <stop offset="70%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#E0F2FE"/>
+      </linearGradient>
+
+      <linearGradient id="skyMidday" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="45%" stop-color="#38BDF8"/>
+        <stop offset="80%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#FEF9C3"/>
+      </linearGradient>
+
+      <linearGradient id="skySunset" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#7C2D12"/>
+        <stop offset="35%" stop-color="#EA580C"/>
+        <stop offset="65%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#FEF08A"/>
+      </linearGradient>
+
+      <radialGradient id="skyNight" cx="50%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#1E1B4B"/>
+        <stop offset="40%" stop-color="#0F172A"/>
+        <stop offset="80%" stop-color="#020617"/>
+        <stop offset="100%" stop-color="#000000"/>
+      </radialGradient>
+
+      <!-- Terrain Gradients -->
+      <linearGradient id="savannaDune" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="greenPasture" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#4ADE80"/>
+        <stop offset="50%" stop-color="#16A34A"/>
+        <stop offset="100%" stop-color="#14532D"/>
+      </linearGradient>
+
+      <linearGradient id="coastalSea" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="50%" stop-color="#0369A1"/>
+        <stop offset="100%" stop-color="#075985"/>
+      </linearGradient>
+
+      <linearGradient id="dhowWood" x1="0%" y1="0%" x2="100%" y2="50%">
+        <stop offset="0%" stop-color="#451A03"/>
+        <stop offset="40%" stop-color="#78350F"/>
+        <stop offset="80%" stop-color="#92400E"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="camelCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#D97706"/>
+        <stop offset="50%" stop-color="#B45309"/>
+        <stop offset="100%" stop-color="#78350F"/>
+      </linearGradient>
+
+      <linearGradient id="calfCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FDE047"/>
+        <stop offset="50%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#D97706"/>
+      </linearGradient>
+
+      <linearGradient id="whiteCoatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="65%" stop-color="#F1F5F9"/>
+        <stop offset="100%" stop-color="#CBD5E1"/>
+      </linearGradient>
+
+      <linearGradient id="slateSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#64748B"/>
+        <stop offset="60%" stop-color="#475569"/>
+        <stop offset="100%" stop-color="#334155"/>
+      </linearGradient>
+
+      <linearGradient id="goldMane" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#92400E"/>
+      </linearGradient>
+
+      <radialGradient id="sunDisk" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="40%" stop-color="#FEF08A"/>
+        <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  
+
+  <!-- Sky Layer -->
+  <rect width="860" height="480" fill="url(#skyDawn)"/>
+
+  <!-- Radiant Sun -->
+  <circle cx="645" cy="80" r="70" fill="url(#sunDisk)" filter="url(#sunHaloGlow)"/>
+  <circle cx="645" cy="80" r="32" fill="#FFFFFF"/>
+
+  <!-- Distant Savanna Ridge / Horizon -->
+  <path d="M 0,260 Q 215,230 430,250 T 860,240 L 860,480 L 0,480 Z" fill="#CBD5E1" opacity="0.35"/>
+
+  <!-- Midground Hills / Rolling Dunes -->
+  <path d="M 0,310 Q 280,280 560,305 T 860,290 L 860,480 L 0,480 Z" fill="url(#savannaDune)"/>
+
+  <!-- Background Environmental Elements -->
+  
+    <g transform="translate(60, 170) scale(0.85)" filter="url(#storyDropShadow)">
+      <!-- Nomadic encampment ground shadow -->
+      <ellipse cx="150" cy="195" rx="140" ry="16" fill="#451A03" opacity="0.25"/>
+
+      <!-- AQAL SOOMAALI DOME -->
+      <g transform="translate(30, 25)">
+        <!-- Dome Structure -->
+        <path d="M 25,160 C 25,50 75,15 135,15 C 195,15 245,50 245,160 Z" fill="#B45309" stroke="#451A03" stroke-width="2.5"/>
+        <!-- Woven Mat Layer Bands (Kebed & Alool) -->
+        <path d="M 75,50 Q 135,38 195,50 L 190,70 Q 135,58 80,70 Z" fill="#DC2626"/>
+        <!-- Chevron embroidery -->
+        <path d="M 85,60 L 92,52 L 99,60 L 106,52 L 113,60 L 120,52 L 127,60 L 134,52 L 141,60 L 148,52 L 155,60 L 162,52 L 169,60 L 176,52 L 183,60" stroke="#FEF08A" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M 48,88 Q 135,70 222,88 L 216,110 Q 135,92 54,110 Z" fill="#EA580C"/>
+        <!-- Structural Ropes -->
+        <path d="M 40,160 Q 90,65 135,15 M 230,160 Q 180,65 135,15" stroke="#78350F" stroke-width="2.5" fill="none"/>
+        <!-- Arched Doorway with Interior Warmth -->
+        <path d="M 105,160 C 105,110 165,110 165,160 Z" fill="#0F172A" stroke="#78350F" stroke-width="3"/>
+        <ellipse cx="135" cy="155" rx="18" ry="8" fill="#F59E0B" opacity="0.8"/>
+        <!-- Rolled Door Screen -->
+        <rect x="100" y="105" width="70" height="12" rx="4" fill="#D97706" stroke="#451A03" stroke-width="1.5"/>
+        <!-- Milk Dhiil outside entrance -->
+        <path d="M 180,162 C 175,155 178,145 185,140 L 195,140 C 202,145 205,155 200,162 Z" fill="#92400E" stroke="#451A03" stroke-width="1"/>
+        <ellipse cx="190" cy="140" rx="3" ry="1.5" fill="#FEF08A"/>
+      </g>
+    </g>
+  
+
+  <!-- Primary Story Subject & Action -->
+  
+    <g transform="translate(240, 150) scale(1.25)" filter="url(#storyDropShadow)">
+      <!-- Patterned Derin Mat on Courtyard Floor -->
+      <polygon points="20,175 280,175 305,215 0,215" fill="#D97706" stroke="#78350F" stroke-width="2"/>
+      <g stroke="#991B1B" stroke-width="3">
+        <line x1="40" y1="180" x2="260" y2="180"/>
+        <line x1="20" y1="205" x2="285" y2="205"/>
+      </g>
+
+      <!-- GRANDMOTHER AYEEYO (Center Left) in embroidered Dirac -->
+      <g transform="translate(60, 60)">
+        <path d="M 20,95 C 20,60 45,45 70,45 C 95,45 120,60 120,95 L 125,135 L 15,135 Z" fill="#047857"/>
+        <ellipse cx="70" cy="30" rx="18" ry="22" fill="#7C2D12"/>
+        <!-- Soft Shash Headwrap -->
+        <path d="M 50,30 C 50,8 90,8 90,30 C 90,45 85,55 85,60 L 55,60 C 55,55 50,45 50,30 Z" fill="#F59E0B" stroke="#B45309" stroke-width="1.5"/>
+        <!-- Kind Smiling Face -->
+        <circle cx="64" cy="28" r="2" fill="#1E293B"/>
+        <circle cx="76" cy="28" r="2" fill="#1E293B"/>
+        <path d="M 66,38 Q 70,44 74,38" stroke="#451A03" stroke-width="2" fill="none"/>
+      </g>
+
+      <!-- TWO CHILDREN (Listening intently to story) -->
+      <g transform="translate(160, 85) scale(0.85)">
+        <!-- Girl Caasha in bright dress -->
+        <path d="M 15,65 C 15,40 35,30 55,30 C 75,30 95,40 95,65 L 100,105 L 10,105 Z" fill="#F97316"/>
+        <circle cx="55" cy="18" r="16" fill="#7C2D12"/>
+        <path d="M 40,16 C 40,0 70,0 70,16 Z" fill="#FDE047"/>
+        <circle cx="50" cy="16" r="2" fill="#1E293B"/><circle cx="60" cy="16" r="2" fill="#1E293B"/>
+        <path d="M 52,24 Q 55,28 58,24" stroke="#451A03" stroke-width="1.5" fill="none"/>
+      </g>
+
+      <!-- OPEN BOOK BEING READ -->
+      <g transform="translate(115, 150)">
+        <polygon points="0,25 35,32 70,25 70,5 35,12 0,5" fill="#065F46" stroke="#064E3B" stroke-width="1.5"/>
+        <polygon points="2,23 35,30 35,10 2,4" fill="#FFFBEB"/>
+        <polygon points="68,23 35,30 35,10 68,4" fill="#FFFFFF"/>
+        <line x1="8" y1="12" x2="28" y2="12" stroke="#94A3B8" stroke-width="1.5"/>
+        <line x1="8" y1="18" x2="26" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+        <line x1="42" y1="12" x2="62" y2="12" stroke="#94A3B8" stroke-width="1.5"/>
+        <line x1="42" y1="18" x2="60" y2="18" stroke="#94A3B8" stroke-width="1.5"/>
+      </g>
+    </g>
+  
+</svg>

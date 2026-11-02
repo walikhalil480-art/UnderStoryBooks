@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="antiquityBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B"/>
+      <stop offset="40%" stop-color="#27272A"/>
+      <stop offset="80%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <radialGradient id="terracottaGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="900" fill="url(#antiquityBg)"/>
+  <rect width="600" height="900" fill="url(#terracottaGlow)"/>
+
+  <!-- Book Spine Crease -->
+  <rect x="0" y="0" width="32" height="900" fill="#000000" opacity="0.45"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#000000" stroke-width="2" opacity="0.5"/>
+  <line x1="34" y1="0" x2="34" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.12"/>
+
+  <!-- Classical Roman Frame -->
+  <rect x="44" y="44" width="512" height="812" rx="4" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.8"/>
+  <rect x="54" y="54" width="492" height="792" rx="2" fill="none" stroke="#A1A1AA" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Classical Greek Key / Ionic Column Capital Motif -->
+  <g fill="none" stroke="#F59E0B" stroke-width="1.8" opacity="0.75" transform="translate(300, 450)">
+    <circle r="75"/>
+    <circle r="60" stroke-dasharray="2,4"/>
+    <!-- Pillar capital spirals -->
+    <path d="M -45,-20 C -60,-40 -20,-60 0,-30 C 20,-60 60,-40 45,-20 L 40,30 L -40,30 Z"/>
+    <line x1="-30" y1="0" x2="-30" y2="30"/>
+    <line x1="0" y1="-10" x2="0" y2="30"/>
+    <line x1="30" y1="0" x2="30" y2="30"/>
+    <circle cx="0" cy="5" r="5" fill="#F59E0B"/>
+  </g>
+
+  <!-- Kicker -->
+  <text x="300" y="110" font-family="'Cinzel', 'Plus Jakarta Sans', serif" font-size="12" font-weight="700" letter-spacing="4" fill="#FDE68A" text-anchor="middle">
+    OXBRIDGE CLASSICAL PHILOSOPHY
+  </text>
+  <line x1="180" y1="125" x2="420" y2="125" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
+  <text x="300" y="150" font-family="sans-serif" font-size="10" font-weight="800" letter-spacing="2.5" fill="#D4D4D8" text-anchor="middle">
+    STOIC ETHICS &amp; CIVIC DUTY IN THE AGORA
+  </text>
+
+  <!-- Title -->
+  <text x="300" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    ECHOES OF
+  </text>
+  <text x="300" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="2">
+    ANTIQUITY
+  </text>
+  <text x="300" y="300" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#E4E4E7" text-anchor="middle">
+    The Lost Dialogue of Roman Steadfastness
+  </text>
+
+  <!-- Author Box -->
+  <rect x="130" y="620" width="340" height="90" rx="8" fill="rgba(39, 39, 42, 0.85)" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="300" y="652" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2.5" fill="#FDE68A" text-anchor="middle">
+    AUTHOR
+  </text>
+  <text x="300" y="682" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+    Dr. Seraphina Vance
+  </text>
+
+  <!-- Footer -->
+  <line x1="150" y1="770" x2="450" y2="770" stroke="#52525B" stroke-width="1"/>
+  <text x="300" y="800" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#E4E4E7" text-anchor="middle">
+    CRITICAL ANNOTATED EDITION
+  </text>
+  <text x="300" y="825" font-family="sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#A1A1AA" text-anchor="middle">
+    EBARO ACADEMIC &amp; PHILOSOPHIC PRESS
+  </text>
+</svg>

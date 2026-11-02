@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="alchemistBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1917"/>
+      <stop offset="40%" stop-color="#292524"/>
+      <stop offset="80%" stop-color="#1C1917"/>
+      <stop offset="100%" stop-color="#0C0A09"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#B45309" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="900" fill="url(#alchemistBg)"/>
+  <rect width="600" height="900" fill="url(#goldGlow)"/>
+
+  <!-- Book Spine Crease -->
+  <rect x="0" y="0" width="32" height="900" fill="#000000" opacity="0.45"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#000000" stroke-width="2" opacity="0.5"/>
+  <line x1="34" y1="0" x2="34" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.12"/>
+
+  <!-- Alchemical Golden Frame -->
+  <rect x="44" y="44" width="512" height="812" rx="6" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.85"/>
+  <rect x="54" y="54" width="492" height="792" rx="4" fill="none" stroke="#FEF3C7" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Alchemical Crucible / Philosophical Seal Motif -->
+  <g fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.8" transform="translate(300, 450)">
+    <circle r="80"/>
+    <circle r="65" stroke-dasharray="3,3"/>
+    <!-- Overlapping Alchemical Triangles (Hermetic Seal) -->
+    <polygon points="0,-60 52,30 -52,30" stroke="#F59E0B" fill="rgba(245, 158, 11, 0.1)"/>
+    <polygon points="0,60 52,-30 -52,-30" stroke="#F59E0B" fill="rgba(245, 158, 11, 0.1)"/>
+    <circle r="15" fill="#F59E0B"/>
+    <circle r="6" fill="#1C1917"/>
+  </g>
+
+  <!-- Kicker -->
+  <text x="300" y="110" font-family="'Cinzel', 'Plus Jakarta Sans', serif" font-size="12" font-weight="700" letter-spacing="4" fill="#FDE68A" text-anchor="middle">
+    EBARO READING SALON GUILD
+  </text>
+  <line x1="180" y1="125" x2="420" y2="125" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
+  <text x="300" y="150" font-family="sans-serif" font-size="10" font-weight="800" letter-spacing="2.5" fill="#FEF3C7" text-anchor="middle">
+    HISTORICAL SALON SELECTION • 600+ ACTIVE READERS
+  </text>
+
+  <!-- Title -->
+  <text x="300" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    THE ALCHEMIST
+  </text>
+  <text x="300" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="2">
+    OF PRAGUE
+  </text>
+  <text x="300" y="300" font-family="Georgia, serif" font-style="italic" font-size="15" fill="#E7E5E4" text-anchor="middle">
+    The Gilded Crucible &amp; The Lost Manuscripts of Bohemia
+  </text>
+
+  <!-- Author Box -->
+  <rect x="130" y="620" width="340" height="90" rx="8" fill="rgba(41, 37, 36, 0.85)" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="300" y="652" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2.5" fill="#FDE68A" text-anchor="middle">
+    AUTHOR
+  </text>
+  <text x="300" y="682" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+    Miloslav Horvath
+  </text>
+
+  <!-- Footer -->
+  <line x1="150" y1="770" x2="450" y2="770" stroke="#44403C" stroke-width="1"/>
+  <text x="300" y="800" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#FDE68A" text-anchor="middle">
+    READING SALON EXCLUSIVE STUDY EDITION
+  </text>
+  <text x="300" y="825" font-family="sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#A8A29E" text-anchor="middle">
+    FOLIO CENTRAL EUROPEAN ARCHIVE
+  </text>
+</svg>

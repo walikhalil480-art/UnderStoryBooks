@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Glow -->
+    <radialGradient id="qalinGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ECFDF5" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#F4EFE6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F4EFE6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Wood Slate Frame -->
+    <linearGradient id="slateWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="50%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+
+    <!-- Fountain Pen Body (Emerald & Gold) -->
+    <linearGradient id="penBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="50%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+
+    <!-- Gold Nib & Accents -->
+    <linearGradient id="goldNib" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Pencil Cedar Wood -->
+    <linearGradient id="pencilWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="40%" stop-color="#FBBF24"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="qalinShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#0F172A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <ellipse cx="200" cy="160" rx="160" ry="110" fill="url(#qalinGlow)"/>
+
+  <!-- TRADITIONAL SCHOOL SLATE BOARD (Loox Dugsiga) -->
+  <g transform="translate(60, 45)" filter="url(#qalinShadow)">
+    <!-- Wooden Slate Outer Frame -->
+    <rect x="0" y="0" width="280" height="210" rx="14" fill="url(#slateWood)" stroke="#3E1A04" stroke-width="2.5"/>
+
+    <!-- Wood Corner Pegs / Joints -->
+    <circle cx="12" cy="12" r="3" fill="#D97706"/>
+    <circle cx="268" cy="12" r="3" fill="#D97706"/>
+    <circle cx="12" cy="198" r="3" fill="#D97706"/>
+    <circle cx="268" cy="198" r="3" fill="#D97706"/>
+
+    <!-- Chalkboard / Blackboard Slate Surface -->
+    <rect x="18" y="18" width="244" height="174" rx="8" fill="#1E293B"/>
+
+    <!-- Ruled Guidance Lines on Slate -->
+    <line x1="28" y1="52" x2="252" y2="52" stroke="#334155" stroke-width="1"/>
+    <line x1="28" y1="78" x2="252" y2="78" stroke="#334155" stroke-width="1"/>
+    <line x1="28" y1="104" x2="252" y2="104" stroke="#334155" stroke-width="1"/>
+    <line x1="28" y1="130" x2="252" y2="130" stroke="#334155" stroke-width="1"/>
+    <line x1="28" y1="156" x2="252" y2="156" stroke="#334155" stroke-width="1"/>
+
+    <!-- Calligraphy in Chalk: Somali Script "Aqoon & Baro" -->
+    <path d="M 40,70 Q 52,58 64,70 M 74,60 L 74,74 M 86,62 Q 95,58 98,72" stroke="#E2E8F0" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <text x="40" y="122" font-family="'Newsreader', serif" font-size="22" font-weight="bold" fill="#F8FAFC" opacity="0.9">eBaro • Aqoon</text>
+    <text x="40" y="148" font-family="sans-serif" font-size="12" font-weight="600" fill="#94A3B8" opacity="0.8">Qalinku waa furaha nolosha</text>
+  </g>
+
+  <!-- PENCIL (Qalinka Qoryada ah) Laid Diagonally -->
+  <g transform="translate(180, 140) rotate(-35)" filter="url(#qalinShadow)">
+    <!-- Main Hexagonal Shaft -->
+    <rect x="0" y="0" width="160" height="14" rx="2" fill="url(#pencilWood)"/>
+    <!-- Pencil Facet Lines -->
+    <line x1="0" y1="5" x2="160" y2="5" stroke="#FDE68A" stroke-width="1.5"/>
+    <line x1="0" y1="9" x2="160" y2="9" stroke="#92400E" stroke-width="1.2"/>
+
+    <!-- Sharpened Wood Cone -->
+    <polygon points="0,0 -22,7 0,14" fill="#FDE68A"/>
+    <!-- Graphite Lead Tip -->
+    <polygon points="-14,4.5 -22,7 -14,9.5" fill="#1E293B"/>
+
+    <!-- Golden Ferrule (Metal Band holding eraser) -->
+    <rect x="156" y="0" width="14" height="14" fill="url(#goldNib)"/>
+    <line x1="161" y1="0" x2="161" y2="14" stroke="#92400E" stroke-width="1"/>
+    <line x1="165" y1="0" x2="165" y2="14" stroke="#92400E" stroke-width="1"/>
+
+    <!-- Pink Rubber Eraser -->
+    <rect x="170" y="0" width="16" height="14" rx="3" fill="#F43F5E"/>
+  </g>
+
+  <!-- CLASSIC FOUNTAIN PEN (Qalinka Khadkiisa leh) Crossing Over -->
+  <g transform="translate(110, 240) rotate(-65)" filter="url(#qalinShadow)">
+    <!-- Pen Barrel -->
+    <rect x="0" y="0" width="180" height="16" rx="6" fill="url(#penBody)" stroke="#022C22" stroke-width="1.5"/>
+
+    <!-- Gold Central Band -->
+    <rect x="55" y="-1" width="10" height="18" fill="url(#goldNib)"/>
+    <rect x="120" y="-1" width="6" height="18" fill="url(#goldNib)"/>
+
+    <!-- Grip Section -->
+    <polygon points="0,1 -20,3 -20,13 0,15" fill="#1E293B"/>
+    <line x1="-20" y1="3" x2="-20" y2="13" stroke="url(#goldNib)" stroke-width="1.5"/>
+
+    <!-- Engraved Gold Nib -->
+    <polygon points="-20,3 -45,8 -20,13" fill="url(#goldNib)" stroke="#92400E" stroke-width="0.8"/>
+    <!-- Nib Slit & Breather Hole -->
+    <line x1="-20" y1="8" x2="-40" y2="8" stroke="#78350F" stroke-width="1"/>
+    <circle cx="-32" cy="8" r="1.5" fill="#78350F"/>
+
+    <!-- Golden Clip on Cap -->
+    <path d="M 130,-4 L 175,-4 Q 180,-4 180,-1 L 175,2 L 130,2 Z" fill="url(#goldNib)"/>
+  </g>
+
+  <!-- Flowing Blue Ink Swirl & Golden Sparkles -->
+  <path d="M 148,220 Q 180,245 220,230 Q 255,215 280,240" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+
+  <!-- Golden Sparkles -->
+  <g fill="#F59E0B">
+    <path d="M 130,175 Q 135,175 135,170 Q 135,175 140,175 Q 135,175 135,180 Q 135,175 130,175 Z"/>
+    <path d="M 330,85 Q 336,85 336,79 Q 336,85 342,85 Q 336,85 336,91 Q 336,85 330,85 Z"/>
+  </g>
+</svg>

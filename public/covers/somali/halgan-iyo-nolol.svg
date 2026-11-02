@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bgMemoir" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27272A"/>
+      <stop offset="50%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <radialGradient id="memoirGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="900" fill="url(#bgMemoir)"/>
+  <rect width="600" height="900" fill="url(#memoirGlow)"/>
+
+  <!-- Book Spine -->
+  <rect x="0" y="0" width="30" height="900" fill="#000000" opacity="0.45"/>
+  <line x1="30" y1="0" x2="30" y2="900" stroke="#000000" stroke-width="2" opacity="0.5"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.1"/>
+
+  <!-- Ornate Border Frame -->
+  <rect x="45" y="45" width="510" height="810" rx="8" fill="none" stroke="#D97706" stroke-width="2.5" opacity="0.8"/>
+  <rect x="55" y="55" width="490" height="790" rx="6" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+
+  <!-- Silhouette / Archive Crest Medallion -->
+  <g transform="translate(300, 420)" stroke="#D97706" stroke-width="2" fill="none" opacity="0.85">
+    <circle r="75"/>
+    <circle r="67" stroke-dasharray="4,4"/>
+    <path d="M-30,40 C-30,10 -15,-5 0,-5 C15,-5 30,10 30,40 Z" fill="#D97706" opacity="0.4"/>
+    <circle cx="0" cy="-25" r="20" fill="#D97706" opacity="0.4"/>
+  </g>
+
+  <!-- Publisher Header -->
+  <text x="300" y="115" font-family="'Cinzel', Georgia, serif" font-size="12" font-weight="700" letter-spacing="4" fill="#D97706" text-anchor="middle" opacity="0.95">
+    EBARO • SOOYAALKA &amp; XUSUUS-QORKA
+  </text>
+  <line x1="160" y1="130" x2="440" y2="130" stroke="#D97706" stroke-width="1" opacity="0.5"/>
+
+  <!-- Category -->
+  <text x="300" y="165" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#FDE68A" text-anchor="middle" opacity="0.9">
+    BIOGRAPHY &amp; MEMOIR
+  </text>
+
+  <!-- Title Lines -->
+  <text x="300" y="240" font-family="'Cinzel', Georgia, serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    HALGAN IYO NOLOL
+  </text>
+  <text x="300" y="285" font-family="'Cinzel', Georgia, serif" font-size="30" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="1">
+    XUSUUS-QORKA DIBLOMAASI
+  </text>
+  <text x="300" y="325" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#D4D4D8" text-anchor="middle">
+    Waaya-aragnimadii iyo Taariikhdii Lama-illaawaanka ahayd ee Geeska Afrika
+  </text>
+
+  <!-- Subtitle Text -->
+  <text x="300" y="565" font-family="Georgia, serif" font-size="15" fill="#E4E4E7" text-anchor="middle">
+    Danjire Cabdiraxmaan Faarax Guuleed
+  </text>
+  <text x="300" y="590" font-family="sans-serif" font-size="12" fill="#A1A1AA" text-anchor="middle">
+    Xusuus-qorkii Dowladdii Rayidka &amp; Kacaankii (1960 - 1991)
+  </text>
+
+  <!-- Author Badge -->
+  <rect x="180" y="650" width="240" height="42" rx="21" fill="#3F3F46" stroke="#D97706" stroke-width="1"/>
+  <text x="300" y="676" font-family="'Cinzel', Georgia, serif" font-size="13" font-weight="700" fill="#F59E0B" text-anchor="middle">
+    AUTHORISED PREVIEW
+  </text>
+
+  <!-- Provenance Footer -->
+  <text x="300" y="780" font-family="sans-serif" font-size="11" font-weight="600" fill="#E4E4E7" text-anchor="middle" opacity="0.85">
+    EXCERPTS PERMITTED FOR RESEARCH &amp; EDUCATION
+  </text>
+  <text x="300" y="802" font-family="sans-serif" font-size="10" fill="#A1A1AA" text-anchor="middle">
+    eBaro Somali Historical &amp; Diplomatic Archives
+  </text>
+</svg>

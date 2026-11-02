@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Coastal Sun Sky Gradient -->
+    <linearGradient id="citySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#BAE6FD"/>
+      <stop offset="85%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#FED7AA"/>
+    </linearGradient>
+
+    <!-- White Coral-Stone Building Gradient -->
+    <linearGradient id="coralStone" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2E8F0"/>
+      <stop offset="40%" stop-color="#F8FAFC"/>
+      <stop offset="80%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Warm Limestone Building 2 -->
+    <linearGradient id="limeStone" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#FEF9C3"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Indian Ocean Harbor Water Gradient -->
+    <linearGradient id="harborSea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="cityShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="220" fill="url(#citySky)"/>
+
+  <!-- Morning Sun -->
+  <circle cx="310" cy="70" r="34" fill="#FEF08A" opacity="0.9"/>
+  <circle cx="310" cy="70" r="18" fill="#FFFFFF"/>
+
+  <!-- Soaring Seagulls -->
+  <path d="M 60,65 Q 68,58 76,65 Q 84,58 92,65" stroke="#0369A1" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <path d="M 120,50 Q 126,44 132,50 Q 138,44 144,50" stroke="#0369A1" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+  <!-- HISTORIC CORAL-STONE CITY SKYLINE (Filtered) -->
+  <g filter="url(#cityShadow)">
+    <!-- Historic Minaret Tower (Left-Center) -->
+    <rect x="110" y="70" width="28" height="135" fill="url(#coralStone)" stroke="#94A3B8" stroke-width="1.5"/>
+    <!-- Minaret Balcony -->
+    <rect x="105" y="88" width="38" height="10" rx="2" fill="#D97706" stroke="#78350F" stroke-width="1"/>
+    <!-- Minaret Dome & Crescent Spire -->
+    <path d="M 112,70 C 112,50 136,50 136,70 Z" fill="#047857" stroke="#064E3B" stroke-width="1"/>
+    <line x1="124" y1="50" x2="124" y2="38" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="124" cy="38" r="2.5" fill="#F59E0B"/>
+
+    <!-- Building 1: Two-Story Historic Merchant House (Left) -->
+    <rect x="35" y="115" width="75" height="90" fill="url(#limeStone)" stroke="#B45309" stroke-width="1.5"/>
+    <!-- Flat Rooftop Parapet battlements -->
+    <rect x="35" y="110" width="15" height="7" fill="#F59E0B"/>
+    <rect x="55" y="110" width="15" height="7" fill="#F59E0B"/>
+    <rect x="75" y="110" width="15" height="7" fill="#F59E0B"/>
+    <rect x="95" y="110" width="15" height="7" fill="#F59E0B"/>
+    <!-- Arched Windows Upper Floor -->
+    <path d="M 50,135 C 50,125 65,125 65,135 L 65,148 L 50,148 Z" fill="#0C4A6E"/>
+    <path d="M 80,135 C 80,125 95,125 95,135 L 95,148 L 80,148 Z" fill="#0C4A6E"/>
+    <!-- Ground Floor Wooden Door -->
+    <path d="M 62,175 C 62,165 82,165 82,175 L 82,205 L 62,205 Z" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+
+    <!-- Building 2: Grand White Coral-Stone Center Hall -->
+    <rect x="138" y="95" width="115" height="110" fill="url(#coralStone)" stroke="#94A3B8" stroke-width="1.5"/>
+    <!-- Wooden Mashrabiya Carved Balcony -->
+    <rect x="165" y="125" width="60" height="32" rx="3" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Mashrabiya wooden lattice pattern -->
+    <g stroke="#FDE68A" stroke-width="1.2" opacity="0.8">
+      <line x1="172" y1="125" x2="172" y2="157"/><line x1="185" y1="125" x2="185" y2="157"/>
+      <line x1="198" y1="125" x2="198" y2="157"/><line x1="211" y1="125" x2="211" y2="157"/>
+      <line x1="165" y1="135" x2="225" y2="135"/><line x1="165" y1="147" x2="225" y2="147"/>
+    </g>
+    <!-- Grand Entrance Archway -->
+    <path d="M 180,175 C 180,160 210,160 210,175 L 210,205 L 180,205 Z" fill="#0C4A6E" stroke="#78350F" stroke-width="2"/>
+
+    <!-- Building 3: Historic Seaside Warehouse & Clock Tower (Right) -->
+    <rect x="253" y="120" width="85" height="85" fill="url(#limeStone)" stroke="#B45309" stroke-width="1.5"/>
+    <!-- Arched Windows -->
+    <path d="M 268,140 C 268,132 280,132 280,140 L 280,152 L 268,152 Z" fill="#0C4A6E"/>
+    <path d="M 295,140 C 295,132 307,132 307,140 L 307,152 L 295,152 Z" fill="#0C4A6E"/>
+    <path d="M 320,140 C 320,132 332,132 332,140 L 332,152 L 320,152 Z" fill="#0C4A6E"/>
+
+    <!-- Coastal Palm Trees along Seaside Corniche -->
+    <g transform="translate(340, 110)">
+      <path d="M 12,95 Q 16,55 24,18 L 28,18 Q 20,55 16,95 Z" fill="#78350F"/>
+      <g stroke="#15803D" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M 26,18 Q 5,8 -8,22"/>
+        <path d="M 26,18 Q 12,-6 5,-10"/>
+        <path d="M 26,18 Q 38,-8 50,0"/>
+        <path d="M 26,18 Q 48,15 56,28"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- SEASIDE HARBOR PROMENADE (Stone Corniche Wall) -->
+  <rect x="0" y="205" width="400" height="15" fill="#D6D3D1" stroke="#78716C" stroke-width="1.5"/>
+  <line x1="0" y1="210" x2="400" y2="210" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- TURQUOISE INDIAN OCEAN HARBOR WATER (Foreground) -->
+  <rect x="0" y="220" width="400" height="100" fill="url(#harborSea)"/>
+
+  <!-- Water Surface Glistening Ripples -->
+  <g stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.8">
+    <path d="M 30,235 Q 70,230 110,235"/>
+    <path d="M 160,245 Q 220,240 280,245"/>
+    <path d="M 80,265 Q 150,260 220,265"/>
+    <path d="M 270,270 Q 330,265 380,270"/>
+    <path d="M 20,285 Q 90,280 160,285"/>
+  </g>
+
+  <!-- Small Dhow Sailboat anchored in Harbor -->
+  <g transform="translate(60, 240) scale(0.65)">
+    <!-- Sail -->
+    <polygon points="40,5 5,42 40,42" fill="#FFFFFF"/>
+    <!-- Hull -->
+    <path d="M 0,42 Q 22,55 45,42 Z" fill="#78350F"/>
+    <line x1="22" y1="5" x2="22" y2="45" stroke="#451A03" stroke-width="2"/>
+  </g>
+</svg>

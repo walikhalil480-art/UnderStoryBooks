@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background warm sun glow -->
+    <radialGradient id="torBgGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#FFFBEB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Domed Shell base gradient -->
+    <radialGradient id="shellDome" cx="45%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="35%" stop-color="#D97706"/>
+      <stop offset="70%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </radialGradient>
+
+    <!-- Scaly Skin Gradient -->
+    <linearGradient id="scalySkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="torShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#451A03" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light -->
+  <ellipse cx="200" cy="170" rx="170" ry="110" fill="url(#torBgGlow)"/>
+
+  <!-- Savanna Sand & Pebbles -->
+  <ellipse cx="200" cy="265" rx="160" ry="24" fill="#FDE68A" opacity="0.6"/>
+  <ellipse cx="200" cy="268" rx="145" ry="16" fill="#78350F" opacity="0.2"/>
+
+  <!-- Desert succulent sprig -->
+  <path d="M 60,260 Q 65,240 70,230 Q 75,245 78,260" stroke="#15803D" stroke-width="3" fill="#86EFAC"/>
+  <path d="M 72,260 Q 80,245 88,235 Q 92,250 90,260" stroke="#15803D" stroke-width="3" fill="#86EFAC"/>
+
+  <g filter="url(#torShadow)">
+    <!-- Back Leg with armored scales & claws -->
+    <path d="M 115,225 C 105,240 98,255 105,268 C 112,272 135,270 138,258 C 140,240 135,230 130,225 Z" 
+          fill="url(#scalySkin)" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Claws -->
+    <polygon points="104,267 100,273 108,270" fill="#FEF08A"/>
+    <polygon points="112,269 110,275 116,271" fill="#FEF08A"/>
+    <polygon points="120,270 120,276 125,271" fill="#FEF08A"/>
+
+    <!-- FRONT ARMORED LEG -->
+    <path d="M 235,220 C 245,235 255,250 258,268 C 255,272 232,273 226,262 C 220,245 222,230 225,220 Z" 
+          fill="url(#scalySkin)" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Armored scale bumps -->
+    <ellipse cx="244" cy="240" rx="3.5" ry="2.5" fill="#FEF08A"/>
+    <ellipse cx="238" cy="248" rx="3.5" ry="2.5" fill="#FEF08A"/>
+    <ellipse cx="246" cy="254" rx="3" ry="2" fill="#FEF08A"/>
+    <!-- Claws -->
+    <polygon points="252,267 258,273 248,270" fill="#FEF08A"/>
+    <polygon points="244,269 248,275 240,271" fill="#FEF08A"/>
+    <polygon points="234,269 236,275 230,271" fill="#FEF08A"/>
+
+    <!-- TORTOISE HEAD & WRINKLED NECK -->
+    <!-- Extended Neck -->
+    <path d="M 240,195 C 265,185 285,175 305,170 C 315,178 305,198 285,208 C 265,215 245,210 240,195 Z" 
+          fill="url(#scalySkin)" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Neck skin wrinkles -->
+    <path d="M 265,188 Q 270,198 268,206" stroke="#451A03" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M 280,180 Q 284,190 282,198" stroke="#451A03" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Head & Beak -->
+    <path d="M 300,170 C 315,162 332,165 338,176 C 342,185 335,195 320,195 C 308,195 300,185 300,170 Z" 
+          fill="url(#scalySkin)" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Beaked Mouth -->
+    <path d="M 338,178 L 328,184" stroke="#451A03" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Wise Tortoise Eye -->
+    <ellipse cx="320" cy="172" rx="4" ry="4" fill="#0F172A"/>
+    <circle cx="319" cy="171" r="1.2" fill="#FFFFFF"/>
+    <path d="M 315,168 Q 320,165 325,168" stroke="#451A03" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+    <!-- MAGNIFICENT HIGH-DOMED LEOPARD TORTOISE CARAPACE (SHELL) -->
+    <path d="M 95,225 C 90,145 135,90 195,90 C 255,90 285,145 275,225 C 260,235 110,235 95,225 Z" 
+          fill="url(#shellDome)" stroke="#451A03" stroke-width="3"/>
+
+    <!-- Carapace Rim (Plastron edge) -->
+    <path d="M 90,225 Q 185,242 280,225 L 276,234 Q 185,250 94,234 Z" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+
+    <!-- INTRICATE GEOMETRIC LEOPARD SCUTES (Star & Rosette patterns) -->
+    <!-- Central Vertebral Scutes -->
+    <!-- Scute 1 (Front top) -->
+    <polygon points="215,100 245,115 240,145 205,140 195,110" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="218,106 238,118 234,138 210,134 204,114" fill="#B45309"/>
+    <circle cx="220" cy="122" r="5" fill="#451A03"/>
+
+    <!-- Scute 2 (Middle peak) -->
+    <polygon points="170,105 200,110 205,145 165,152 145,125" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="174,112 195,116 198,140 170,145 156,128" fill="#B45309"/>
+    <circle cx="178" cy="128" r="5.5" fill="#451A03"/>
+
+    <!-- Scute 3 (Back) -->
+    <polygon points="120,135 145,128 162,154 135,175 112,160" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="125,140 142,135 154,152 135,167 118,157" fill="#B45309"/>
+    <circle cx="134" cy="150" r="5" fill="#451A03"/>
+
+    <!-- Lateral / Costal Scutes (Lower rim) -->
+    <!-- Lateral Front -->
+    <polygon points="208,145 242,148 258,185 220,195 195,160" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="214,152 238,154 248,180 220,188 202,162" fill="#B45309"/>
+    <circle cx="225" cy="170" r="5" fill="#451A03"/>
+
+    <!-- Lateral Middle -->
+    <polygon points="160,158 198,162 215,200 170,208 145,178" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="168,165 194,168 205,195 172,201 154,180" fill="#B45309"/>
+    <circle cx="180" cy="184" r="5" fill="#451A03"/>
+
+    <!-- Lateral Rear -->
+    <polygon points="125,175 150,175 165,212 125,218 108,190" fill="#FEF08A" stroke="#451A03" stroke-width="2"/>
+    <polygon points="130,180 146,180 156,206 128,210 115,192" fill="#B45309"/>
+    <circle cx="135" cy="195" r="4.5" fill="#451A03"/>
+  </g>
+</svg>

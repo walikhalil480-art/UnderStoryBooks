@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Sky Glow -->
+    <linearGradient id="horseSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="60%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#E0E7FF" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Horse Coat Chestnut Gradient -->
+    <linearGradient id="horseCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="40%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#431407"/>
+    </linearGradient>
+
+    <!-- Flowing Black/Dark Mane -->
+    <linearGradient id="maneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Ground Savanna -->
+    <linearGradient id="savannaGround" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <filter id="horseShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#451A03" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Backdrop -->
+  <rect width="400" height="320" rx="16" fill="url(#horseSky)"/>
+
+  <!-- Morning Sun -->
+  <circle cx="310" cy="75" r="32" fill="#F59E0B" opacity="0.7"/>
+  <circle cx="310" cy="75" r="24" fill="#FDE68A"/>
+
+  <!-- Distant Blue Savanna Ridge -->
+  <path d="M 0,210 Q 100,185 200,205 Q 300,180 400,210 L 400,320 L 0,320 Z" fill="#94A3B8" opacity="0.35"/>
+  <path d="M -10,240 Q 120,215 250,235 Q 340,220 420,245 L 420,320 L -10,320 Z" fill="url(#savannaGround)"/>
+
+  <!-- Dust Cloud / Galloping Shadow -->
+  <ellipse cx="205" cy="272" rx="95" ry="16" fill="#451A03" opacity="0.3"/>
+  <circle cx="120" cy="265" r="14" fill="#E2A662" opacity="0.4"/>
+  <circle cx="100" cy="268" r="10" fill="#E2A662" opacity="0.3"/>
+
+  <!-- NOBLE SOMALI STALLION (FARAS ORDAYA) -->
+  <g filter="url(#horseShadow)">
+    <!-- Flowing Full Tail -->
+    <path d="M 125,178 C 95,190 70,225 60,255 C 80,245 95,220 115,195 Z" fill="url(#maneGrad)"/>
+    <path d="M 128,180 C 105,198 85,232 78,258 C 95,248 108,225 125,198 Z" fill="#334155"/>
+
+    <!-- Hind Legs (Muscular, Powerful Gallop) -->
+    <!-- Far Hind Leg -->
+    <path d="M 145,175 Q 125,215 130,265 L 140,266 Q 138,220 155,182 Z" fill="#431407"/>
+    <ellipse cx="135" cy="266" rx="6" ry="4" fill="#1E293B"/>
+
+    <!-- Near Hind Leg -->
+    <path d="M 160,165 Q 140,210 148,270 L 158,271 Q 155,215 175,175 Z" fill="url(#horseCoat)"/>
+    <ellipse cx="153" cy="271" rx="6.5" ry="4" fill="#1E293B"/>
+
+    <!-- Horse Body (Sleek, Powerful Barrel) -->
+    <ellipse cx="195" cy="172" rx="55" ry="30" fill="url(#horseCoat)"/>
+
+    <!-- Front Legs Raised in Gallop -->
+    <!-- Far Front Leg -->
+    <path d="M 235,175 Q 260,210 270,250 L 278,247 Q 268,208 245,172 Z" fill="#431407"/>
+    <ellipse cx="274" cy="248" rx="6" ry="4" fill="#1E293B"/>
+
+    <!-- Near Front Leg -->
+    <path d="M 222,175 Q 245,210 252,265 L 262,264 Q 252,208 234,172 Z" fill="url(#horseCoat)"/>
+    <ellipse cx="257" cy="265" rx="6.5" ry="4" fill="#1E293B"/>
+
+    <!-- Arched Muscular Neck -->
+    <path d="M 230,175 C 245,145 258,115 272,88 L 292,98 C 280,128 268,162 250,188 Z" fill="url(#horseCoat)"/>
+
+    <!-- Flowing Dark Mane on Neck Ridge -->
+    <path d="M 232,172 Q 220,155 242,142 Q 230,128 255,115 Q 248,98 274,86 L 276,92 Q 256,104 260,118 Q 242,132 248,146 Q 232,160 236,174 Z" fill="url(#maneGrad)"/>
+
+    <!-- Horse Head (Fine Arabian/Somali Conformation) -->
+    <path d="M 268,90 Q 285,76 308,82 Q 324,88 322,98 Q 312,106 298,105 Q 282,104 274,96 Z" fill="url(#horseCoat)"/>
+
+    <!-- White Star Diamond on Forehead -->
+    <polygon points="288,85 292,89 288,93 284,89" fill="#FFFFFF"/>
+
+    <!-- Muzzle & Flared Nostril -->
+    <ellipse cx="318" cy="95" rx="6" ry="5" fill="#431407"/>
+    <circle cx="316" cy="94" r="1.5" fill="#020617"/>
+
+    <!-- Gentle Intelligent Eye -->
+    <circle cx="288" cy="87" r="4" fill="#020617"/>
+    <circle cx="286.5" cy="85.5" r="1.5" fill="#FFFFFF"/>
+
+    <!-- Alert Pricked Ears -->
+    <polygon points="268,88 264,68 274,80" fill="url(#horseCoat)"/>
+    <polygon points="274,86 272,66 280,78" fill="#431407"/>
+
+    <!-- Fine Leather Bridal & Golden Trim -->
+    <path d="M 276,90 L 312,96" stroke="#DC2626" stroke-width="1.5" fill="none"/>
+    <circle cx="282" cy="91" r="2" fill="#F59E0B"/>
+  </g>
+
+  <!-- Golden Sunbeam Sparkles -->
+  <g fill="#F59E0B">
+    <path d="M 60,60 Q 66,60 66,54 Q 66,60 72,60 Q 66,60 66,66 Q 66,60 60,60 Z"/>
+    <path d="M 345,45 Q 350,45 350,40 Q 350,45 355,45 Q 350,45 350,50 Q 350,45 345,45 Z" opacity="0.8"/>
+  </g>
+</svg>

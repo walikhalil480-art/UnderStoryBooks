@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Deep Midnight Sky Gradient -->
+    <radialGradient id="nightCosmos" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="35%" stop-color="#0F172A"/>
+      <stop offset="70%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Star Core Radiant Flare -->
+    <radialGradient id="starCoreFlare" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FEF08A"/>
+      <stop offset="55%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#6366F1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1E1B4B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Golden Star Facet Shading (Gold Leaf) -->
+    <linearGradient id="goldFacetLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <linearGradient id="goldFacetDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="60%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <!-- Crescent Moon Gradient -->
+    <linearGradient id="crescentMoon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+
+    <!-- Drop Glow Filter -->
+    <filter id="starGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#FACC15" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Night Sky -->
+  <rect width="400" height="320" fill="url(#nightCosmos)"/>
+
+  <!-- Starry Constellations in Background -->
+  <g fill="#FFFFFF">
+    <circle cx="45" cy="40" r="1.5" opacity="0.8"/>
+    <circle cx="85" cy="65" r="2" opacity="0.9"/>
+    <circle cx="120" cy="30" r="1.2" opacity="0.6"/>
+    <circle cx="160" cy="80" r="2" opacity="0.7"/>
+    <circle cx="280" cy="50" r="1.8" opacity="0.9"/>
+    <circle cx="350" cy="45" r="2.2" opacity="0.8"/>
+    <circle cx="320" cy="95" r="1.5" opacity="0.7"/>
+    <circle cx="365" cy="130" r="1.2" opacity="0.6"/>
+    <circle cx="65" cy="140" r="1.8" opacity="0.7"/>
+    <circle cx="110" cy="180" r="1.5" opacity="0.8"/>
+    <circle cx="330" cy="200" r="2" opacity="0.8"/>
+  </g>
+
+  <!-- Distant Glowing Crescent Moon -->
+  <g transform="translate(305, 45) scale(0.7)">
+    <path d="M 40,0 A 30,30 0 1 0 40,60 A 24,24 0 1 1 40,0 Z" fill="url(#crescentMoon)"/>
+  </g>
+
+  <!-- Distant Savanna Horizon Silhouette -->
+  <path d="M 0,285 Q 120,275 240,282 T 400,278 L 400,320 L 0,320 Z" fill="#020617"/>
+  <!-- Acacia tree silhouette on horizon -->
+  <g transform="translate(60, 240) scale(0.45)" fill="#020617">
+    <path d="M 45,90 L 50,45 L 30,25 M 50,45 L 70,26" stroke="#020617" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="50" cy="20" rx="42" ry="10"/>
+  </g>
+
+  <!-- RADIANT LENS FLARE HALO -->
+  <circle cx="200" cy="145" r="110" fill="url(#starCoreFlare)"/>
+
+  <!-- LONG DIFFRACTION SPIKES (Four luminous cardinal rays) -->
+  <g stroke="url(#goldFacetLight)" stroke-linecap="round" opacity="0.85">
+    <!-- Vertical Spikes -->
+    <polygon points="199,25 201,25 204,145 196,145" fill="#FEF08A"/>
+    <polygon points="199,265 201,265 204,145 196,145" fill="#FEF08A"/>
+    <!-- Horizontal Spikes -->
+    <polygon points="65,144 65,146 200,149 200,141" fill="#FEF08A"/>
+    <polygon points="335,144 335,146 200,149 200,141" fill="#FEF08A"/>
+  </g>
+
+  <!-- BRILLIANT 8-POINTED MULTIFACETED GOLDEN STAR (XIDDIG) -->
+  <g filter="url(#starGlow)" transform="translate(200, 145)">
+    <!-- 8 Points composed of alternating light & shaded triangular facets -->
+    <!-- Point 1: North (Up) -->
+    <polygon points="0,0 -8,-25 0,-85" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 8,-25 0,-85" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 2: North-East -->
+    <polygon points="0,0 12,-18 55,-55" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 20,-10 55,-55" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 3: East (Right) -->
+    <polygon points="0,0 25,-8 85,0" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 25,8 85,0" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 4: South-East -->
+    <polygon points="0,0 20,10 55,55" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 12,18 55,55" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 5: South (Down) -->
+    <polygon points="0,0 8,25 0,85" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 -8,25 0,85" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 6: South-West -->
+    <polygon points="0,0 -12,18 -55,55" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 -20,10 -55,55" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 7: West (Left) -->
+    <polygon points="0,0 -25,8 -85,0" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 -25,-8 -85,0" fill="url(#goldFacetDark)"/>
+
+    <!-- Point 8: North-West -->
+    <polygon points="0,0 -20,-10 -55,-55" fill="url(#goldFacetLight)"/>
+    <polygon points="0,0 -12,-18 -55,-55" fill="url(#goldFacetDark)"/>
+
+    <!-- Center Radiant Diamond Core -->
+    <polygon points="0,-18 18,0 0,18 -18,0" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF"/>
+  </g>
+</svg>

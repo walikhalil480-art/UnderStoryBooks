@@ -1,0 +1,191 @@
+name: "eBaro CI/CD Pipeline"
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # ============================================================================
+  # STAGE A: CODE QUALITY & AUTOMATED TESTS
+  # ============================================================================
+  quality-check:
+    name: "Stage A: Code Quality & Automated Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: "Set up Node.js 22.x"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: "Install Dependencies"
+        run: npm ci
+
+      - name: "TypeScript Verification (Linting)"
+        run: npm run lint
+
+      - name: "Execute Automated Test Suite"
+        run: npm test
+
+      - name: "Verify Production Frontend Compilation"
+        run: npm run build
+
+      - name: "Scan Production Dependencies for Vulnerabilities"
+        run: npm audit --omit=dev --audit-level=high
+
+  # ============================================================================
+  # STAGE B: DOCKER BUILD & CONTAINER VULNERABILITY SCANNING
+  # ============================================================================
+  docker-build-and-scan:
+    name: "Stage B: Docker Build & Vulnerability Scanning"
+    needs: [quality-check]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: "Set up Docker Buildx"
+        uses: docker/setup-buildx-action@v3
+
+      - name: "Build Frontend Image (with GHA layer caching)"
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile.frontend
+          load: true
+          tags: ebaro-frontend:scan
+          cache-from: type=gha,scope=frontend
+          cache-to: type=gha,mode=max,scope=frontend
+
+      - name: "Build Backend Image (with GHA layer caching)"
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile.backend
+          load: true
+          tags: ebaro-backend:scan
+          cache-from: type=gha,scope=backend
+          cache-to: type=gha,mode=max,scope=backend
+
+      - name: "Scan Frontend Docker Image with Trivy"
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "ebaro-frontend:scan"
+          format: "table"
+          exit-code: "0"
+          ignore-unfixed: true
+          vuln-type: "os,library"
+          severity: "CRITICAL,HIGH"
+
+      - name: "Scan Backend Docker Image with Trivy"
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "ebaro-backend:scan"
+          format: "table"
+          exit-code: "0"
+          ignore-unfixed: true
+          vuln-type: "os,library"
+          severity: "CRITICAL,HIGH"
+
+  # ============================================================================
+  # STAGE C: CONTINUOUS DELIVERY (PUBLISH IMAGES TO REGISTRY)
+  # ============================================================================
+  publish-images:
+    name: "Stage C: Continuous Delivery (Publish Images)"
+    needs: [docker-build-and-scan]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Source Code"
+        uses: actions/checkout@v4
+
+      - name: "Check Docker Hub Credentials"
+        id: check-creds
+        run: |
+          if [ -n "${{ secrets.DOCKERHUB_USERNAME }}" ] && [ -n "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "configured=true" >> $GITHUB_OUTPUT
+            echo "Registry credentials detected. Proceeding with image publishing."
+          else
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::warning::DOCKERHUB_USERNAME or DOCKERHUB_TOKEN secret is not configured. Skipping image push."
+          fi
+
+      - name: "Set up Docker Buildx"
+        if: steps.check-creds.outputs.configured == 'true'
+        uses: docker/setup-buildx-action@v3
+
+      - name: "Log in to Docker Hub"
+        if: steps.check-creds.outputs.configured == 'true'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Extract metadata & tags for Frontend
+      - name: "Extract Frontend Image Metadata"
+        if: steps.check-creds.outputs.configured == 'true'
+        id: meta-frontend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/ebaro-frontend
+          tags: |
+            type=sha,prefix=sha-,format=short
+            type=ref,event=tag
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      # Extract metadata & tags for Backend
+      - name: "Extract Backend Image Metadata"
+        if: steps.check-creds.outputs.configured == 'true'
+        id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/ebaro-backend
+          tags: |
+            type=sha,prefix=sha-,format=short
+            type=ref,event=tag
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      # Build and Push Frontend Image
+      - name: "Publish Frontend Image to Docker Hub"
+        if: steps.check-creds.outputs.configured == 'true'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile.frontend
+          push: true
+          tags: ${{ steps.meta-frontend.outputs.tags }}
+          labels: ${{ steps.meta-frontend.outputs.labels }}
+          cache-from: type=gha,scope=frontend
+
+      # Build and Push Backend Image
+      - name: "Publish Backend Image to Docker Hub"
+        if: steps.check-creds.outputs.configured == 'true'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile.backend
+          push: true
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          labels: ${{ steps.meta-backend.outputs.labels }}
+          cache-from: type=gha,scope=backend

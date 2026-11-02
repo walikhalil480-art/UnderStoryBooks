@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Radiant Dawn Path Sky -->
+    <linearGradient id="roadSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="30%" stop-color="#FED7AA"/>
+      <stop offset="70%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+
+    <!-- Morning Sun on Horizon -->
+    <radialGradient id="sunPath" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FEF08A"/>
+      <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Winding Road Pavement Gradient -->
+    <linearGradient id="roadPave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="40%" stop-color="#E2CBB0"/>
+      <stop offset="80%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+
+    <!-- Savanna Earth Banks -->
+    <linearGradient id="savannaBank" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="roadShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#451A03" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="320" fill="url(#roadSky)"/>
+
+  <!-- Morning Sun at the Horizon (Destination of the Road) -->
+  <circle cx="215" cy="135" r="45" fill="url(#sunPath)"/>
+  <circle cx="215" cy="135" r="22" fill="#FFFFFF"/>
+
+  <!-- Distant Blue Mountain Range on Horizon -->
+  <polygon points="120,140 160,115 200,140" fill="#818CF8" opacity="0.6"/>
+  <polygon points="190,140 235,108 280,140" fill="#6366F1" opacity="0.6"/>
+  <polygon points="260,140 300,122 340,140" fill="#818CF8" opacity="0.6"/>
+
+  <!-- Savanna Hills Ground -->
+  <path d="M 0,140 Q 130,128 260,138 T 400,135 L 400,320 L 0,320 Z" fill="url(#savannaBank)"/>
+
+  <!-- SCENIC WINDING ROAD (WADDO / JID) (Curving from foreground into horizon sun) -->
+  <path d="M 120,320 C 130,240 170,200 208,142 L 222,142 C 230,200 290,240 330,320 Z" 
+        fill="url(#roadPave)" stroke="#64748B" stroke-width="2"/>
+
+  <!-- Golden Road Center Dashed Markings (Vanishing perspective) -->
+  <g stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round">
+    <line x1="225" y1="315" x2="223" y2="280"/>
+    <line x1="221" y1="265" x2="219" y2="240"/>
+    <line x1="218" y1="228" x2="217" y2="210"/>
+    <line x1="216" y1="200" x2="215" y2="185"/>
+    <line x1="215" y1="178" x2="215" y2="168"/>
+    <line x1="215" y1="162" x2="215" y2="155"/>
+    <line x1="215" y1="150" x2="215" y2="145"/>
+  </g>
+
+  <!-- Left Roadside Trees (Acacia) -->
+  <g filter="url(#roadShadow)">
+    <!-- Big Roadside Acacia -->
+    <path d="M 45,260 C 50,225 58,195 62,165 L 68,165 C 65,195 62,225 72,260 Z" fill="#451A03"/>
+    <ellipse cx="65" cy="155" rx="42" ry="14" fill="#14532D"/>
+    <ellipse cx="62" cy="150" rx="34" ry="9" fill="#15803D"/>
+
+    <!-- Distant smaller tree -->
+    <path d="M 130,175 L 133,150 L 136,175 Z" fill="#451A03"/>
+    <ellipse cx="133" cy="146" rx="18" ry="7" fill="#15803D"/>
+  </g>
+
+  <!-- Right Roadside Milestone Signpost (Wooden guidepost pointing forward) -->
+  <g filter="url(#roadShadow)" transform="translate(295, 220)">
+    <!-- Wooden Post -->
+    <rect x="18" y="20" width="8" height="60" rx="2" fill="#78350F" stroke="#451A03" stroke-width="1.5"/>
+    <!-- Signboard pointing left toward road -->
+    <path d="M 0,22 L 35,22 L 35,42 L 0,42 L -10,32 Z" fill="#FEF08A" stroke="#78350F" stroke-width="2"/>
+    <!-- Arrow on sign -->
+    <path d="M 18,32 L 0,32 M 8,26 L 0,32 L 8,38" stroke="#B45309" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Roadside Blooming Desert Wildflowers (Red, yellow, white petals) -->
+  <g>
+    <!-- Left flowers -->
+    <circle cx="85" cy="275" r="4.5" fill="#EF4444"/>
+    <circle cx="85" cy="275" r="1.5" fill="#FEF08A"/>
+    <circle cx="102" cy="285" r="4" fill="#F59E0B"/>
+    <circle cx="112" cy="295" r="5" fill="#EF4444"/>
+
+    <!-- Right flowers -->
+    <circle cx="340" cy="280" r="4.5" fill="#F59E0B"/>
+    <circle cx="355" cy="290" r="5" fill="#EF4444"/>
+    <circle cx="370" cy="278" r="4" fill="#FFFFFF"/>
+  </g>
+</svg>

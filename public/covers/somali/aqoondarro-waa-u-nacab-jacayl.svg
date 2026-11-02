@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A1A"/>
+      <stop offset="60%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#1E3A1A"/>
+    </linearGradient>
+
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CA8A04"/>
+      <stop offset="35%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#FFFFFF"/>
+      <stop offset="85%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="900" fill="url(#coverBg)"/>
+  <rect width="600" height="900" fill="url(#centerGlow)"/>
+
+  <!-- Book Spine Embossed Shadow (Left) -->
+  <rect x="0" y="0" width="30" height="900" fill="#000000" opacity="0.3"/>
+  <line x1="30" y1="0" x2="30" y2="900" stroke="#000000" stroke-width="2" opacity="0.4"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.15"/>
+
+  <!-- Ornate Outer Gold Border Frame -->
+  <rect x="45" y="45" width="510" height="810" rx="8" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.85"/>
+  <rect x="55" y="55" width="490" height="790" rx="6" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+
+  <!-- Corner Flourishes -->
+  <g stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.9">
+    <!-- Top-Left -->
+    <path d="M 65,85 L 65,65 L 85,65"/>
+    <circle cx="65" cy="65" r="3" fill="#F59E0B"/>
+    <!-- Top-Right -->
+    <path d="M 535,85 L 535,65 L 515,65"/>
+    <circle cx="535" cy="65" r="3" fill="#F59E0B"/>
+    <!-- Bottom-Left -->
+    <path d="M 65,815 L 65,835 L 85,835"/>
+    <circle cx="65" cy="835" r="3" fill="#F59E0B"/>
+    <!-- Bottom-Right -->
+    <path d="M 535,815 L 535,835 L 515,835"/>
+    <circle cx="535" cy="835" r="3" fill="#F59E0B"/>
+  </g>
+
+  <!-- Publisher Header Seal -->
+  <text x="300" y="115" font-family="'Cinzel', 'Georgia', serif" font-size="13" font-weight="700" letter-spacing="4" fill="#F59E0B" text-anchor="middle" opacity="0.9">
+    EBARO • SOMALI HERITAGE CLASSICS
+  </text>
+  <line x1="160" y1="130" x2="440" y2="130" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+
+  <!-- Category Pill Label -->
+  <text x="300" y="165" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#E2E8F0" text-anchor="middle" opacity="0.75">
+    SHEEKO FANeed • CLASSIC NOVEL
+  </text>
+
+  <!-- Central Emblem / Icon Graphic -->
+  <g transform="translate(300, 310)" stroke="#F59E0B" stroke-width="2.5" fill="none" opacity="0.9">
+    <circle cx="0" cy="0" r="70" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <circle cx="0" cy="0" r="62" stroke-width="2"/>
+    <!-- Central Somali Star Symbol -->
+    <polygon points="0,-36 10,-12 36,-10 16,10 22,35 0,20 -22,35 -16,10 -36,-10 -10,-12" fill="#F59E0B" stroke="none"/>
+  </g>
+
+  <!-- Title Section -->
+  <text x="300" y="470" font-family="'Cinzel', 'Georgia', serif" font-size="34" font-weight="900" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">
+    AQOONDARRO WAA U
+  </text>
+  <text x="300" y="520" font-family="'Cinzel', 'Georgia', serif" font-size="32" font-weight="900" letter-spacing="3" fill="#F59E0B" text-anchor="middle">
+    NACAB JACAYL
+  </text>
+
+  <!-- Divider Line -->
+  <line x1="220" y1="555" x2="380" y2="555" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="300,550 305,555 300,560 295,555" fill="#F59E0B"/>
+
+  <!-- English Subtitle / Meaning -->
+  <text x="300" y="590" font-family="'Georgia', serif" font-style="italic" font-size="16" fill="#F1F5F9" text-anchor="middle" opacity="0.85">
+    Ignorance is the Enemy of Love
+  </text>
+
+  <!-- Author Name Section -->
+  <g transform="translate(0, 710)">
+    <text x="300" y="0" font-family="sans-serif" font-size="12" font-weight="600" letter-spacing="3" fill="#E2E8F0" text-anchor="middle" opacity="0.75">
+      Q O R A A G A • A U T H O R
+    </text>
+    <text x="300" y="32" font-family="'Cinzel', 'Georgia', serif" font-size="22" font-weight="800" letter-spacing="2" fill="#F59E0B" text-anchor="middle">
+      FAARAX M.J. CAWL
+    </text>
+    <text x="300" y="58" font-family="sans-serif" font-size="13" fill="#CBD5E1" text-anchor="middle" opacity="0.8">
+      Daabacaaddii Koowaad: 1974
+    </text>
+  </g>
+
+  <!-- Bottom Publisher Seal -->
+  <line x1="180" y1="800" x2="420" y2="800" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+  <text x="300" y="825" font-family="sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#94A3B8" text-anchor="middle">
+    EBARO DIGITAL LIBRARY • GUDIRADA SUUGAANTA
+  </text>
+</svg>

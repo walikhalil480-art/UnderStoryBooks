@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Warm Courtyard Background Glow -->
+    <radialGradient id="childGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FFFBEB" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Warm Somali Skin Tones (Natural deep golden-brown) -->
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="45%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+
+    <!-- Girl's Vibrant Patterned Dirac Dress (Warm tangerine & gold) -->
+    <linearGradient id="girlDress" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="60%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+
+    <!-- Girl's Sunny Headscarf (Shash / Masar) -->
+    <linearGradient id="girlScarf" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="60%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+
+    <!-- Boy's Sky-Blue Tunic Shirt -->
+    <linearGradient id="boyShirt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="childrenShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#451A03" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light -->
+  <ellipse cx="200" cy="165" rx="175" ry="115" fill="url(#childGlow)"/>
+
+  <!-- Courtyard Mat Shadow -->
+  <ellipse cx="200" cy="270" rx="160" ry="24" fill="#FDE68A" opacity="0.6"/>
+  <ellipse cx="200" cy="272" rx="145" ry="16" fill="#78350F" opacity="0.2"/>
+
+  <!-- TWO SMILING CHILDREN (CARRUUR / SAAXIIB) (Filtered) -->
+  <g filter="url(#childrenShadow)">
+    <!-- LEFT CHILD: Curving Somali Girl (Caasha) -->
+    <!-- Girl's Torso & Dress -->
+    <path d="M 110,185 C 110,165 130,155 155,155 C 175,155 185,168 185,190 L 195,265 C 195,270 100,270 95,265 Z" 
+          fill="url(#girlDress)" stroke="#9A3412" stroke-width="1.5"/>
+
+    <!-- Dress Floral / Geometric Motifs -->
+    <g fill="#FEF08A" opacity="0.75">
+      <circle cx="125" cy="205" r="4"/><circle cx="150" cy="215" r="5"/><circle cx="170" cy="205" r="4"/>
+      <circle cx="115" cy="235" r="4"/><circle cx="140" cy="245" r="5"/><circle cx="165" cy="240" r="4"/>
+    </g>
+
+    <!-- Girl's Left Arm holding book -->
+    <path d="M 160,175 C 175,190 185,210 188,230" stroke="url(#skinTone)" stroke-width="14" stroke-linecap="round" fill="none"/>
+
+    <!-- Girl's Head & Face -->
+    <ellipse cx="148" cy="120" rx="26" ry="30" fill="url(#skinTone)"/>
+
+    <!-- Girl's Colorful Headscarf (Shash) wrapping head gracefully -->
+    <path d="M 120,120 C 118,85 178,85 176,120 C 175,98 122,98 120,120 Z" fill="url(#girlScarf)"/>
+    <path d="M 120,105 C 120,85 176,85 176,105 C 176,122 170,135 168,140 L 128,140 C 126,135 120,122 120,105 Z" 
+          fill="url(#girlScarf)" stroke="#B45309" stroke-width="1.5"/>
+
+    <!-- Girl's Happy Facial Features -->
+    <!-- Eyes (Bright, smiling crescent eyes) -->
+    <ellipse cx="138" cy="118" rx="4.5" ry="5.5" fill="#FFFFFF"/>
+    <ellipse cx="138" cy="118" rx="3.5" ry="4" fill="#0F172A"/>
+    <circle cx="137" cy="116" r="1.5" fill="#FFFFFF"/>
+    <path d="M 132,110 Q 138,107 144,110" stroke="#451A03" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <ellipse cx="158" cy="118" rx="4.5" ry="5.5" fill="#FFFFFF"/>
+    <ellipse cx="158" cy="118" rx="3.5" ry="4" fill="#0F172A"/>
+    <circle cx="157" cy="116" r="1.5" fill="#FFFFFF"/>
+    <path d="M 152,110 Q 158,107 164,110" stroke="#451A03" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Cheerful Smile -->
+    <path d="M 140,132 Q 148,142 156,132" stroke="#451A03" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 142,132 Q 148,138 154,132" fill="#FFFFFF"/>
+
+
+    <!-- RIGHT CHILD: Curious Somali Boy (Cali) -->
+    <!-- Boy's Torso & Sky-Blue Tunic -->
+    <path d="M 215,185 C 215,165 225,155 250,155 C 275,155 295,165 295,185 L 305,265 C 305,270 210,270 205,265 Z" 
+          fill="url(#boyShirt)" stroke="#0369A1" stroke-width="1.5"/>
+
+    <!-- Tunic Collar / Placket -->
+    <path d="M 248,155 L 248,195" stroke="#BAE6FD" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="248" cy="168" r="2" fill="#FFFFFF"/>
+    <circle cx="248" cy="180" r="2" fill="#FFFFFF"/>
+
+    <!-- Boy's Arm pointing happily to book -->
+    <path d="M 235,185 C 220,200 208,215 205,232" stroke="url(#skinTone)" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <!-- Pointing finger hand -->
+    <circle cx="205" cy="235" r="7" fill="url(#skinTone)"/>
+    <line x1="205" y1="235" x2="196" y2="238" stroke="url(#skinTone)" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Boy's Head & Face -->
+    <ellipse cx="255" cy="118" rx="26" ry="30" fill="url(#skinTone)"/>
+
+    <!-- Boy's Neat Short Dark Hair -->
+    <path d="M 228,115 C 228,85 282,85 282,115 C 275,100 235,100 228,115 Z" fill="#0F172A"/>
+
+    <!-- Boy's Happy Facial Features -->
+    <!-- Eyes -->
+    <ellipse cx="245" cy="116" rx="4.5" ry="5.5" fill="#FFFFFF"/>
+    <ellipse cx="245" cy="116" rx="3.5" ry="4" fill="#0F172A"/>
+    <circle cx="244" cy="114" r="1.5" fill="#FFFFFF"/>
+    <path d="M 239,108 Q 245,105 251,108" stroke="#451A03" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <ellipse cx="265" cy="116" rx="4.5" ry="5.5" fill="#FFFFFF"/>
+    <ellipse cx="265" cy="116" rx="3.5" ry="4" fill="#0F172A"/>
+    <circle cx="264" cy="114" r="1.5" fill="#FFFFFF"/>
+    <path d="M 259,108 Q 265,105 271,108" stroke="#451A03" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Cheerful Laughing Smile -->
+    <path d="M 247,130 Q 255,140 263,130" stroke="#451A03" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 249,130 Q 255,137 261,130" fill="#FFFFFF"/>
+
+
+    <!-- OPEN PICTURE STORYBOOK HELD BETWEEN THEM -->
+    <g transform="translate(150, 220)">
+      <!-- Book Cover Spine -->
+      <path d="M 5,30 Q 50,42 95,30 L 95,5 Q 50,15 5,5 Z" fill="#065F46" stroke="#064E3B" stroke-width="2"/>
+      <!-- Open Pages -->
+      <path d="M 8,28 Q 50,38 50,28 L 50,3 Q 28,12 8,5 Z" fill="#FFFBEB" stroke="#D5CBB9" stroke-width="1"/>
+      <path d="M 92,28 Q 50,38 50,28 L 50,3 Q 72,12 92,5 Z" fill="#FFFFFF" stroke="#D5CBB9" stroke-width="1"/>
+      <!-- Page text lines & colorful picture on page -->
+      <rect x="16" y="10" width="22" height="12" rx="2" fill="#FDE047"/>
+      <line x1="58" y1="10" x2="84" y2="10" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="58" y1="16" x2="80" y2="16" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="58" y1="22" x2="76" y2="22" stroke="#94A3B8" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background warm market glow -->
+    <radialGradient id="basketGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#FFFBEB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Woven wicker basket gradient -->
+    <linearGradient id="basketWicker" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="45%" stop-color="#B45309"/>
+      <stop offset="85%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <!-- Ripe Mango Gradient -->
+    <radialGradient id="mangoGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="85%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </radialGradient>
+
+    <!-- Ripe Banana (Moos) Gradient -->
+    <linearGradient id="bananaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+
+    <!-- Pomegranate (Rummaan) Gradient -->
+    <radialGradient id="pomGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="60%" stop-color="#DC2626"/>
+      <stop offset="90%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#450A0A"/>
+    </radialGradient>
+
+    <!-- Fresh Lime Gradient -->
+    <radialGradient id="limeGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#BBF7D0"/>
+      <stop offset="50%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </radialGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="basketShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#451A03" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light -->
+  <ellipse cx="200" cy="165" rx="170" ry="110" fill="url(#basketGlow)"/>
+
+  <!-- Ground Plane Shadow -->
+  <ellipse cx="200" cy="272" rx="150" ry="24" fill="#FDE68A" opacity="0.6"/>
+  <ellipse cx="200" cy="275" rx="135" ry="18" fill="#78350F" opacity="0.2"/>
+
+  <!-- MARKET BASKET (DAMBIIL) & FRUITS (Filtered) -->
+  <g filter="url(#basketShadow)">
+    <!-- Braided Handles (Arcing gracefully above basket) -->
+    <path d="M 135,160 C 135,70 265,70 265,160" stroke="#78350F" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M 135,160 C 135,70 265,70 265,160" stroke="#FEF3C7" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6,4" fill="none"/>
+
+    <!-- FRUITS HEAPED INSIDE BASKET (Upper Layer) -->
+    <!-- Sweet Red Pomegranate (Rummaan) on left -->
+    <circle cx="160" cy="145" r="26" fill="url(#pomGrad)"/>
+    <!-- Crown calyx -->
+    <polygon points="152,122 156,128 160,121 164,128 168,122 163,130 157,130" fill="#991B1B"/>
+    <ellipse cx="152" cy="138" rx="6" ry="3" fill="#FFFFFF" opacity="0.35"/>
+
+    <!-- Ripe Golden Mango (Cambo) in center -->
+    <path d="M 185,120 C 220,115 240,140 230,170 C 220,185 190,180 180,160 C 172,145 170,125 185,120 Z" 
+          fill="url(#mangoGrad)"/>
+    <ellipse cx="196" cy="132" rx="8" ry="4" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- Fresh Green Limes (Liin) -->
+    <circle cx="250" cy="155" r="18" fill="url(#limeGrad)"/>
+    <ellipse cx="244" cy="150" rx="4" ry="2" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="218" cy="165" r="15" fill="url(#limeGrad)"/>
+
+    <!-- Bunch of Curved Somali Sweet Bananas (Moos) on right -->
+    <g transform="translate(195, 110)">
+      <!-- Banana 1 -->
+      <path d="M 25,10 C 45,15 65,35 60,65 C 56,66 50,62 48,55 C 50,38 35,25 22,20 Z" fill="url(#bananaGrad)" stroke="#A16207" stroke-width="1"/>
+      <circle cx="23" cy="15" r="3" fill="#78350F"/> <!-- Stem tip -->
+      <path d="M 58,62 L 62,68" stroke="#451A03" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Banana 2 -->
+      <path d="M 32,8 C 55,15 78,38 72,68 C 68,69 62,65 60,58 C 64,40 48,25 30,18 Z" fill="url(#bananaGrad)" stroke="#A16207" stroke-width="1"/>
+      <circle cx="31" cy="12" r="3" fill="#78350F"/>
+    </g>
+
+    <!-- WOVEN BASKET BODY (Flared conical dambiil) -->
+    <path d="M 115,165 L 140,265 C 140,274 260,274 260,265 L 285,165 Z" 
+          fill="url(#basketWicker)" stroke="#451A03" stroke-width="2.5"/>
+
+    <!-- Basket Top Woven Rim -->
+    <ellipse cx="200" cy="165" rx="88" ry="16" fill="#F59E0B" stroke="#78350F" stroke-width="3"/>
+    <ellipse cx="200" cy="165" rx="82" ry="12" fill="#D97706"/>
+
+    <!-- INTRICATE BASKETRY WEAVE TEXTURE (Cross-hatch pattern) -->
+    <!-- Horizontal Weave Hoops -->
+    <path d="M 120,188 Q 200,202 280,188" stroke="#78350F" stroke-width="2" fill="none"/>
+    <path d="M 125,210 Q 200,224 275,210" stroke="#78350F" stroke-width="2" fill="none"/>
+    <path d="M 130,232 Q 200,246 270,232" stroke="#78350F" stroke-width="2" fill="none"/>
+    <path d="M 135,252 Q 200,264 265,252" stroke="#78350F" stroke-width="2" fill="none"/>
+
+    <!-- Diagonal Wicker Interlace (Left slant) -->
+    <g stroke="#FEF3C7" stroke-width="1.8" opacity="0.65" stroke-linecap="round">
+      <line x1="125" y1="170" x2="150" y2="265"/>
+      <line x1="145" y1="170" x2="170" y2="268"/>
+      <line x1="165" y1="170" x2="190" y2="270"/>
+      <line x1="185" y1="170" x2="210" y2="270"/>
+      <line x1="205" y1="170" x2="230" y2="268"/>
+      <line x1="225" y1="170" x2="250" y2="265"/>
+      <line x1="245" y1="170" x2="260" y2="245"/>
+    </g>
+
+    <!-- Diagonal Wicker Interlace (Right slant) -->
+    <g stroke="#78350F" stroke-width="1.8" opacity="0.55" stroke-linecap="round">
+      <line x1="275" y1="170" x2="250" y2="265"/>
+      <line x1="255" y1="170" x2="230" y2="268"/>
+      <line x1="235" y1="170" x2="210" y2="270"/>
+      <line x1="215" y1="170" x2="190" y2="270"/>
+      <line x1="195" y1="170" x2="170" y2="268"/>
+      <line x1="175" y1="170" x2="150" y2="265"/>
+      <line x1="155" y1="170" x2="140" y2="245"/>
+    </g>
+
+    <!-- Bottom Base Ring -->
+    <ellipse cx="200" cy="265" rx="60" ry="10" fill="#78350F" stroke="#451A03" stroke-width="2"/>
+  </g>
+</svg>

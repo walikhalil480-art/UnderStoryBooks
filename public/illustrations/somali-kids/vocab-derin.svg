@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background courtyard sunlight glow -->
+    <radialGradient id="matGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#FFFBEB" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Natural Palm Straw Fiber Gradient -->
+    <linearGradient id="strawBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="35%" stop-color="#FDE68A"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Terracotta Red Vegetal Dye Gradient -->
+    <linearGradient id="redDye" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="50%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+
+    <!-- Forest Green / Indigo Vegetal Dye -->
+    <linearGradient id="greenDye" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="50%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter for Mat on Floor -->
+    <filter id="derinShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#78350F" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light -->
+  <ellipse cx="200" cy="165" rx="170" ry="110" fill="url(#matGlow)"/>
+
+  <!-- DERIN (WOVEN MAT) IN PERSPECTIVE (Filtered) -->
+  <g filter="url(#derinShadow)">
+    <!-- Top Braided Fringe Tassels (Far edge) -->
+    <g stroke="#D97706" stroke-width="2" stroke-linecap="round">
+      <line x1="88" y1="75" x2="84" y2="65"/><line x1="102" y1="75" x2="100" y2="65"/>
+      <line x1="116" y1="75" x2="114" y2="65"/><line x1="130" y1="75" x2="128" y2="65"/>
+      <line x1="144" y1="75" x2="142" y2="65"/><line x1="158" y1="75" x2="156" y2="65"/>
+      <line x1="172" y1="75" x2="170" y2="65"/><line x1="186" y1="75" x2="184" y2="65"/>
+      <line x1="200" y1="75" x2="200" y2="65"/><line x1="214" y1="75" x2="216" y2="65"/>
+      <line x1="228" y1="75" x2="230" y2="65"/><line x1="242" y1="75" x2="244" y2="65"/>
+      <line x1="256" y1="75" x2="258" y2="65"/><line x1="270" y1="75" x2="272" y2="65"/>
+      <line x1="284" y1="75" x2="286" y2="65"/><line x1="298" y1="75" x2="300" y2="65"/>
+      <line x1="312" y1="75" x2="316" y2="65"/>
+    </g>
+
+    <!-- Main Woven Mat Polygon (Perspective slant) -->
+    <polygon points="80,75 320,75 355,255 45,255" fill="url(#strawBase)" stroke="#B45309" stroke-width="2.5"/>
+
+    <!-- Outer Terracotta Border Band -->
+    <polygon points="90,83 310,83 315,97 85,97" fill="url(#redDye)"/>
+    <polygon points="52,235 348,235 344,248 56,248" fill="url(#redDye)"/>
+    <!-- Side border stripes -->
+    <polygon points="85,97 90,83 52,235 60,235" fill="url(#redDye)"/>
+    <polygon points="310,83 315,97 340,235 348,235" fill="url(#redDye)"/>
+
+    <!-- Green / Teal Accent Inset Band -->
+    <polygon points="98,104 302,104 305,114 95,114" fill="url(#greenDye)"/>
+    <polygon points="68,218 332,218 329,228 71,228" fill="url(#greenDye)"/>
+
+    <!-- Fine Woven Reed Ribbing Lines across mat body -->
+    <g stroke="#B45309" stroke-width="1" opacity="0.35">
+      <line x1="90" y1="120" x2="310" y2="120"/><line x1="86" y1="130" x2="314" y2="130"/>
+      <line x1="82" y1="140" x2="318" y2="140"/><line x1="78" y1="150" x2="322" y2="150"/>
+      <line x1="74" y1="160" x2="326" y2="160"/><line x1="70" y1="170" x2="330" y2="170"/>
+      <line x1="66" y1="180" x2="334" y2="180"/><line x1="62" y1="190" x2="338" y2="190"/>
+      <line x1="58" y1="200" x2="342" y2="200"/><line x1="54" y1="210" x2="346" y2="210"/>
+    </g>
+
+    <!-- TRADITIONAL SOMALI DIAMOND MEDALLIONS (Dheeman Patterns) -->
+    <!-- Center Diamond Medallion -->
+    <polygon points="200,125 240,165 200,205 160,165" fill="url(#redDye)" stroke="#7F1D1D" stroke-width="2"/>
+    <polygon points="200,135 230,165 200,195 170,165" fill="#FEF08A" stroke="#B45309" stroke-width="1.5"/>
+    <polygon points="200,145 220,165 200,185 180,165" fill="url(#greenDye)"/>
+    <polygon points="200,155 210,165 200,175 190,165" fill="#FEF08A"/>
+
+    <!-- Left Diamond Medallion -->
+    <polygon points="125,138 152,165 125,192 98,165" fill="url(#redDye)" stroke="#7F1D1D" stroke-width="1.5"/>
+    <polygon points="125,146 144,165 125,184 106,165" fill="#FEF08A"/>
+    <polygon points="125,154 136,165 125,176 114,165" fill="url(#greenDye)"/>
+
+    <!-- Right Diamond Medallion -->
+    <polygon points="275,138 302,165 275,192 248,165" fill="url(#redDye)" stroke="#7F1D1D" stroke-width="1.5"/>
+    <polygon points="275,146 294,165 275,184 256,165" fill="#FEF08A"/>
+    <polygon points="275,154 286,165 275,176 264,165" fill="url(#greenDye)"/>
+
+    <!-- Bottom Braided Fringe Tassels (Near edge) -->
+    <g stroke="#B45309" stroke-width="2.5" stroke-linecap="round">
+      <line x1="50" y1="255" x2="45" y2="268"/><line x1="68" y1="255" x2="65" y2="268"/>
+      <line x1="86" y1="255" x2="84" y2="268"/><line x1="104" y1="255" x2="103" y2="268"/>
+      <line x1="122" y1="255" x2="121" y2="268"/><line x1="140" y1="255" x2="140" y2="268"/>
+      <line x1="158" y1="255" x2="158" y2="268"/><line x1="176" y1="255" x2="177" y2="268"/>
+      <line x1="194" y1="255" x2="195" y2="268"/><line x1="212" y1="255" x2="213" y2="268"/>
+      <line x1="230" y1="255" x2="231" y2="268"/><line x1="248" y1="255" x2="249" y2="268"/>
+      <line x1="266" y1="255" x2="267" y2="268"/><line x1="284" y1="255" x2="285" y2="268"/>
+      <line x1="302" y1="255" x2="304" y2="268"/><line x1="320" y1="255" x2="323" y2="268"/>
+      <line x1="338" y1="255" x2="342" y2="268"/><line x1="352" y1="255" x2="357" y2="268"/>
+    </g>
+  </g>
+</svg>

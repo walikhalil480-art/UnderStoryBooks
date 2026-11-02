@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Ocean Water Gradient (Somali Indian Ocean Turquoise) -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="45%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Fish Vibrant Scales (Gold, Orange, Coral) -->
+    <linearGradient id="fishScales" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="30%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+
+    <!-- Fin Iridescence -->
+    <linearGradient id="finGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="50%" stop-color="#FB7185"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+
+    <filter id="fishShadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#082F49" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ocean Water Backdrop -->
+  <rect width="400" height="320" rx="16" fill="url(#oceanGrad)"/>
+
+  <!-- Sunlight Caustic Beams through Water -->
+  <g fill="#FFFFFF" opacity="0.15">
+    <polygon points="120,0 160,0 210,320 150,320"/>
+    <polygon points="240,0 290,0 340,320 270,320"/>
+    <polygon points="40,0 75,0 110,320 65,320"/>
+  </g>
+
+  <!-- Sea Bed & Coral Reef Silhouettes -->
+  <path d="M 0,270 Q 100,245 200,265 Q 300,248 400,270 L 400,320 L 0,320 Z" fill="#0C4A6E"/>
+  <!-- Coral Branches -->
+  <path d="M 320,290 Q 325,250 340,245 M 332,260 Q 348,252 355,240 M 325,270 Q 312,255 305,248" stroke="#F43F5E" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M 70,290 Q 75,255 88,248 M 80,270 Q 95,262 102,252" stroke="#10B981" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- Rising Air Bubbles -->
+  <circle cx="285" cy="180" r="4" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="295" cy="140" r="6" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="290" cy="95" r="8" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="120" cy="120" r="5" fill="#FFFFFF" opacity="0.5"/>
+
+  <!-- THE VIBRANT SOMALI COASTAL FISH (KALLUUN) -->
+  <g filter="url(#fishShadow)">
+    <!-- Dorsal Fin (Top flowing fin) -->
+    <path d="M 175,108 Q 210,65 260,95 Q 220,105 185,115 Z" fill="url(#finGrad)"/>
+    <!-- Fin Ray Ridges -->
+    <line x1="200" y1="102" x2="225" y2="78" stroke="#FFFFFF" stroke-width="1.2" opacity="0.7"/>
+    <line x1="220" y1="105" x2="245" y2="84" stroke="#FFFFFF" stroke-width="1.2" opacity="0.7"/>
+
+    <!-- Ventral / Pelvic Fins -->
+    <path d="M 185,202 Q 215,245 240,225 Q 210,210 195,198 Z" fill="url(#finGrad)"/>
+
+    <!-- Large Fan-shaped Tail Fin (Caudal Fin) -->
+    <path d="M 115,160 C 85,115 50,118 45,135 C 65,160 65,160 45,185 C 50,202 85,205 115,160 Z" fill="url(#finGrad)"/>
+    <!-- Tail Ray Ribs -->
+    <path d="M 105,160 Q 75,142 55,138 M 105,160 Q 75,160 52,160 M 105,160 Q 75,178 55,182" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+    <!-- Streamlined Fish Body -->
+    <path d="M 115,160
+             C 145,105 240,100 285,150
+             C 292,158 292,162 285,170
+             C 240,220 145,215 115,160 Z"
+          fill="url(#fishScales)"/>
+
+    <!-- Shimmering Scale Arcs -->
+    <path d="M 155,140 Q 165,150 155,160" stroke="#FDE68A" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M 175,132 Q 185,142 175,152 Q 185,162 175,172" stroke="#FDE68A" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M 195,128 Q 205,138 195,148 Q 205,158 195,168 Q 205,178 195,188" stroke="#FDE68A" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M 215,132 Q 225,145 215,158 Q 225,170 215,182" stroke="#FDE68A" stroke-width="2" fill="none" opacity="0.8"/>
+
+    <!-- Gill Cover Curve (Operculum) -->
+    <path d="M 240,132 Q 248,158 240,185" stroke="#9A3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Translucent Pectoral Side Fin -->
+    <path d="M 210,165 Q 180,185 190,195 Q 220,185 225,170 Z" fill="#F43F5E" opacity="0.85"/>
+    <line x1="210" y1="168" x2="192" y2="188" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8"/>
+
+    <!-- Big Curious Fish Eye -->
+    <circle cx="265" cy="148" r="8" fill="#FFFFFF"/>
+    <circle cx="266" cy="148" r="5" fill="#0F172A"/>
+    <circle cx="264.5" cy="146.5" r="2" fill="#FFFFFF"/>
+
+    <!-- Cute Fish Mouth/Lips -->
+    <path d="M 288,155 Q 295,160 288,165" stroke="#BE123C" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Water Surface Glimmer -->
+  <g fill="#FFFFFF" opacity="0.75">
+    <path d="M 330,45 Q 336,45 336,39 Q 336,45 342,45 Q 336,45 336,51 Q 336,45 330,45 Z"/>
+    <path d="M 180,35 Q 185,35 185,30 Q 185,35 190,35 Q 185,35 185,40 Q 185,35 180,35 Z"/>
+  </g>
+</svg>

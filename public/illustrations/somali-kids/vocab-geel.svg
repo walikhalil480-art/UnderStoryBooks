@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Sky & Sun Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="60%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#FCE7F3" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Dune Sand Gradient -->
+    <linearGradient id="duneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A662"/>
+      <stop offset="50%" stop-color="#C68239"/>
+      <stop offset="100%" stop-color="#A56424"/>
+    </linearGradient>
+
+    <!-- Camel Coat Gradient -->
+    <linearGradient id="camelCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9A066"/>
+      <stop offset="40%" stop-color="#C28445"/>
+      <stop offset="100%" stop-color="#9A5D25"/>
+    </linearGradient>
+
+    <!-- Camel Highlight -->
+    <linearGradient id="camelHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FBD9A5"/>
+      <stop offset="100%" stop-color="#C28445" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft Drop Shadow -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#78350F" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Backdrop -->
+  <rect width="400" height="320" rx="16" fill="url(#skyGrad)"/>
+
+  <!-- Morning Desert Sun -->
+  <circle cx="310" cy="80" r="38" fill="#F59E0B" opacity="0.6"/>
+  <circle cx="310" cy="80" r="28" fill="#FDE68A"/>
+
+  <!-- Distant Blue/Purple Hills -->
+  <path d="M 0,210 Q 90,175 190,195 Q 290,170 400,200 L 400,320 L 0,320 Z" fill="#D4B08C" opacity="0.45"/>
+
+  <!-- Acacia Tree in Background -->
+  <g transform="translate(45, 120) scale(0.65)" opacity="0.75">
+    <path d="M 50,150 L 52,80 L 25,45 M 52,85 L 85,42 M 52,70 L 54,35" stroke="#78350F" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="25" cy="40" rx="35" ry="12" fill="#065F46"/>
+    <ellipse cx="85" cy="38" rx="42" ry="14" fill="#047857"/>
+    <ellipse cx="54" cy="32" rx="38" ry="11" fill="#059669"/>
+  </g>
+
+  <!-- Rolling Terracotta Desert Sand Dunes -->
+  <path d="M -20,240 Q 110,210 230,235 Q 330,220 420,245 L 420,320 L -20,320 Z" fill="url(#duneGrad)"/>
+  <path d="M -10,265 Q 140,245 280,260 Q 360,250 420,270 L 420,320 L -10,320 Z" fill="#935116"/>
+
+  <!-- Camel Cast Shadow on Sand -->
+  <ellipse cx="225" cy="275" rx="85" ry="16" fill="#582C07" opacity="0.32"/>
+
+  <!-- THE SOMALI CAMEL (DALMAR) -->
+  <g filter="url(#softShadow)">
+    <!-- Back-Side Far Legs -->
+    <path d="M 180,205 L 176,268 L 184,270 L 188,208 Z" fill="#8C501D"/>
+    <path d="M 270,195 L 278,266 L 286,268 L 278,198 Z" fill="#8C501D"/>
+    <!-- Far Feet Padded Hooves -->
+    <ellipse cx="180" cy="270" rx="8" ry="4" fill="#5E330D"/>
+    <ellipse cx="282" cy="268" rx="8" ry="4" fill="#5E330D"/>
+
+    <!-- Near-Side Front Leg -->
+    <path d="M 198,205 Q 196,235 194,274 L 204,275 Q 206,235 208,205 Z" fill="url(#camelCoat)"/>
+    <ellipse cx="199" cy="275" rx="9" ry="4.5" fill="#5E330D"/>
+
+    <!-- Near-Side Hind Leg (Curved thigh of desert camel) -->
+    <path d="M 248,185 Q 265,205 258,235 L 254,272 L 264,273 L 270,230 Q 275,200 256,180 Z" fill="url(#camelCoat)"/>
+    <ellipse cx="259" cy="273" rx="9" ry="4.5" fill="#5E330D"/>
+
+    <!-- Camel Body Torso -->
+    <ellipse cx="228" cy="188" rx="46" ry="26" fill="url(#camelCoat)"/>
+
+    <!-- PROMINENT DROMEDARY HUMP -->
+    <path d="M 205,172 C 205,138 238,135 248,172 Z" fill="url(#camelCoat)"/>
+    <!-- Hump Sun Highlight -->
+    <path d="M 208,168 C 210,144 235,142 244,168 Z" fill="url(#camelHighlight)"/>
+
+    <!-- Tail with Hair Tuft -->
+    <path d="M 272,185 Q 285,202 282,224" stroke="#9A5D25" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 282,222 Q 286,232 282,238 Q 278,232 282,222" fill="#5E330D"/>
+
+    <!-- Long Elegant S-Curved Neck -->
+    <path d="M 195,195 Q 165,188 152,148 Q 142,118 156,88 L 170,94 Q 158,122 166,148 Q 176,178 206,185 Z" fill="url(#camelCoat)"/>
+
+    <!-- Neck Muscle Contour Highlight -->
+    <path d="M 160,94 Q 148,122 156,148" stroke="url(#camelHighlight)" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Camel Head -->
+    <path d="M 148,90 Q 138,82 122,86 Q 112,89 114,97 Q 116,104 126,104 Q 144,105 160,98 Z" fill="url(#camelCoat)"/>
+
+    <!-- Upper Lip / Snout (Split prehensile camel lip) -->
+    <ellipse cx="118" cy="94" rx="7" ry="5" fill="#B27435"/>
+    <circle cx="115" cy="94" r="1.5" fill="#582C07"/>
+
+    <!-- Soft Friendly Camel Eye with Long Eyelash -->
+    <circle cx="138" cy="88" r="4.5" fill="#291402"/>
+    <circle cx="137" cy="86.5" r="1.5" fill="#FFFFFF"/>
+    <!-- Eyelash -->
+    <path d="M 133,85 Q 138,82 144,84" stroke="#291402" stroke-width="1.5" fill="none"/>
+
+    <!-- Alert Camel Ear -->
+    <path d="M 158,82 C 160,72 166,72 167,82 Z" fill="#9A5D25"/>
+    <path d="M 160,82 C 161,75 165,75 165,82 Z" fill="#FBD9A5"/>
+
+    <!-- Traditional Somali Woven Halter (Heeryo / Koore detail in gold and red) -->
+    <path d="M 124,96 Q 136,102 148,93" stroke="#DC2626" stroke-width="2" fill="none"/>
+    <circle cx="140" cy="97" r="2.5" fill="#F59E0B"/>
+    <path d="M 140,99 L 140,118" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Little desert grass clump in foreground -->
+  <g transform="translate(325, 272)" stroke="#78350F" stroke-width="2" stroke-linecap="round">
+    <path d="M 0,15 Q -6,4 -14,0"/>
+    <path d="M 0,15 Q -2,2 -5,-8"/>
+    <path d="M 0,15 Q 4,2 10,-5"/>
+    <path d="M 0,15 Q 8,5 15,2"/>
+  </g>
+</svg>

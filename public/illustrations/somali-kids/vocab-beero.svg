@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Sunny Agricultural Sky -->
+    <linearGradient id="farmSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#BAE6FD"/>
+      <stop offset="85%" stop-color="#FEF9C3"/>
+      <stop offset="100%" stop-color="#FEF08A"/>
+    </linearGradient>
+
+    <!-- Lush Field Green 1 -->
+    <linearGradient id="lushGreen1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="60%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+
+    <!-- Lush Field Green 2 (Deep rows) -->
+    <linearGradient id="lushGreen2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="60%" stop-color="#15803D"/>
+      <stop offset="100%" stop-color="#14532D"/>
+    </linearGradient>
+
+    <!-- Fresh Irrigation Canal Water -->
+    <linearGradient id="canalWater" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <!-- Palm Tree Trunk Gradient -->
+    <linearGradient id="palmTrunk" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="50%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="farmShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#14532D" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Clear Sky -->
+  <rect width="400" height="320" fill="url(#farmSky)"/>
+
+  <!-- Morning Sun -->
+  <circle cx="80" cy="70" r="32" fill="#FEF08A" opacity="0.9"/>
+  <circle cx="80" cy="70" r="18" fill="#FFFFFF"/>
+
+  <!-- Fluffy White Summer Rain Clouds -->
+  <g fill="#FFFFFF" opacity="0.85">
+    <ellipse cx="280" cy="65" rx="36" ry="16"/>
+    <ellipse cx="260" cy="60" rx="22" ry="18"/>
+    <ellipse cx="300" cy="62" rx="24" ry="14"/>
+  </g>
+
+  <!-- Distant Blue Acacia Hills on Horizon -->
+  <path d="M 0,165 Q 120,145 250,158 T 400,150 L 400,185 L 0,185 Z" fill="#86EFAC" opacity="0.6"/>
+
+  <!-- PALM TREES (Left Riverbank) -->
+  <g filter="url(#farmShadow)">
+    <!-- Palm 1 (Tall Date Palm) -->
+    <path d="M 55,210 Q 58,140 70,85 L 75,85 Q 63,140 60,210 Z" fill="url(#palmTrunk)"/>
+    <!-- Palm Ring Segments -->
+    <g stroke="#451A03" stroke-width="1.5" opacity="0.6">
+      <line x1="56" y1="180" x2="60" y2="180"/>
+      <line x1="58" y1="150" x2="63" y2="150"/>
+      <line x1="62" y1="120" x2="68" y2="120"/>
+    </g>
+    <!-- Palm Fronds (Graceful curving green fronds) -->
+    <g stroke="#15803D" stroke-width="4.5" stroke-linecap="round" fill="none">
+      <path d="M 72,85 Q 40,70 15,90"/>
+      <path d="M 72,85 Q 45,50 30,55"/>
+      <path d="M 72,85 Q 75,40 72,35"/>
+      <path d="M 72,85 Q 100,50 115,60"/>
+      <path d="M 72,85 Q 105,75 125,95"/>
+      <path d="M 72,85 Q 85,95 85,115"/>
+    </g>
+    <!-- Golden Date Clusters -->
+    <circle cx="70" cy="92" r="5" fill="#F59E0B"/>
+    <circle cx="76" cy="94" r="4.5" fill="#D97706"/>
+
+    <!-- Palm 2 (Smaller adjacent palm) -->
+    <path d="M 35,215 Q 32,160 25,120 L 29,120 Q 36,160 39,215 Z" fill="url(#palmTrunk)"/>
+    <g stroke="#16A34A" stroke-width="3.5" stroke-linecap="round" fill="none">
+      <path d="M 27,120 Q 5,110 -10,125"/>
+      <path d="M 27,120 Q 15,95 5,90"/>
+      <path d="M 27,120 Q 30,85 28,78"/>
+      <path d="M 27,120 Q 50,95 62,105"/>
+    </g>
+  </g>
+
+  <!-- LUSH FERTILE AGRICULTURAL FIELDS (Beero) -->
+  <!-- Far Field (Terracotta soil & sprouting crops) -->
+  <polygon points="0,175 400,175 400,205 0,205" fill="#D97706" opacity="0.35"/>
+
+  <!-- Mid Ground Field (Vibrant young green maize / grain rows) -->
+  <polygon points="0,205 400,205 400,245 0,245" fill="url(#lushGreen1)"/>
+
+  <!-- Perspective Crop Rows (Vanishing to horizon) -->
+  <g stroke="#14532D" stroke-width="2.5" opacity="0.55">
+    <line x1="120" y1="205" x2="80" y2="245"/>
+    <line x1="160" y1="205" x2="135" y2="245"/>
+    <line x1="200" y1="205" x2="190" y2="245"/>
+    <line x1="240" y1="205" x2="245" y2="245"/>
+    <line x1="280" y1="205" x2="300" y2="245"/>
+    <line x1="320" y1="205" x2="355" y2="245"/>
+    <line x1="360" y1="205" x2="410" y2="245"/>
+  </g>
+
+  <!-- SPARKLING RIVER IRRIGATION CANAL (Winding across the land) -->
+  <path d="M 0,240 C 90,238 180,248 240,242 C 300,236 360,245 400,242 L 400,265 C 360,268 300,258 240,265 C 180,272 90,260 0,265 Z" 
+        fill="url(#canalWater)" stroke="#0369A1" stroke-width="1.5"/>
+  <!-- Water sunlight sparkles -->
+  <path d="M 60,250 Q 120,248 180,252" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M 260,252 Q 320,248 370,254" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+  <!-- FOREGROUND LUSH RICH VEGETABLE HARVEST BEDS -->
+  <polygon points="0,262 400,262 400,320 0,320" fill="url(#lushGreen2)"/>
+
+  <!-- Foreground Harvest Produce (Golden ripe squash / melons & lush leaves) -->
+  <g filter="url(#farmShadow)">
+    <!-- Vegetable Plant 1 -->
+    <ellipse cx="140" cy="295" rx="14" ry="10" fill="#F59E0B"/>
+    <path d="M 130,290 Q 140,285 150,290" stroke="#B45309" stroke-width="1.5" fill="none"/>
+    <circle cx="132" cy="285" r="8" fill="#22C55E"/>
+    <circle cx="148" cy="285" r="7" fill="#16A34A"/>
+
+    <!-- Vegetable Plant 2 -->
+    <ellipse cx="250" cy="292" rx="16" ry="11" fill="#F59E0B"/>
+    <path d="M 238,288 Q 250,282 262,288" stroke="#B45309" stroke-width="1.5" fill="none"/>
+    <circle cx="240" cy="282" r="9" fill="#22C55E"/>
+    <circle cx="260" cy="284" r="8" fill="#16A34A"/>
+
+    <!-- Vegetable Plant 3 -->
+    <ellipse cx="340" cy="298" rx="15" ry="10" fill="#F59E0B"/>
+    <circle cx="330" cy="288" r="8" fill="#22C55E"/>
+    <circle cx="350" cy="290" r="7.5" fill="#16A34A"/>
+  </g>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Tropical Indian Ocean Sky Gradient -->
+    <linearGradient id="oceanSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="40%" stop-color="#E0F2FE"/>
+      <stop offset="85%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FED7AA"/>
+    </linearGradient>
+
+    <!-- Glowing Sun -->
+    <radialGradient id="sunDoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="60%" stop-color="#FDE047" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Teak Wood Hull Gradient -->
+    <linearGradient id="hullTeak" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#451A03"/>
+      <stop offset="35%" stop-color="#78350F"/>
+      <stop offset="70%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <!-- Canvas Lateen Sail Gradient (Sunlit billow) -->
+    <linearGradient id="sailCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F8FAFC"/>
+      <stop offset="85%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Indian Ocean Waves Gradient -->
+    <linearGradient id="seaWaves" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="35%" stop-color="#0369A1"/>
+      <stop offset="75%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="boatShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0C4A6E" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="220" fill="url(#oceanSky)"/>
+
+  <!-- Morning coastal sun -->
+  <circle cx="90" cy="80" r="45" fill="url(#sunDoon)"/>
+  <circle cx="90" cy="80" r="22" fill="#FEF08A" opacity="0.9"/>
+
+  <!-- Soaring Somali Seagulls -->
+  <path d="M 60,60 Q 68,52 76,60 Q 84,52 92,60" stroke="#0369A1" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M 120,45 Q 126,38 132,45 Q 138,38 144,45" stroke="#0369A1" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+
+  <!-- Distant Calm Sea Horizon -->
+  <line x1="0" y1="205" x2="400" y2="205" stroke="#0284C7" stroke-width="2"/>
+
+  <!-- BOAT / DHOW (DOON) (Filtered) -->
+  <g filter="url(#boatShadow)">
+    <!-- Wooden Rigging Ropes (Hemp lines) -->
+    <line x1="200" y1="45" x2="80" y2="205" stroke="#78350F" stroke-width="1.5" opacity="0.7"/>
+    <line x1="200" y1="45" x2="330" y2="208" stroke="#78350F" stroke-width="1.5" opacity="0.7"/>
+    <line x1="235" y1="80" x2="270" y2="206" stroke="#78350F" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Slanted Wooden Spar / Yard (Antenna boom) -->
+    <line x1="88" y1="185" x2="285" y2="35" stroke="#78350F" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- BILLOWING TRIANGULAR LATEEN SAIL -->
+    <path d="M 94,182 C 145,155 220,110 282,38 C 285,120 280,180 235,198 C 175,198 120,192 94,182 Z" 
+          fill="url(#sailCanvas)" stroke="#94A3B8" stroke-width="1.5"/>
+
+    <!-- Sail seam stitches & curve shadow -->
+    <path d="M 160,135 Q 210,158 245,195" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 215,85 Q 250,130 268,185" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Main Solid Mast -->
+    <line x1="210" y1="55" x2="210" y2="215" stroke="#451A03" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- TRADITIONAL CARVED WOODEN HULL (Deep teak dhow) -->
+    <!-- Hull Base -->
+    <path d="M 65,198 C 110,238 290,238 340,198 C 305,230 115,230 65,198 Z" 
+          fill="url(#hullTeak)" stroke="#270F03" stroke-width="2.5"/>
+
+    <!-- Graceful curved prow / bowsprit -->
+    <path d="M 52,185 Q 60,198 68,202 L 72,196 Q 64,192 58,183 Z" fill="#92400E" stroke="#451A03" stroke-width="1.5"/>
+
+    <!-- Turquoise & White Nautical Waterline Stripe (Classic Berbera dhow livery) -->
+    <path d="M 72,204 Q 200,224 332,204 L 331,209 Q 200,229 73,209 Z" fill="#06B6D4"/>
+    <path d="M 74,209 Q 200,229 330,209 L 329,213 Q 200,233 75,213 Z" fill="#FFFFFF"/>
+
+    <!-- Deck railing / gunwale -->
+    <path d="M 68,198 Q 200,214 336,198" stroke="#FDE047" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- INDIAN OCEAN ROLLING WAVES & FOAM (Front Foreground) -->
+  <!-- Back wave layer -->
+  <path d="M 0,225 C 60,215 120,235 180,222 C 240,210 300,230 360,220 C 380,216 400,222 400,222 L 400,320 L 0,320 Z" 
+        fill="#0284C7" opacity="0.85"/>
+
+  <!-- Mid wave layer with foam splashes around hull -->
+  <path d="M 0,245 C 50,235 110,250 170,238 C 230,226 290,245 350,235 C 380,230 400,238 400,238 L 400,320 L 0,320 Z" 
+        fill="url(#seaWaves)"/>
+
+  <!-- White water foam curls -->
+  <path d="M 50,238 Q 75,225 105,236 Q 135,226 160,242" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M 180,245 Q 220,232 260,244 Q 300,230 340,242" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M 270,235 Q 295,224 325,232" stroke="#E0F2FE" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.95"/>
+
+  <!-- Sparkling water bubbles -->
+  <circle cx="85" cy="245" r="2.5" fill="#FFFFFF"/>
+  <circle cx="140" cy="252" r="2" fill="#FFFFFF"/>
+  <circle cx="230" cy="255" r="3" fill="#FFFFFF"/>
+  <circle cx="310" cy="250" r="2.5" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="babylonBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C1810"/>
+      <stop offset="50%" stop-color="#4A2810"/>
+      <stop offset="100%" stop-color="#1A0D07"/>
+    </linearGradient>
+
+    <linearGradient id="coinGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="40%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="50%" cy="38%" r="48%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#1A0D07" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="900" fill="url(#babylonBg)"/>
+  <rect width="600" height="900" fill="url(#sunGlow)"/>
+
+  <!-- Spine Shadow -->
+  <rect x="0" y="0" width="28" height="900" fill="#000000" opacity="0.45"/>
+  <line x1="28" y1="0" x2="28" y2="900" stroke="#F59E0B" stroke-width="1" opacity="0.35"/>
+
+  <!-- Babylonian Geometric Border -->
+  <rect x="42" y="42" width="516" height="816" rx="6" fill="none" stroke="#F59E0B" stroke-width="2.5" opacity="0.85"/>
+  <rect x="52" y="52" width="496" height="796" rx="4" fill="none" stroke="#F59E0B" stroke-width="1" stroke-dasharray="10,6" opacity="0.45"/>
+
+  <!-- Corner Stepped Ziggurat Accents -->
+  <g fill="#F59E0B" opacity="0.85">
+    <!-- Top-Left -->
+    <polygon points="62,62 86,62 86,68 74,68 74,80 68,80 68,92 62,92"/>
+    <!-- Top-Right -->
+    <polygon points="538,62 514,62 514,68 526,68 526,80 532,80 532,92 538,92"/>
+    <!-- Bottom-Left -->
+    <polygon points="62,838 86,838 86,832 74,832 74,820 68,820 68,808 62,808"/>
+    <!-- Bottom-Right -->
+    <polygon points="538,838 514,838 514,832 526,832 526,820 532,820 532,808 538,808"/>
+  </g>
+
+  <!-- Header Banner -->
+  <text x="300" y="110" font-family="'Cinzel', 'Georgia', serif" font-size="12" font-weight="700" letter-spacing="5" fill="#F59E0B" text-anchor="middle" opacity="0.95">
+    EBARO • CLASSICS OF FINANCIAL MASTERY
+  </text>
+  <line x1="160" y1="126" x2="440" y2="126" stroke="#F59E0B" stroke-width="1" opacity="0.5"/>
+
+  <!-- Central Babylonian Gold Emblem -->
+  <g transform="translate(300, 265)" stroke="#F59E0B" stroke-width="2" fill="none">
+    <circle cx="0" cy="0" r="66" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <circle cx="0" cy="0" r="58" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="44" stroke-width="1"/>
+    <!-- Babylonian Sun Star / Wealth Seal -->
+    <g fill="#F59E0B">
+      <polygon points="0,-36 9,-11 34,-9 14,9 20,33 0,19 -20,33 -14,9 -34,-9 -9,-11"/>
+    </g>
+  </g>
+
+  <!-- Title Block -->
+  <text x="300" y="405" font-family="'Cinzel', 'Georgia', serif" font-size="28" font-weight="900" letter-spacing="4" fill="#FFFFFF" text-anchor="middle">
+    THE RICHEST MAN
+  </text>
+  <text x="300" y="445" font-family="'Cinzel', 'Georgia', serif" font-size="24" font-weight="900" letter-spacing="4" fill="#E2E8F0" text-anchor="middle">
+    IN
+  </text>
+  <text x="300" y="500" font-family="'Cinzel', 'Georgia', serif" font-size="44" font-weight="900" letter-spacing="6" fill="url(#coinGold)" text-anchor="middle">
+    BABYLON
+  </text>
+
+  <!-- Divider Line -->
+  <line x1="200" y1="535" x2="400" y2="535" stroke="#F59E0B" stroke-width="2"/>
+  <polygon points="300,529 306,535 300,541 294,535" fill="#F59E0B"/>
+
+  <!-- Subtitle -->
+  <text x="300" y="572" font-family="'Georgia', serif" font-style="italic" font-size="16" fill="#FEF08A" text-anchor="middle" opacity="0.95">
+    The Success Secrets of the Ancients
+  </text>
+
+  <!-- Golden Law Quote -->
+  <text x="300" y="625" font-family="'Georgia', serif" font-style="italic" font-size="13.5" fill="#D1D5DB" text-anchor="middle">
+    &quot;A part of all you earn is yours to keep.&quot;
+  </text>
+  <text x="300" y="648" font-family="sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle" letter-spacing="1">
+    Seven Cures for a Lean Purse • The Five Laws of Gold
+  </text>
+
+  <!-- Author Attribution -->
+  <g transform="translate(0, 725)">
+    <text x="300" y="0" font-family="sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="#9CA3AF" text-anchor="middle">
+      A U T H O R
+    </text>
+    <text x="300" y="32" font-family="'Cinzel', 'Georgia', serif" font-size="24" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">
+      GEORGE S. CLASON
+    </text>
+    <text x="300" y="58" font-family="sans-serif" font-size="12" fill="#F59E0B" text-anchor="middle" opacity="0.9">
+      Authorized Centennial Edition • 1926
+    </text>
+  </g>
+
+  <!-- Bottom Imprint -->
+  <line x1="180" y1="815" x2="420" y2="815" stroke="#F59E0B" stroke-width="1" opacity="0.4"/>
+  <text x="300" y="835" font-family="sans-serif" font-size="9.5" font-weight="700" letter-spacing="3" fill="#9CA3AF" text-anchor="middle">
+    EBARO DIGITAL LIBRARY • FINANCIAL HERITAGE
+  </text>
+</svg>

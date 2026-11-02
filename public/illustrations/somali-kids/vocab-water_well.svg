@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background morning glow -->
+    <radialGradient id="wellSky" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#FED7AA" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Limestone Well Wall Gradient -->
+    <linearGradient id="stoneWall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78716C"/>
+      <stop offset="30%" stop-color="#A8A29E"/>
+      <stop offset="70%" stop-color="#D6D3D1"/>
+      <stop offset="100%" stop-color="#78716C"/>
+    </linearGradient>
+
+    <!-- Well Interior Deep Water Gradient -->
+    <radialGradient id="wellWater" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="85%" stop-color="#075985"/>
+      <stop offset="100%" stop-color="#0C4A6E"/>
+    </radialGradient>
+
+    <!-- Wood Beam Gradient -->
+    <linearGradient id="beamWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#451A03"/>
+      <stop offset="50%" stop-color="#78350F"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="wellShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#451A03" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Sky Glow -->
+  <ellipse cx="200" cy="160" rx="180" ry="120" fill="url(#wellSky)"/>
+
+  <!-- Ground Plane Sandy Oasis -->
+  <ellipse cx="200" cy="270" rx="170" ry="26" fill="#FDE68A" opacity="0.6"/>
+  <ellipse cx="200" cy="272" rx="150" ry="18" fill="#78350F" opacity="0.2"/>
+
+  <!-- WELL STRUCTURE (Filtered) -->
+  <g filter="url(#wellShadow)">
+    <!-- WOODEN WINCH FRAMEWORK (Acacia post beams) -->
+    <!-- Left Upright Post -->
+    <polygon points="120,230 130,230 135,70 125,70" fill="url(#beamWood)" stroke="#270F03" stroke-width="1.5"/>
+    <line x1="123" y1="210" x2="105" y2="245" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Right Upright Post -->
+    <polygon points="270,230 280,230 275,70 265,70" fill="url(#beamWood)" stroke="#270F03" stroke-width="1.5"/>
+    <line x1="277" y1="210" x2="295" y2="245" stroke="#78350F" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Crossbeam / Ridge Pole -->
+    <rect x="110" y="65" width="180" height="14" rx="3" fill="url(#beamWood)" stroke="#270F03" stroke-width="2"/>
+
+    <!-- Wooden Pulley Wheel in Center -->
+    <circle cx="200" cy="95" r="14" fill="#92400E" stroke="#451A03" stroke-width="2.5"/>
+    <circle cx="200" cy="95" r="5" fill="#451A03"/>
+    <line x1="188" y1="95" x2="212" y2="95" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="200" y1="83" x2="200" y2="107" stroke="#FEF08A" stroke-width="1.5"/>
+
+    <!-- Iron Pulley Hanger Bracket -->
+    <rect x="197" y="78" width="6" height="10" fill="#1E293B"/>
+
+    <!-- Twisted Hemp Rope Hanging down into well -->
+    <line x1="192" y1="95" x2="185" y2="165" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+    <line x1="208" y1="95" x2="215" y2="155" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- STONE WELL MASONRY BASE (Hand-carved limestone blocks) -->
+    <!-- Exterior Wall Cylinder -->
+    <path d="M 115,190 L 115,260 C 115,285 285,285 285,260 L 285,190 Z" 
+          fill="url(#stoneWall)" stroke="#44403C" stroke-width="2.5"/>
+
+    <!-- Stone Masonry Mortar Joints / Blocks -->
+    <g stroke="#57534E" stroke-width="1.5" opacity="0.75">
+      <!-- Course 1 -->
+      <path d="M 115,212 Q 200,230 285,212" fill="none"/>
+      <line x1="150" y1="192" x2="150" y2="216"/>
+      <line x1="200" y1="195" x2="200" y2="219"/>
+      <line x1="250" y1="192" x2="250" y2="216"/>
+      <!-- Course 2 -->
+      <path d="M 115,236 Q 200,254 285,236" fill="none"/>
+      <line x1="130" y1="214" x2="130" y2="238"/>
+      <line x1="175" y1="218" x2="175" y2="242"/>
+      <line x1="225" y1="218" x2="225" y2="242"/>
+      <line x1="270" y1="214" x2="270" y2="238"/>
+      <!-- Course 3 -->
+      <line x1="150" y1="238" x2="150" y2="262"/>
+      <line x1="200" y1="242" x2="200" y2="265"/>
+      <line x1="250" y1="238" x2="250" y2="262"/>
+    </g>
+
+    <!-- Top Well Opening Rim (Ellipse) -->
+    <ellipse cx="200" cy="190" rx="85" ry="24" fill="#A8A29E" stroke="#44403C" stroke-width="3"/>
+
+    <!-- Deep Sparkling Water within Well Opening -->
+    <ellipse cx="200" cy="190" rx="72" ry="18" fill="url(#wellWater)"/>
+    <ellipse cx="200" cy="190" rx="60" ry="12" fill="#38BDF8" opacity="0.35"/>
+
+    <!-- TRADITIONAL LEATHER BUCKET (Waraabiso) suspended over rim -->
+    <g transform="translate(165, 145)">
+      <!-- Bucket Handle -->
+      <path d="M 4,18 Q 18,2 32,18" stroke="#78350F" stroke-width="2.5" fill="none"/>
+      <!-- Bucket Body -->
+      <path d="M 5,18 L 10,48 Q 18,52 26,48 L 31,18 Z" fill="#92400E" stroke="#451A03" stroke-width="2"/>
+      <!-- Metal Bands -->
+      <path d="M 6,24 Q 18,28 30,24" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+      <path d="M 9,42 Q 18,46 27,42" stroke="#F59E0B" stroke-width="1.5" fill="none"/>
+      <!-- Water pouring from bucket -->
+      <path d="M 12,20 Q 8,35 10,50 Q 14,40 16,22" fill="#38BDF8" opacity="0.8"/>
+      <!-- Water Droplets -->
+      <circle cx="8" cy="55" r="2.5" fill="#38BDF8"/>
+      <circle cx="12" cy="62" r="2" fill="#38BDF8"/>
+      <circle cx="7" cy="70" r="1.8" fill="#38BDF8"/>
+    </g>
+
+    <!-- Stone Water Trough (Berked) beside the well -->
+    <path d="M 55,248 L 105,248 L 100,270 L 58,270 Z" fill="#D6D3D1" stroke="#44403C" stroke-width="2"/>
+    <ellipse cx="80" cy="248" rx="25" ry="6" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+  </g>
+</svg>

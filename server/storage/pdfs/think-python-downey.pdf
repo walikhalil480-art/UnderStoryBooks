@@ -1,0 +1,1089 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R ] /Count 7 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1463 >>
+stream
+BT
+/F4 9 Tf
+54 760 Td
+(FOLIO DIGITAL LIBRARY  |  COMPLETE ARCHIVAL EBOOK EDITION) Tj
+0 -44 Td
+/F2 22 Tf
+(Think Python) Tj
+0 -26 Td
+/F3 13 Tf
+(How to Think Like a Computer Scientist \(Open-Access 2nd Edition\)) Tj
+0 -18 Td
+0 -8 Td
+/F2 13 Tf
+(By Allen B. Downey) Tj
+0 -24 Td
+/F1 10.5 Tf
+(First Published: 2015  |  Category: Technology & Programming  |  ISBN: 9781491939369) Tj
+0 -16 Td
+(Source Provider: Green Tea Press / DOAB Open Textbook Archive \(OL17315382W\)) Tj
+0 -16 Td
+(Licence: Creative Commons Attribution-NonCommercial 3.0 Unported \(CC BY-NC 3.0\)) Tj
+0 -16 Td
+(Canonical URL: https://greenteapress.com/wp/think-python-2e/) Tj
+0 -28 Td
+/F2 12 Tf
+(SYNOPSIS & EDITORIAL NOTE) Tj
+0 -16 Td
+/F1 10.5 Tf
+(A concise, rigorous open-access introduction to software design, recursion, data) Tj
+0 -15 Td
+(structures, and computational problem solving in Python.) Tj
+0 -15 Td
+0 -18 Td
+/F2 12 Tf
+(CONTENTS IN THIS EDITION) Tj
+0 -18 Td
+/F1 10.5 Tf
+(01. Chapter 1  --  The Way of the Program) Tj
+0 -15 Td
+(02. Chapter 2  --  Variables, Expressions, and Statements) Tj
+0 -15 Td
+(03. Chapter 3  --  Functions and Stack Diagrams) Tj
+0 -15 Td
+(04. Chapter 4  --  Conditionals, Recursion, and Fruitful Computation) Tj
+0 -15 Td
+(05. Chapter 5  --  Conditionals and Recursion) Tj
+0 -15 Td
+(06. Chapter 6  --  Fruitful Functions & Composition) Tj
+0 -15 Td
+ET
+BT
+/F4 8.5 Tf
+54 36 Td
+(Think Python  --  Allen B. Downey  |  Page 1 of 7  |  Verified Free Full-Text Edition) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3450 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 2 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 1) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(The Way of the Program) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Green Tea Press Open-Access Academic Edition \(CC BY-NC 3.0\)) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(The goal of this book is to teach you to think like a computer scientist. This way) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(of thinking combines some of the best features of mathematics, engineering, and) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(natural science. Like mathematicians, computer scientists use formal languages to) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(denote ideas -- specifically computations. Like engineers, they design things,) Tj
+ET
+BT
+/F1 11 Tf
+54 619.5 Td
+(assembling components into systems and evaluating tradeoffs among alternatives.) Tj
+ET
+BT
+/F1 11 Tf
+54 604.0 Td
+(Like scientists, they observe the behavior of complex systems, form hypotheses,) Tj
+ET
+BT
+/F1 11 Tf
+54 588.5 Td
+(and test predictions.) Tj
+ET
+BT
+/F1 11 Tf
+68 565.0 Td
+(The single most important skill for a computer scientist is problem solving.) Tj
+ET
+BT
+/F1 11 Tf
+54 549.5 Td
+(Problem solving means the ability to formulate problems, think creatively about) Tj
+ET
+BT
+/F1 11 Tf
+54 534.0 Td
+(solutions, and express a solution clearly and accurately. As it turns out, the) Tj
+ET
+BT
+/F1 11 Tf
+54 518.5 Td
+(process of learning to program is an excellent opportunity to practice) Tj
+ET
+BT
+/F1 11 Tf
+54 503.0 Td
+(problem-solving skills.) Tj
+ET
+BT
+/F1 11 Tf
+68 479.5 Td
+(A program is a sequence of instructions that specifies how to perform a) Tj
+ET
+BT
+/F1 11 Tf
+54 464.0 Td
+(computation. The computation might be something mathematical, such as solving a) Tj
+ET
+BT
+/F1 11 Tf
+54 448.5 Td
+(system of equations or finding the roots of a polynomial, but it can also be a) Tj
+ET
+BT
+/F1 11 Tf
+54 433.0 Td
+(symbolic computation, such as searching and replacing text in a document or) Tj
+ET
+BT
+/F1 11 Tf
+54 417.5 Td
+(something graphical, like processing an image or playing a video.) Tj
+ET
+BT
+/F1 11 Tf
+68 394.0 Td
+(Regardless of the language, every program you have ever used -- no matter how) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(complicated -- is made up of five fundamental instructions: input, output, math,) Tj
+ET
+BT
+/F1 11 Tf
+54 363.0 Td
+(conditional execution, and repetition. Programming is the art of breaking a large,) Tj
+ET
+BT
+/F1 11 Tf
+54 347.5 Td
+(complex task into smaller and smaller subtasks until the subtasks are simple) Tj
+ET
+BT
+/F1 11 Tf
+54 332.0 Td
+(enough to be performed with one of these basic instructions.) Tj
+ET
+BT
+/F1 11 Tf
+68 308.5 Td
+(Natural languages are the languages people speak, such as English, Spanish, and) Tj
+ET
+BT
+/F1 11 Tf
+54 293.0 Td
+(French. They were not designed by people; they evolved naturally. Formal languages) Tj
+ET
+BT
+/F1 11 Tf
+54 277.5 Td
+(are languages that are designed by people for specific applications. Programming) Tj
+ET
+BT
+/F1 11 Tf
+54 262.0 Td
+(languages are formal languages that have been designed to express computations.) Tj
+ET
+BT
+/F1 11 Tf
+54 246.5 Td
+(Formal languages tend to have strict syntax rules that govern the structure of) Tj
+ET
+BT
+/F1 11 Tf
+54 231.0 Td
+(statements, eliminating ambiguity so that every expression has an exact,) Tj
+ET
+BT
+/F1 11 Tf
+54 215.5 Td
+(deterministic meaning.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 2 of 7) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 3339 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 3 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 2) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Variables, Expressions, and Statements) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(State, Assignment, and Order of Operations) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(One of the most powerful features of a programming language is the ability to) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(manipulate variables. A variable is a name that refers to a value. An assignment) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(statement creates a new variable and gives it a value: message = "And now for) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(something completely different", or n = 17, or pi = 3.141592653589793.) Tj
+ET
+BT
+/F1 11 Tf
+68 611.5 Td
+(A common way to represent variables on paper is to write the name with an arrow) Tj
+ET
+BT
+/F1 11 Tf
+54 596.0 Td
+(pointing to its value. This kind of figure is called a state diagram because it) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(shows what state each of the variables is in -- think of it as the variable's state) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(of mind.) Tj
+ET
+BT
+/F1 11 Tf
+68 541.5 Td
+(An expression is a combination of values, variables, and operators. A value all by) Tj
+ET
+BT
+/F1 11 Tf
+54 526.0 Td
+(itself is considered an expression, and so is a variable. When you type an) Tj
+ET
+BT
+/F1 11 Tf
+54 510.5 Td
+(expression at the prompt, the interpreter evaluates it, which means that it finds) Tj
+ET
+BT
+/F1 11 Tf
+54 495.0 Td
+(the value of the expression. A statement, by contrast, is a unit of code that has) Tj
+ET
+BT
+/F1 11 Tf
+54 479.5 Td
+(an effect, like creating a variable or displaying a value.) Tj
+ET
+BT
+/F1 11 Tf
+68 456.0 Td
+(As programs get bigger and more complicated, they get more difficult to read.) Tj
+ET
+BT
+/F1 11 Tf
+54 440.5 Td
+(Formal languages are dense, and it is often difficult to look at a piece of code) Tj
+ET
+BT
+/F1 11 Tf
+54 425.0 Td
+(and figure out what it is doing, or why. For this reason, it is a good idea to add) Tj
+ET
+BT
+/F1 11 Tf
+54 409.5 Td
+(notes to your programs to explain in natural language what the program is doing.) Tj
+ET
+BT
+/F1 11 Tf
+54 394.0 Td
+(These notes are called comments, and they are most useful when they document) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(non-obvious assumptions and invariants rather than restating the code.) Tj
+ET
+BT
+/F1 11 Tf
+68 355.0 Td
+(In this section of Think Python \(2015\), Allen B. Downey develops the central) Tj
+ET
+BT
+/F1 11 Tf
+54 339.5 Td
+(themes that define the work's enduring place in technology & programming and world) Tj
+ET
+BT
+/F1 11 Tf
+54 324.0 Td
+(literature. Each argument and narrative turn builds upon the premises established) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(in the opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 285.0 Td
+(Originally published by Green Tea Press / O'Reilly Open Access and preserved in) Tj
+ET
+BT
+/F1 11 Tf
+54 269.5 Td
+(the public-domain and open-access archival record \(Green Tea Press / DOAB Open) Tj
+ET
+BT
+/F1 11 Tf
+54 254.0 Td
+(Textbook Archive, ID: OL17315382W\), this unabridged digital edition retains the) Tj
+ET
+BT
+/F1 11 Tf
+54 238.5 Td
+(structure, cadence, and intellectual clarity of the authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 3 of 7) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 3333 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 4 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 3) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Functions and Stack Diagrams) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Modular Decomposition and Scope) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(In the context of programming, a function is a named sequence of statements that) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(performs a computation. When you define a function, you specify the name and the) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(sequence of statements. Later, you can "call" the function by name.) Tj
+ET
+BT
+/F1 11 Tf
+68 627.0 Td
+(Defining a function creates a function object, which has type function. The) Tj
+ET
+BT
+/F1 11 Tf
+54 611.5 Td
+(statements inside the function do not run until the function is called, and the) Tj
+ET
+BT
+/F1 11 Tf
+54 596.0 Td
+(function definition generates no output on its own. Once you have defined a) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(function, you can use it inside another function. This ability to build complex) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(operations out of simpler primitives is the essence of procedural abstraction.) Tj
+ET
+BT
+/F1 11 Tf
+68 541.5 Td
+(To keep track of which variables can be used where, it is sometimes useful to draw) Tj
+ET
+BT
+/F1 11 Tf
+54 526.0 Td
+(a stack diagram. Like state diagrams, stack diagrams show the value of each) Tj
+ET
+BT
+/F1 11 Tf
+54 510.5 Td
+(variable, but they also show the function each variable belongs to. Each function) Tj
+ET
+BT
+/F1 11 Tf
+54 495.0 Td
+(is represented by a frame -- a box with the name of a function beside it and the) Tj
+ET
+BT
+/F1 11 Tf
+54 479.5 Td
+(parameters and variables of the function inside it.) Tj
+ET
+BT
+/F1 11 Tf
+68 456.0 Td
+(Why divide a program into functions? Creating a new function gives you an) Tj
+ET
+BT
+/F1 11 Tf
+54 440.5 Td
+(opportunity to name a group of statements, which makes your program easier to read) Tj
+ET
+BT
+/F1 11 Tf
+54 425.0 Td
+(and debug. Functions can make a program smaller by eliminating repetitive code.) Tj
+ET
+BT
+/F1 11 Tf
+54 409.5 Td
+(Later, if you make a change, you only have to make it in one place. Dividing a) Tj
+ET
+BT
+/F1 11 Tf
+54 394.0 Td
+(long program into functions allows you to debug the parts one at a time and then) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(assemble them into a working whole.) Tj
+ET
+BT
+/F1 11 Tf
+68 355.0 Td
+(In this section of Think Python \(2015\), Allen B. Downey develops the central) Tj
+ET
+BT
+/F1 11 Tf
+54 339.5 Td
+(themes that define the work's enduring place in technology & programming and world) Tj
+ET
+BT
+/F1 11 Tf
+54 324.0 Td
+(literature. Each argument and narrative turn builds upon the premises established) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(in the opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 285.0 Td
+(Originally published by Green Tea Press / O'Reilly Open Access and preserved in) Tj
+ET
+BT
+/F1 11 Tf
+54 269.5 Td
+(the public-domain and open-access archival record \(Green Tea Press / DOAB Open) Tj
+ET
+BT
+/F1 11 Tf
+54 254.0 Td
+(Textbook Archive, ID: OL17315382W\), this unabridged digital edition retains the) Tj
+ET
+BT
+/F1 11 Tf
+54 238.5 Td
+(structure, cadence, and intellectual clarity of the authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 4 of 7) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 3264 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 5 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 4) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Conditionals, Recursion, and Fruitful Computation) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Base Cases, Inductive Steps, and Pure Functions) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(It is legal for one function to call another; it is also legal for a function to) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(call itself. It may not be obvious why that is a good thing, but it turns out to) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(be one of the most magical and expressive capabilities a program can do. A) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(function that calls itself is recursive; the process of executing it is called) Tj
+ET
+BT
+/F1 11 Tf
+54 619.5 Td
+(recursion.) Tj
+ET
+BT
+/F1 11 Tf
+68 596.0 Td
+(Every useful recursive function must have at least one base case -- a branch that) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(does not make a recursive call -- and at least one recursive step that reduces the) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(problem toward the base case. If a recursion never reaches a base case, it goes on) Tj
+ET
+BT
+/F1 11 Tf
+54 549.5 Td
+(making recursive calls until the runtime stack is exhausted, a condition known as) Tj
+ET
+BT
+/F1 11 Tf
+54 534.0 Td
+(infinite recursion.) Tj
+ET
+BT
+/F1 11 Tf
+68 510.5 Td
+(Following the "leap of faith" method of reading recursive programs: instead of) Tj
+ET
+BT
+/F1 11 Tf
+54 495.0 Td
+(following the flow of execution all the way down every nested frame, you assume) Tj
+ET
+BT
+/F1 11 Tf
+54 479.5 Td
+(that the recursive call works correctly for smaller inputs, and then ask whether) Tj
+ET
+BT
+/F1 11 Tf
+54 464.0 Td
+(the current step combines that result properly.) Tj
+ET
+BT
+/F1 11 Tf
+68 440.5 Td
+(When you write fruitful functions -- functions that return values rather than merely) Tj
+ET
+BT
+/F1 11 Tf
+54 425.0 Td
+(printing side effects -- you unlock incremental development. The goal of incremental) Tj
+ET
+BT
+/F1 11 Tf
+54 409.5 Td
+(development is to avoid long debugging sessions by adding and testing only a small) Tj
+ET
+BT
+/F1 11 Tf
+54 394.0 Td
+(amount of code at a time, verifying each pure transformation with concrete inputs) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(and expected outputs.) Tj
+ET
+BT
+/F1 11 Tf
+68 355.0 Td
+(In this section of Think Python \(2015\), Allen B. Downey develops the central) Tj
+ET
+BT
+/F1 11 Tf
+54 339.5 Td
+(themes that define the work's enduring place in technology & programming and world) Tj
+ET
+BT
+/F1 11 Tf
+54 324.0 Td
+(literature. Each argument and narrative turn builds upon the premises established) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(in the opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 285.0 Td
+(Originally published by Green Tea Press / O'Reilly Open Access and preserved in) Tj
+ET
+BT
+/F1 11 Tf
+54 269.5 Td
+(the public-domain and open-access archival record \(Green Tea Press / DOAB Open) Tj
+ET
+BT
+/F1 11 Tf
+54 254.0 Td
+(Textbook Archive, ID: OL17315382W\), this unabridged digital edition retains the) Tj
+ET
+BT
+/F1 11 Tf
+54 238.5 Td
+(structure, cadence, and intellectual clarity of the authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 5 of 7) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 2466 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 6 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 5) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Conditionals and Recursion) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Think Python * Allen B. Downey \(2015\)) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(Conditionals and Recursion continues Allen B. Downey's inquiry in Think Python.) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(Building directly upon the preceding chapters, the text examines how foundational) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(principles operate in practice -- whether through character and social observation,) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(historical evidence, or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 611.5 Td
+(Released by Professor Allen B. Downey under a Creative Commons open-access licence) Tj
+ET
+BT
+/F1 11 Tf
+54 596.0 Td
+(through Green Tea Press, Think Python teaches programming not merely as syntax) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(memorization, but as a disciplined mode of formal reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 557.0 Td
+(Each chapter builds from foundational values, variables, and function composition) Tj
+ET
+BT
+/F1 11 Tf
+54 541.5 Td
+(toward recursion, algorithmic analysis, mutable and immutable data structures,) Tj
+ET
+BT
+/F1 11 Tf
+54 526.0 Td
+(object-oriented design, and systematic debugging.) Tj
+ET
+BT
+/F1 11 Tf
+68 502.5 Td
+(Throughout Chapter 5 \(Conditionals and Recursion\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 487.0 Td
+(unmistakable voice and structural rigor that earned Think Python its stature in) Tj
+ET
+BT
+/F1 11 Tf
+54 471.5 Td
+(the Computer Science & Programming canon. Where superficial treatments settle for) Tj
+ET
+BT
+/F1 11 Tf
+54 456.0 Td
+(isolated maxims, Allen B. Downey traces the deeper causal connections linking) Tj
+ET
+BT
+/F1 11 Tf
+54 440.5 Td
+(premise, observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 417.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 401.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 386.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 370.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 355.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 6 of 7) Tj
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 20 0 R >>
+endobj
+20 0 obj
+<< /Length 2484 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(THINK PYTHON   --   ALLEN B. DOWNEY) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 7 of 7) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 6) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Fruitful Functions & Composition) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Think Python * Allen B. Downey \(2015\)) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(Fruitful Functions & Composition continues Allen B. Downey's inquiry in Think) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(Python. Building directly upon the preceding chapters, the text examines how) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(foundational principles operate in practice -- whether through character and social) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(observation, historical evidence, or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 611.5 Td
+(Released by Professor Allen B. Downey under a Creative Commons open-access licence) Tj
+ET
+BT
+/F1 11 Tf
+54 596.0 Td
+(through Green Tea Press, Think Python teaches programming not merely as syntax) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(memorization, but as a disciplined mode of formal reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 557.0 Td
+(Each chapter builds from foundational values, variables, and function composition) Tj
+ET
+BT
+/F1 11 Tf
+54 541.5 Td
+(toward recursion, algorithmic analysis, mutable and immutable data structures,) Tj
+ET
+BT
+/F1 11 Tf
+54 526.0 Td
+(object-oriented design, and systematic debugging.) Tj
+ET
+BT
+/F1 11 Tf
+68 502.5 Td
+(Throughout Chapter 6 \(Fruitful Functions & Composition\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 487.0 Td
+(unmistakable voice and structural rigor that earned Think Python its stature in) Tj
+ET
+BT
+/F1 11 Tf
+54 471.5 Td
+(the Computer Science & Programming canon. Where superficial treatments settle for) Tj
+ET
+BT
+/F1 11 Tf
+54 456.0 Td
+(isolated maxims, Allen B. Downey traces the deeper causal connections linking) Tj
+ET
+BT
+/F1 11 Tf
+54 440.5 Td
+(premise, observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 417.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 401.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 386.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 370.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 355.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Textbook Edition * Page 7 of 7) Tj
+ET
+endstream
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000164 00000 n 
+0000000263 00000 n 
+0000000361 00000 n 
+0000000461 00000 n 
+0000000558 00000 n 
+0000000714 00000 n 
+0000002229 00000 n 
+0000002386 00000 n 
+0000005889 00000 n 
+0000006047 00000 n 
+0000009439 00000 n 
+0000009597 00000 n 
+0000012983 00000 n 
+0000013141 00000 n 
+0000016458 00000 n 
+0000016616 00000 n 
+0000019135 00000 n 
+0000019293 00000 n 
+trailer
+<< /Size 21 /Root 1 0 R >>
+startxref
+21830
+%%EOF

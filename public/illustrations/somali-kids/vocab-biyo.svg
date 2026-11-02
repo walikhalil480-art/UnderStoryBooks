@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Refreshing Aqua Ambient Glow -->
+    <radialGradient id="waterGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#E0F2FE" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#BAE6FD" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F0F9FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Traditional Clay Water Jug (Ashuun) Terracotta Gradient -->
+    <linearGradient id="clayAshuun" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#9A3412"/>
+      <stop offset="40%" stop-color="#C2410C"/>
+      <stop offset="75%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+
+    <!-- Crystal Clear Pouring Water Gradient -->
+    <linearGradient id="pourStream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Glass Cup Water Gradient -->
+    <linearGradient id="cupWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="60%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <!-- Glass Reflection Sheen -->
+    <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#E0F2FE" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="waterShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0369A1" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Light -->
+  <ellipse cx="200" cy="165" rx="175" ry="115" fill="url(#waterGlow)"/>
+
+  <!-- Tabletop Ripple Plane -->
+  <ellipse cx="200" cy="270" rx="150" ry="24" fill="#BAE6FD" opacity="0.6"/>
+  <ellipse cx="200" cy="272" rx="135" ry="16" fill="#0284C7" opacity="0.18"/>
+
+  <!-- WATER JUG & POURING STREAM (Filtered) -->
+  <g filter="url(#waterShadow)">
+    <!-- TRADITIONAL TERRACOTTA CLAY JUG (ASHUUN) (Tilted pouring) -->
+    <g transform="translate(70, 70) rotate(-28)">
+      <!-- Jug Loop Handle -->
+      <path d="M 35,45 C 5,45 5,115 35,115" stroke="#7C2D12" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <path d="M 35,45 C 5,45 5,115 35,115" stroke="#EA580C" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+      <!-- Jug Body -->
+      <path d="M 40,25 L 75,25 L 82,50 C 115,70 115,130 85,150 L 35,150 C 5,130 5,70 38,50 Z" 
+            fill="url(#clayAshuun)" stroke="#7C2D12" stroke-width="2.5"/>
+
+      <!-- Traditional Incised Clay Neck Band (Somali pottery chevron engraving) -->
+      <path d="M 38,48 L 82,48 L 84,58 L 36,58 Z" fill="#7C2D12"/>
+      <path d="M 40,53 L 45,49 L 50,53 L 55,49 L 60,53 L 65,49 L 70,53 L 75,49 L 80,53" 
+            stroke="#FEF3C7" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+      <!-- Spout Opening (Where water streams out) -->
+      <ellipse cx="58" cy="25" rx="18" ry="6" fill="#451A03"/>
+      <ellipse cx="58" cy="25" rx="14" ry="4" fill="#38BDF8"/>
+    </g>
+
+    <!-- CRYSTALLINE POURING WATER STREAM -->
+    <!-- Arc from jug spout into glass -->
+    <path d="M 135,120 C 180,125 215,145 224,195 L 234,195 C 228,140 185,115 138,110 Z" 
+          fill="url(#pourStream)"/>
+    <!-- Stream highlight highlight line -->
+    <path d="M 142,114 Q 185,124 228,190" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Water Splash Crests at impact in glass -->
+    <path d="M 218,192 Q 212,180 205,185 Q 215,190 220,195" fill="#38BDF8"/>
+    <path d="M 238,192 Q 248,180 252,186 Q 242,190 236,195" fill="#38BDF8"/>
+
+    <!-- GLASS OF REFRESHING WATER (Right side) -->
+    <!-- Water Inside Glass -->
+    <path d="M 205,195 L 210,265 C 210,270 250,270 250,265 L 255,195 Z" fill="url(#cupWater)"/>
+    <!-- Water surface meniscus ellipse in glass -->
+    <ellipse cx="230" cy="195" rx="25" ry="6" fill="#7DD3FC" stroke="#0284C7" stroke-width="1.5"/>
+
+    <!-- Clear Glass Tumbler Outer Wall -->
+    <path d="M 200,165 L 208,266 C 209,274 251,274 252,266 L 260,165 Z" 
+          fill="url(#glassReflection)" stroke="#BAE6FD" stroke-width="2"/>
+    <!-- Glass Rim -->
+    <ellipse cx="230" cy="165" rx="30" ry="7" fill="none" stroke="#BAE6FD" stroke-width="2.5"/>
+    <ellipse cx="230" cy="165" rx="28" ry="6" fill="#FFFFFF" opacity="0.3"/>
+
+    <!-- Glass Base Thickness -->
+    <ellipse cx="230" cy="265" rx="20" ry="5" fill="#BAE6FD" opacity="0.6"/>
+
+    <!-- SPARKLING WATER DROPLETS & BUBBLES -->
+    <!-- Airborne droplets -->
+    <ellipse cx="190" cy="135" rx="3.5" ry="4.5" fill="#38BDF8"/>
+    <ellipse cx="189" cy="134" rx="1.5" ry="1.8" fill="#FFFFFF"/>
+
+    <ellipse cx="206" cy="155" rx="3" ry="4" fill="#38BDF8"/>
+    <ellipse cx="205" cy="154" rx="1.2" ry="1.5" fill="#FFFFFF"/>
+
+    <ellipse cx="245" cy="172" rx="3.5" ry="4.5" fill="#38BDF8"/>
+    <ellipse cx="244" cy="171" rx="1.5" ry="1.8" fill="#FFFFFF"/>
+
+    <circle cx="212" cy="170" r="2.5" fill="#E0F2FE"/>
+    <circle cx="258" cy="180" r="2.2" fill="#E0F2FE"/>
+
+    <!-- Bubbles rising inside the glass -->
+    <circle cx="225" cy="245" r="2.5" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="235" cy="235" r="3" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="220" cy="215" r="2" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="240" cy="210" r="2.8" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+</svg>

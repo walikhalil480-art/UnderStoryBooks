@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bgBiz" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C0519"/>
+      <stop offset="50%" stop-color="#27030D"/>
+      <stop offset="100%" stop-color="#4C0519"/>
+    </linearGradient>
+    <radialGradient id="bizGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FB7185" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FB7185" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="900" fill="url(#bgBiz)"/>
+  <rect width="600" height="900" fill="url(#bizGlow)"/>
+
+  <!-- Book Spine -->
+  <rect x="0" y="0" width="30" height="900" fill="#000000" opacity="0.4"/>
+  <line x1="30" y1="0" x2="30" y2="900" stroke="#000000" stroke-width="2" opacity="0.4"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.15"/>
+
+  <!-- Ornate Border Frame -->
+  <rect x="45" y="45" width="510" height="810" rx="8" fill="none" stroke="#FBBF24" stroke-width="2.5" opacity="0.85"/>
+  <rect x="55" y="55" width="490" height="790" rx="6" fill="none" stroke="#FDE68A" stroke-width="1" opacity="0.45"/>
+
+  <!-- Growth Diamond Medallion -->
+  <g transform="translate(300, 420)" stroke="#FBBF24" stroke-width="2" fill="none" opacity="0.85">
+    <polygon points="0,-75 75,0 0,75 -75,0"/>
+    <polygon points="0,-55 55,0 0,55 -55,0" stroke-dasharray="4,4"/>
+    <path d="M-30,20 L-10,-5 L10,-25 L35,-45" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="35" cy="-45" r="5" fill="#FBBF24"/>
+  </g>
+
+  <!-- Publisher Header -->
+  <text x="300" y="115" font-family="'Cinzel', Georgia, serif" font-size="12" font-weight="700" letter-spacing="4" fill="#FBBF24" text-anchor="middle" opacity="0.95">
+    EBARO • HOGGAAMINTA &amp; GANACSIGA CASRIGA AH
+  </text>
+  <line x1="160" y1="130" x2="440" y2="130" stroke="#FBBF24" stroke-width="1" opacity="0.5"/>
+
+  <!-- Category -->
+  <text x="300" y="165" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#FECDD3" text-anchor="middle" opacity="0.9">
+    SELF-DEVELOPMENT &amp; BUSINESS
+  </text>
+
+  <!-- Title Lines -->
+  <text x="300" y="240" font-family="'Cinzel', Georgia, serif" font-size="34" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    HORUMARKA NAFTA
+  </text>
+  <text x="300" y="285" font-family="'Cinzel', Georgia, serif" font-size="32" font-weight="800" fill="#FBBF24" text-anchor="middle" letter-spacing="1">
+    &amp; GUUSHA GANACSIGA
+  </text>
+  <text x="300" y="325" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#F3E8FF" text-anchor="middle">
+    Tallaabooyinka Dhisidda Dhaqaale &amp; Xirfadaha Hoggaaminta Casriga ah
+  </text>
+
+  <!-- Subtitle Text -->
+  <text x="300" y="565" font-family="Georgia, serif" font-size="15" fill="#FEE2E2" text-anchor="middle">
+    Maxamed Cumar Cigaal (M.B.A.)
+  </text>
+  <text x="300" y="590" font-family="sans-serif" font-size="12" fill="#FDA4AF" text-anchor="middle">
+    Buugga Rasmiga ah ee Ganacsatada Da'da yar ee Soomaaliyeed
+  </text>
+
+  <!-- Author Badge -->
+  <rect x="180" y="650" width="240" height="42" rx="21" fill="#881337" stroke="#FBBF24" stroke-width="1"/>
+  <text x="300" y="676" font-family="'Cinzel', Georgia, serif" font-size="13" font-weight="700" fill="#FBBF24" text-anchor="middle">
+    AUTHORISED PREMIUM EDITION
+  </text>
+
+  <!-- Provenance Footer -->
+  <text x="300" y="780" font-family="sans-serif" font-size="11" font-weight="600" fill="#FDE68A" text-anchor="middle" opacity="0.9">
+    AUTHOR ROYALTIES PROGRAM • DIRECT PUBLISHER LICENCE
+  </text>
+  <text x="300" y="802" font-family="sans-serif" font-size="10" fill="#FDA4AF" text-anchor="middle">
+    Published via eBaro Author Network • Price: $4.99 USD
+  </text>
+</svg>

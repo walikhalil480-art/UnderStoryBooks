@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="100%" height="100%">
+  
+    <defs>
+      <!-- Shadow Filters -->
+      <filter id="storyDropShadow" x="-10%" y="-10%" width="125%" height="125%">
+        <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.22"/>
+      </filter>
+      <filter id="sunHaloGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+
+      <!-- Skies -->
+      <linearGradient id="skyDawn" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FED7AA"/>
+        <stop offset="35%" stop-color="#FEF08A"/>
+        <stop offset="70%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#E0F2FE"/>
+      </linearGradient>
+
+      <linearGradient id="skyMidday" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="45%" stop-color="#38BDF8"/>
+        <stop offset="80%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#FEF9C3"/>
+      </linearGradient>
+
+      <linearGradient id="skySunset" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#7C2D12"/>
+        <stop offset="35%" stop-color="#EA580C"/>
+        <stop offset="65%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#FEF08A"/>
+      </linearGradient>
+
+      <radialGradient id="skyNight" cx="50%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#1E1B4B"/>
+        <stop offset="40%" stop-color="#0F172A"/>
+        <stop offset="80%" stop-color="#020617"/>
+        <stop offset="100%" stop-color="#000000"/>
+      </radialGradient>
+
+      <!-- Terrain Gradients -->
+      <linearGradient id="savannaDune" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="greenPasture" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#4ADE80"/>
+        <stop offset="50%" stop-color="#16A34A"/>
+        <stop offset="100%" stop-color="#14532D"/>
+      </linearGradient>
+
+      <linearGradient id="coastalSea" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="50%" stop-color="#0369A1"/>
+        <stop offset="100%" stop-color="#075985"/>
+      </linearGradient>
+
+      <linearGradient id="dhowWood" x1="0%" y1="0%" x2="100%" y2="50%">
+        <stop offset="0%" stop-color="#451A03"/>
+        <stop offset="40%" stop-color="#78350F"/>
+        <stop offset="80%" stop-color="#92400E"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="camelCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#D97706"/>
+        <stop offset="50%" stop-color="#B45309"/>
+        <stop offset="100%" stop-color="#78350F"/>
+      </linearGradient>
+
+      <linearGradient id="calfCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FDE047"/>
+        <stop offset="50%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#D97706"/>
+      </linearGradient>
+
+      <linearGradient id="whiteCoatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="65%" stop-color="#F1F5F9"/>
+        <stop offset="100%" stop-color="#CBD5E1"/>
+      </linearGradient>
+
+      <linearGradient id="slateSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#64748B"/>
+        <stop offset="60%" stop-color="#475569"/>
+        <stop offset="100%" stop-color="#334155"/>
+      </linearGradient>
+
+      <linearGradient id="goldMane" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#92400E"/>
+      </linearGradient>
+
+      <radialGradient id="sunDisk" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="40%" stop-color="#FEF08A"/>
+        <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  
+
+  <!-- Sky Layer -->
+  <rect width="860" height="480" fill="url(#skyMidday)"/>
+
+  <!-- Radiant Sun -->
+  <circle cx="125" cy="70" r="70" fill="url(#sunDisk)" filter="url(#sunHaloGlow)"/>
+  <circle cx="125" cy="70" r="32" fill="#FFFFFF"/>
+
+  <!-- Distant Savanna Ridge / Horizon -->
+  <path d="M 0,260 Q 215,238 430,250 T 860,240 L 860,480 L 0,480 Z" fill="#CBD5E1" opacity="0.35"/>
+
+  <!-- Midground Hills / Rolling Dunes -->
+  <path d="M 0,310 Q 280,274 560,305 T 860,290 L 860,480 L 0,480 Z" fill="url(#savannaDune)"/>
+
+  <!-- Background Environmental Elements -->
+  
+    <g transform="translate(640, 180) scale(1)" filter="url(#storyDropShadow)">
+      <path d="M 45,180 C 48,135 52,95 55,60 L 65,60 C 62,95 58,135 62,180 Z" fill="#451A03"/>
+      <!-- Main spreading limbs -->
+      <path d="M 58,75 Q 30,55 0,50 L 0,42 Q 32,48 60,65 Z" fill="#451A03"/>
+      <path d="M 60,75 Q 90,55 120,50 L 120,42 Q 88,48 60,65 Z" fill="#451A03"/>
+      <!-- Canopy Layer -->
+      <ellipse cx="60" cy="40" rx="65" ry="16" fill="#14532D"/>
+      <ellipse cx="10" cy="46" rx="35" ry="12" fill="#15803D"/>
+      <ellipse cx="110" cy="46" rx="35" ry="12" fill="#15803D"/>
+      <ellipse cx="60" cy="36" rx="55" ry="12" fill="#22C55E" opacity="0.3"/>
+    </g>
+  
+
+  <!-- Primary Story Subject & Action -->
+  
+      <g transform="translate(250, 130) scale(1.2)" filter="url(#storyDropShadow)">
+        <!-- Traditional Stone Water Well -->
+        <rect x="70" y="80" width="14" height="90" fill="#78350F"/>
+        <rect x="180" y="80" width="14" height="90" fill="#78350F"/>
+        <rect x="60" y="75" width="145" height="12" fill="#92400E"/>
+        <circle cx="132" cy="98" r="12" fill="#B45309"/>
+        <!-- Stone Well Cylinder -->
+        <path d="M 65,130 L 65,190 C 65,210 200,210 200,190 L 200,130 Z" fill="#A8A29E" stroke="#57534E" stroke-width="2"/>
+        <ellipse cx="132" cy="130" rx="68" ry="18" fill="#38BDF8"/>
+        <!-- Bucket with Fresh Water -->
+        <rect x="122" y="105" width="20" height="20" rx="3" fill="#B45309"/>
+      </g>
+    
+</svg>

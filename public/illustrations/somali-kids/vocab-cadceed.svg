@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Sky Sunrise Gradient -->
+    <linearGradient id="sunSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="45%" stop-color="#FED7AA"/>
+      <stop offset="75%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#F4EFE6"/>
+    </linearGradient>
+
+    <!-- Sun Radiant Gradient -->
+    <radialGradient id="sunDisc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </radialGradient>
+
+    <!-- Sun Rays Aura -->
+    <radialGradient id="sunAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="sunShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#D97706" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Backdrop -->
+  <rect width="400" height="320" rx="16" fill="url(#sunSky)"/>
+
+  <!-- Radiant Outer Aura -->
+  <circle cx="200" cy="140" r="130" fill="url(#sunAura)"/>
+
+  <!-- Dynamic Geometric Sunbeams (Fallaadhaha Cadceedda) -->
+  <g stroke="#F59E0B" stroke-width="4" stroke-linecap="round" opacity="0.85">
+    <!-- Cardinal Rays -->
+    <line x1="200" y1="50" x2="200" y2="25"/>
+    <line x1="200" y1="230" x2="200" y2="255"/>
+    <line x1="110" y1="140" x2="85" y2="140"/>
+    <line x1="290" y1="140" x2="315" y2="140"/>
+
+    <!-- Diagonal Rays -->
+    <line x1="136" y1="76" x2="118" y2="58"/>
+    <line x1="264" y1="76" x2="282" y2="58"/>
+    <line x1="136" y1="204" x2="118" y2="222"/>
+    <line x1="264" y1="204" x2="282" y2="222"/>
+
+    <!-- Intermediate Finer Rays -->
+    <g stroke="#FBBF24" stroke-width="2.5">
+      <line x1="165" y1="60" x2="155" y2="38"/>
+      <line x1="235" y1="60" x2="245" y2="38"/>
+      <line x1="120" y1="105" x2="98" y2="95"/>
+      <line x1="280" y1="105" x2="302" y2="95"/>
+      <line x1="120" y1="175" x2="98" y2="185"/>
+      <line x1="280" y1="175" x2="302" y2="185"/>
+    </g>
+  </g>
+
+  <!-- CENTRAL GLOWING SUN DISC -->
+  <circle cx="200" cy="140" r="54" fill="url(#sunDisc)" filter="url(#sunShadow)"/>
+  <circle cx="200" cy="140" r="42" fill="#FFFFFF" opacity="0.35"/>
+
+  <!-- Somaliland/Somali Savanna Silhouette Horizon Below -->
+  <path d="M 0,250 Q 100,230 200,245 Q 300,228 400,252 L 400,320 L 0,320 Z" fill="#065F46"/>
+  <path d="M -10,268 Q 120,252 240,262 Q 330,250 420,272 L 420,320 L -10,320 Z" fill="#022C22"/>
+
+  <!-- Acacia Tree Silhouettes under the Sunrise -->
+  <g transform="translate(65, 222) scale(0.65)" fill="#022C22" stroke="#022C22">
+    <path d="M 30,70 L 32,32 L 15,16 M 32,35 L 48,15" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="15" cy="12" rx="26" ry="8"/>
+    <ellipse cx="48" cy="10" rx="30" ry="9"/>
+  </g>
+
+  <g transform="translate(305, 230) scale(0.55)" fill="#022C22" stroke="#022C22">
+    <path d="M 30,70 L 32,32 L 15,16 M 32,35 L 48,15" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="15" cy="12" rx="26" ry="8"/>
+    <ellipse cx="48" cy="10" rx="30" ry="9"/>
+  </g>
+</svg>

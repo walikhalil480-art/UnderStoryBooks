@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="100%" height="100%">
+  
+    <defs>
+      <!-- Shadow Filters -->
+      <filter id="storyDropShadow" x="-10%" y="-10%" width="125%" height="125%">
+        <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.22"/>
+      </filter>
+      <filter id="sunHaloGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+
+      <!-- Skies -->
+      <linearGradient id="skyDawn" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FED7AA"/>
+        <stop offset="35%" stop-color="#FEF08A"/>
+        <stop offset="70%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#E0F2FE"/>
+      </linearGradient>
+
+      <linearGradient id="skyMidday" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="45%" stop-color="#38BDF8"/>
+        <stop offset="80%" stop-color="#BAE6FD"/>
+        <stop offset="100%" stop-color="#FEF9C3"/>
+      </linearGradient>
+
+      <linearGradient id="skySunset" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#7C2D12"/>
+        <stop offset="35%" stop-color="#EA580C"/>
+        <stop offset="65%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#FEF08A"/>
+      </linearGradient>
+
+      <radialGradient id="skyNight" cx="50%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#1E1B4B"/>
+        <stop offset="40%" stop-color="#0F172A"/>
+        <stop offset="80%" stop-color="#020617"/>
+        <stop offset="100%" stop-color="#000000"/>
+      </radialGradient>
+
+      <!-- Terrain Gradients -->
+      <linearGradient id="savannaDune" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="greenPasture" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#4ADE80"/>
+        <stop offset="50%" stop-color="#16A34A"/>
+        <stop offset="100%" stop-color="#14532D"/>
+      </linearGradient>
+
+      <linearGradient id="coastalSea" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0284C7"/>
+        <stop offset="50%" stop-color="#0369A1"/>
+        <stop offset="100%" stop-color="#075985"/>
+      </linearGradient>
+
+      <linearGradient id="dhowWood" x1="0%" y1="0%" x2="100%" y2="50%">
+        <stop offset="0%" stop-color="#451A03"/>
+        <stop offset="40%" stop-color="#78350F"/>
+        <stop offset="80%" stop-color="#92400E"/>
+        <stop offset="100%" stop-color="#B45309"/>
+      </linearGradient>
+
+      <linearGradient id="camelCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#D97706"/>
+        <stop offset="50%" stop-color="#B45309"/>
+        <stop offset="100%" stop-color="#78350F"/>
+      </linearGradient>
+
+      <linearGradient id="calfCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FDE047"/>
+        <stop offset="50%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#D97706"/>
+      </linearGradient>
+
+      <linearGradient id="whiteCoatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="65%" stop-color="#F1F5F9"/>
+        <stop offset="100%" stop-color="#CBD5E1"/>
+      </linearGradient>
+
+      <linearGradient id="slateSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#64748B"/>
+        <stop offset="60%" stop-color="#475569"/>
+        <stop offset="100%" stop-color="#334155"/>
+      </linearGradient>
+
+      <linearGradient id="goldMane" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="50%" stop-color="#D97706"/>
+        <stop offset="100%" stop-color="#92400E"/>
+      </linearGradient>
+
+      <radialGradient id="sunDisk" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="40%" stop-color="#FEF08A"/>
+        <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  
+
+  <!-- Sky Layer -->
+  <rect width="860" height="480" fill="url(#skyDawn)"/>
+
+  <!-- Radiant Sun -->
+  <circle cx="505" cy="80" r="70" fill="url(#sunDisk)" filter="url(#sunHaloGlow)"/>
+  <circle cx="505" cy="80" r="32" fill="#FFFFFF"/>
+
+  <!-- Distant Savanna Ridge / Horizon -->
+  <path d="M 0,260 Q 215,254 430,250 T 860,240 L 860,480 L 0,480 Z" fill="#CBD5E1" opacity="0.35"/>
+
+  <!-- Midground Hills / Rolling Dunes -->
+  <path d="M 0,310 Q 280,262 560,305 T 860,290 L 860,480 L 0,480 Z" fill="url(#greenPasture)"/>
+
+  <!-- Background Environmental Elements -->
+  
+    <g transform="translate(640, 180) scale(1)" filter="url(#storyDropShadow)">
+      <path d="M 45,180 C 48,135 52,95 55,60 L 65,60 C 62,95 58,135 62,180 Z" fill="#451A03"/>
+      <!-- Main spreading limbs -->
+      <path d="M 58,75 Q 30,55 0,50 L 0,42 Q 32,48 60,65 Z" fill="#451A03"/>
+      <path d="M 60,75 Q 90,55 120,50 L 120,42 Q 88,48 60,65 Z" fill="#451A03"/>
+      <!-- Canopy Layer -->
+      <ellipse cx="60" cy="40" rx="65" ry="16" fill="#14532D"/>
+      <ellipse cx="10" cy="46" rx="35" ry="12" fill="#15803D"/>
+      <ellipse cx="110" cy="46" rx="35" ry="12" fill="#15803D"/>
+      <ellipse cx="60" cy="36" rx="55" ry="12" fill="#22C55E" opacity="0.3"/>
+    </g>
+  
+
+  <!-- Primary Story Subject & Action -->
+  
+      <g transform="translate(240, 120) scale(1.2)" filter="url(#storyDropShadow)">
+        
+    <g transform="translate(0, 30) scale(1)" filter="url(#storyDropShadow)">
+      <!-- Nomadic encampment ground shadow -->
+      <ellipse cx="150" cy="195" rx="140" ry="16" fill="#451A03" opacity="0.25"/>
+
+      <!-- AQAL SOOMAALI DOME -->
+      <g transform="translate(30, 25)">
+        <!-- Dome Structure -->
+        <path d="M 25,160 C 25,50 75,15 135,15 C 195,15 245,50 245,160 Z" fill="#B45309" stroke="#451A03" stroke-width="2.5"/>
+        <!-- Woven Mat Layer Bands (Kebed & Alool) -->
+        <path d="M 75,50 Q 135,38 195,50 L 190,70 Q 135,58 80,70 Z" fill="#DC2626"/>
+        <!-- Chevron embroidery -->
+        <path d="M 85,60 L 92,52 L 99,60 L 106,52 L 113,60 L 120,52 L 127,60 L 134,52 L 141,60 L 148,52 L 155,60 L 162,52 L 169,60 L 176,52 L 183,60" stroke="#FEF08A" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <path d="M 48,88 Q 135,70 222,88 L 216,110 Q 135,92 54,110 Z" fill="#EA580C"/>
+        <!-- Structural Ropes -->
+        <path d="M 40,160 Q 90,65 135,15 M 230,160 Q 180,65 135,15" stroke="#78350F" stroke-width="2.5" fill="none"/>
+        <!-- Arched Doorway with Interior Warmth -->
+        <path d="M 105,160 C 105,110 165,110 165,160 Z" fill="#0F172A" stroke="#78350F" stroke-width="3"/>
+        <ellipse cx="135" cy="155" rx="18" ry="8" fill="#F59E0B" opacity="0.8"/>
+        <!-- Rolled Door Screen -->
+        <rect x="100" y="105" width="70" height="12" rx="4" fill="#D97706" stroke="#451A03" stroke-width="1.5"/>
+        <!-- Milk Dhiil outside entrance -->
+        <path d="M 180,162 C 175,155 178,145 185,140 L 195,140 C 202,145 205,155 200,162 Z" fill="#92400E" stroke="#451A03" stroke-width="1"/>
+        <ellipse cx="190" cy="140" rx="3" ry="1.5" fill="#FEF08A"/>
+      </g>
+    </g>
+  
+        <!-- White Peace Dove in Flight with Olive Twig -->
+        <g transform="translate(180, 10)">
+          <path d="M 25,25 Q 10,5 35,0 Q 30,18 45,22 Q 55,5 75,5 Q 60,25 50,28 Q 55,38 45,35 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+          <circle cx="50" cy="24" r="1.5" fill="#0F172A"/>
+          <path d="M 52,24 L 62,26" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </g>
+    
+</svg>

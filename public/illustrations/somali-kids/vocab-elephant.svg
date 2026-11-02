@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Savanna golden dust glow -->
+    <radialGradient id="eleBgGlow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#FFEDD5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Elephant skin gradient (natural warm weathered slate gray) -->
+    <linearGradient id="eleSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="45%" stop-color="#475569"/>
+      <stop offset="85%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Ear inner warmth -->
+    <linearGradient id="earInner" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="40%" stop-color="#CBD5E1"/>
+      <stop offset="70%" stop-color="#FCA5A5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Ivory Tusk Gradient -->
+    <linearGradient id="ivoryTusk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEFCE8"/>
+      <stop offset="60%" stop-color="#FEF08A"/>
+      <stop offset="90%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+
+    <!-- Drop shadow -->
+    <filter id="eleShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Golden Savanna Sky -->
+  <ellipse cx="200" cy="155" rx="180" ry="120" fill="url(#eleBgGlow)"/>
+
+  <!-- Distant Acacia silhouette -->
+  <path d="M 60,195 L 63,165 L 50,150 M 63,165 L 75,152 M 63,160 L 63,145" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <ellipse cx="62" cy="144" rx="28" ry="7" fill="#64748B" opacity="0.3"/>
+
+  <!-- Ground Plane with warm earth shadows -->
+  <ellipse cx="200" cy="275" rx="160" ry="24" fill="#FDE68A" opacity="0.5"/>
+  <ellipse cx="205" cy="278" rx="145" ry="18" fill="#1E293B" opacity="0.2"/>
+
+  <!-- ELEPHANT MAIN BODY (with filter) -->
+  <g filter="url(#eleShadow)">
+    <!-- Tail with bristled brush tip -->
+    <path d="M 105,170 Q 95,210 98,245" stroke="#334155" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 98,245 C 95,252 93,258 97,262 C 101,258 100,252 98,245" fill="#1E293B"/>
+
+    <!-- Back Left Leg (Far side) -->
+    <path d="M 125,185 L 122,265 C 122,270 140,270 142,265 L 145,185 Z" fill="#334155"/>
+    <ellipse cx="132" cy="265" rx="9" ry="3" fill="#64748B"/>
+
+    <!-- Front Left Leg (Far side) -->
+    <path d="M 230,190 L 225,266 C 225,271 245,271 247,266 L 250,190 Z" fill="#334155"/>
+    <ellipse cx="236" cy="266" rx="9" ry="3" fill="#64748B"/>
+
+    <!-- Main Torso & Massive Ribcage / Back curve -->
+    <path d="M 110,165 C 110,120 155,100 210,105 C 255,110 275,135 280,175 C 285,215 250,235 200,235 C 145,235 110,215 110,165 Z" 
+          fill="url(#eleSkin)"/>
+
+    <!-- Skin Wrinkles on Body -->
+    <path d="M 145,145 Q 155,175 148,205" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45"/>
+    <path d="M 175,138 Q 185,172 178,212" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45"/>
+    <path d="M 205,142 Q 212,175 208,215" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.45"/>
+
+    <!-- Back Right Leg (Near side) -->
+    <path d="M 140,190 L 138,270 C 138,276 162,276 164,270 L 168,190 Z" fill="url(#eleSkin)" stroke="#1E293B" stroke-width="1.5"/>
+    <!-- Toenails -->
+    <ellipse cx="144" cy="271" rx="3.5" ry="4" fill="#E2E8F0"/>
+    <ellipse cx="151" cy="272" rx="3.5" ry="4" fill="#E2E8F0"/>
+    <ellipse cx="158" cy="271" rx="3.5" ry="4" fill="#E2E8F0"/>
+
+    <!-- Front Right Leg (Near side pillar leg) -->
+    <path d="M 248,185 L 246,270 C 246,276 270,276 272,270 L 275,185 Z" fill="url(#eleSkin)" stroke="#1E293B" stroke-width="1.5"/>
+    <!-- Knee folds -->
+    <path d="M 246,225 Q 260,228 274,225" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <!-- Toenails -->
+    <ellipse cx="252" cy="271" rx="3.5" ry="4" fill="#E2E8F0"/>
+    <ellipse cx="259" cy="272" rx="3.5" ry="4" fill="#E2E8F0"/>
+    <ellipse cx="266" cy="271" rx="3.5" ry="4" fill="#E2E8F0"/>
+
+    <!-- ELEPHANT HEAD & DOME FOREHEAD -->
+    <path d="M 260,140 C 265,95 315,92 330,125 C 335,140 330,165 315,180 Z" fill="url(#eleSkin)"/>
+
+    <!-- Large Contoured African Ear -->
+    <path d="M 255,108 C 240,90 205,100 205,140 C 205,185 240,225 265,225 C 280,225 285,180 278,145 Z" 
+          fill="url(#earInner)" stroke="#334155" stroke-width="2"/>
+    <!-- Ear cartilage ridges -->
+    <path d="M 225,130 Q 240,155 248,190" stroke="#475569" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <path d="M 242,125 Q 252,150 258,175" stroke="#475569" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+    <!-- Graceful Curving TRUNK -->
+    <path d="M 315,160 C 330,175 355,190 358,220 C 362,248 335,265 315,255 C 302,248 308,232 320,236 C 332,240 345,230 342,215 C 338,195 320,185 305,175 Z" 
+          fill="url(#eleSkin)" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Trunk skin wrinkle rings -->
+    <path d="M 316,170 Q 324,172 328,178" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 324,185 Q 333,188 338,195" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 334,202 Q 343,206 348,214" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+    <path d="M 338,220 Q 344,228 340,238" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- CURVING IVORY TUSK -->
+    <path d="M 305,178 C 325,185 352,210 365,200 C 370,195 355,180 328,170 C 315,165 306,172 305,178 Z" 
+          fill="url(#ivoryTusk)" stroke="#B45309" stroke-width="1"/>
+
+    <!-- Gentle Wise Eye -->
+    <ellipse cx="295" cy="128" rx="6" ry="4.5" fill="#1E293B"/>
+    <circle cx="296" cy="127" r="1.5" fill="#FFFFFF"/>
+    <!-- Eye wrinkle hoods -->
+    <path d="M 288,124 Q 295,120 302,124" stroke="#1E293B" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 288,133 Q 295,136 302,133" stroke="#1E293B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Warm Home Courtyard Glow -->
+    <radialGradient id="familyGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#FCE7F3" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F4EFE6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Mother Dirac Fabric Gradient (Vibrant Emerald & Turquoise) -->
+    <linearGradient id="diracGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="50%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+
+    <!-- Headscarf Gambis (Golden Yellow & Coral) -->
+    <linearGradient id="gambisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+
+    <!-- Child Outfit Gradient (Soft Blue) -->
+    <linearGradient id="childGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <filter id="familyShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#451A03" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Warm Home Courtyard Backdrop -->
+  <ellipse cx="200" cy="165" rx="165" ry="120" fill="url(#familyGlow)"/>
+
+  <!-- Traditional Woven Mat on Courtyard Ground -->
+  <ellipse cx="200" cy="265" rx="150" ry="26" fill="#E2A662" stroke="#B45309" stroke-width="2"/>
+  <ellipse cx="200" cy="265" rx="120" ry="19" fill="none" stroke="#92400E" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- FAMILY READING SCENE: MOTHER (HOOYO) & LITTLE CHILD -->
+  <g filter="url(#familyShadow)">
+    <!-- MOTHER (HOOYO) -->
+    <!-- Flowing Dress Body -->
+    <path d="M 120,255 Q 115,190 145,150 Q 185,140 215,150 Q 240,190 235,255 Z" fill="url(#diracGrad)"/>
+    <!-- Traditional Golden Dirac Floral Embroidery Pattern -->
+    <circle cx="160" cy="190" r="4" fill="#FDE68A" opacity="0.8"/>
+    <circle cx="195" cy="180" r="5" fill="#FDE68A" opacity="0.8"/>
+    <circle cx="170" cy="225" r="4.5" fill="#FDE68A" opacity="0.8"/>
+    <circle cx="205" cy="215" r="4" fill="#FDE68A" opacity="0.8"/>
+
+    <!-- Gentle Arm Enfolding Child & Holding Book -->
+    <path d="M 140,165 Q 125,200 155,215 Q 180,225 210,210" stroke="#9A5D25" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M 215,165 Q 235,195 210,215" stroke="#9A5D25" stroke-width="12" stroke-linecap="round" fill="none"/>
+
+    <!-- Mother Head & Graceful Neck -->
+    <ellipse cx="180" cy="100" rx="18" ry="22" fill="#9A5D25"/>
+
+    <!-- Mother Warm Smiling Face -->
+    <ellipse cx="176" cy="98" rx="2" ry="3" fill="#291402"/>
+    <ellipse cx="188" cy="98" rx="2" ry="3" fill="#291402"/>
+    <!-- Warm Smile -->
+    <path d="M 178,110 Q 182,116 188,110" stroke="#78350F" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Elegant Flowing Headscarf (Gambis / Hijab) -->
+    <path d="M 160,88 C 158,58 202,58 202,88 C 205,115 198,142 208,160 L 152,160 C 162,142 155,115 160,88 Z" fill="url(#gambisGrad)"/>
+    <ellipse cx="181" cy="74" rx="22" ry="14" fill="url(#gambisGrad)"/>
+
+    <!-- LITTLE SMILING CHILD (CARUURTA) LEANING AGAINST MOTHER -->
+    <g transform="translate(195, 160)">
+      <!-- Child Body -->
+      <path d="M 15,95 Q 5,60 25,45 Q 55,45 65,95 Z" fill="url(#childGrad)"/>
+
+      <!-- Child Head -->
+      <circle cx="40" cy="28" r="16" fill="#9A5D25"/>
+      <!-- Happy Child Hair / Tuft -->
+      <path d="M 32,16 Q 40,8 48,16" stroke="#1E293B" stroke-width="3" fill="none"/>
+
+      <!-- Child Big Curious Eyes & Cheerful Smile -->
+      <circle cx="36" cy="27" r="2.5" fill="#0F172A"/>
+      <circle cx="45" cy="27" r="2.5" fill="#0F172A"/>
+      <circle cx="35" cy="26" r="1" fill="#FFFFFF"/>
+      <circle cx="44" cy="26" r="1" fill="#FFFFFF"/>
+      <path d="M 37,35 Q 41,40 46,35" stroke="#78350F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- Child's Little Hand Pointing at the Open Book -->
+      <circle cx="12" cy="52" r="5" fill="#9A5D25"/>
+    </g>
+
+    <!-- THE STORYBOOK OPEN TOGETHER ON HER LAP -->
+    <g transform="translate(155, 195) scale(0.65)">
+      <!-- Book Cover -->
+      <path d="M 10,65 Q 40,75 75,70 L 75,10 Q 40,15 10,5 Z" fill="#DC2626"/>
+      <path d="M 140,65 Q 110,75 75,70 L 75,10 Q 110,15 140,5 Z" fill="#DC2626"/>
+      <!-- Open Ivory Pages -->
+      <path d="M 15,8 Q 45,18 75,12 L 75,68 Q 45,72 15,62 Z" fill="#FAF5EF" stroke="#E2D9C8"/>
+      <path d="M 135,8 Q 105,18 75,12 L 75,68 Q 105,72 135,62 Z" fill="#FAF5EF" stroke="#E2D9C8"/>
+      <!-- Lines of Story on Book -->
+      <line x1="25" y1="25" x2="65" y2="25" stroke="#047857" stroke-width="2"/>
+      <line x1="25" y1="35" x2="60" y2="35" stroke="#64748B" stroke-width="1.5"/>
+      <line x1="25" y1="45" x2="65" y2="45" stroke="#64748B" stroke-width="1.5"/>
+      <line x1="85" y1="25" x2="125" y2="25" stroke="#047857" stroke-width="2"/>
+      <line x1="85" y1="35" x2="120" y2="35" stroke="#64748B" stroke-width="1.5"/>
+      <line x1="85" y1="45" x2="125" y2="45" stroke="#64748B" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Golden Stars & Love Hearts Radiating from Family -->
+  <g fill="#F59E0B">
+    <path d="M 285,120 Q 290,120 290,115 Q 290,120 295,120 Q 290,120 290,125 Q 290,120 285,120 Z"/>
+    <path d="M 95,125 Q 100,125 100,120 Q 100,125 105,125 Q 100,125 100,130 Q 100,125 95,125 Z" opacity="0.8"/>
+  </g>
+  <!-- Gentle Coral Love Heart -->
+  <path d="M 190,52 C 190,46 182,42 176,48 C 170,42 162,46 162,52 C 162,60 176,70 176,70 C 176,70 190,60 190,52 Z" fill="#F43F5E" opacity="0.85"/>
+</svg>

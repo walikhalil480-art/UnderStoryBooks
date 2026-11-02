@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Highland Mountain Sky Gradient -->
+    <linearGradient id="mountSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="35%" stop-color="#F472B6"/>
+      <stop offset="70%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+
+    <!-- Far Distant Mountain Peak (Golis / Shimbiris Peak) -->
+    <linearGradient id="farPeak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+
+    <!-- Mid-Range Escarpment Ridge -->
+    <linearGradient id="midRidge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="60%" stop-color="#7E22CE"/>
+      <stop offset="100%" stop-color="#581C87"/>
+    </linearGradient>
+
+    <!-- Near Rocky Mountain Cliffs (Frankincense & Juniper limestone) -->
+    <linearGradient id="nearCliff" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="30%" stop-color="#78350F"/>
+      <stop offset="70%" stop-color="#451A03"/>
+      <stop offset="100%" stop-color="#1C1917"/>
+    </linearGradient>
+
+    <!-- Valley Mist Gradient -->
+    <linearGradient id="valleyMist" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="mountShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#3B0764" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Mountain Sky -->
+  <rect width="400" height="320" fill="url(#mountSky)"/>
+
+  <!-- Morning Sun Rising over Ridge -->
+  <circle cx="270" cy="95" r="45" fill="#FEF08A" opacity="0.85"/>
+  <circle cx="270" cy="95" r="25" fill="#FFFFFF"/>
+
+  <!-- LAYER 1: HIGHEST DISTANT MAJESTIC PEAKS (Filtered) -->
+  <g filter="url(#mountShadow)">
+    <polygon points="120,70 190,165 40,165" fill="url(#farPeak)" opacity="0.85"/>
+    <polygon points="190,85 270,180 120,180" fill="url(#farPeak)" opacity="0.9"/>
+    <!-- Snow / Quartz limestone glint on apex -->
+    <polygon points="120,70 135,90 110,90" fill="#FFFFFF" opacity="0.7"/>
+    <polygon points="190,85 204,102 182,102" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+
+  <!-- Valley Morning Mist Ribbon 1 -->
+  <path d="M 0,160 Q 150,140 280,165 T 400,155 L 400,195 L 0,195 Z" fill="url(#valleyMist)"/>
+
+  <!-- LAYER 2: MID-GROUND ESCARPMENTS (Daallo Highland Cliffs) -->
+  <path d="M 0,165 L 75,120 L 145,155 L 230,110 L 325,160 L 400,135 L 400,260 L 0,260 Z" 
+        fill="url(#midRidge)"/>
+
+  <!-- Mountain gullies & rock ribs on mid-ridge -->
+  <g stroke="#3B0764" stroke-width="2" stroke-linecap="round" opacity="0.45">
+    <line x1="75" y1="120" x2="65" y2="175"/>
+    <line x1="145" y1="155" x2="135" y2="195"/>
+    <line x1="230" y1="110" x2="220" y2="185"/>
+    <line x1="325" y1="160" x2="310" y2="205"/>
+  </g>
+
+  <!-- Valley Morning Mist Ribbon 2 -->
+  <path d="M 0,195 Q 120,180 260,200 T 400,190 L 400,230 L 0,230 Z" fill="url(#valleyMist)"/>
+
+  <!-- LAYER 3: FOREGROUND ROCKY CANYON CLIFFS & HIGHLAND PINES -->
+  <!-- Left Promontory Ridge -->
+  <path d="M -20,320 L -20,205 L 85,175 L 175,235 L 210,320 Z" 
+        fill="url(#nearCliff)" stroke="#1C1917" stroke-width="2"/>
+
+  <!-- Right Promontory Ridge -->
+  <path d="M 235,320 L 265,225 L 340,195 L 420,225 L 420,320 Z" 
+        fill="url(#nearCliff)" stroke="#1C1917" stroke-width="2"/>
+
+  <!-- Highland Juniper & Frankincense Trees on Cliffs -->
+  <!-- Left Tree 1 -->
+  <path d="M 65,190 L 65,165" stroke="#451A03" stroke-width="3"/>
+  <polygon points="65,145 52,165 78,165" fill="#14532D"/>
+  <polygon points="65,155 50,172 80,172" fill="#166534"/>
+
+  <!-- Left Tree 2 (Clinging to cliff edge) -->
+  <path d="M 115,210 L 115,185" stroke="#451A03" stroke-width="2.5"/>
+  <polygon points="115,170 105,186 125,186" fill="#14532D"/>
+  <polygon points="115,178 102,192 128,192" fill="#166534"/>
+
+  <!-- Right Tree on Cliff -->
+  <path d="M 320,215 L 320,185" stroke="#451A03" stroke-width="3"/>
+  <polygon points="320,165 306,186 334,186" fill="#14532D"/>
+  <polygon points="320,176 304,194 336,194" fill="#166534"/>
+
+  <!-- Winding Highland Mountain Trail passing through valley -->
+  <path d="M 185,245 Q 195,275 220,320" stroke="#FDE68A" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M 185,245 Q 195,275 220,320" stroke="#D97706" stroke-width="8" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production Build Output
+dist/
+build/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Relational Database & Runtime Data
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+tsconfig.tsbuildinfo
+server/data/*.db
+server/data/*.db-wal
+server/data/*.db-shm
+server/data/*.sqlite*
+server/storage/manuscripts/*
+!server/storage/manuscripts/.gitkeep
+
+# Logs & Temporary Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor & IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test & Coverage Outputs
+coverage/
+.nyc_output/

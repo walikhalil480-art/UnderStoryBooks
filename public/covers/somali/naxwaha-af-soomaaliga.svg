@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bgLinguistics" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <radialGradient id="linguisticGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="900" fill="url(#bgLinguistics)"/>
+  <rect width="600" height="900" fill="url(#linguisticGlow)"/>
+
+  <!-- Book Spine Embossed Shadow -->
+  <rect x="0" y="0" width="30" height="900" fill="#000000" opacity="0.4"/>
+  <line x1="30" y1="0" x2="30" y2="900" stroke="#000000" stroke-width="2" opacity="0.4"/>
+  <line x1="32" y1="0" x2="32" y2="900" stroke="#FFFFFF" stroke-width="1" opacity="0.12"/>
+
+  <!-- Ornate Border Frame -->
+  <rect x="45" y="45" width="510" height="810" rx="8" fill="none" stroke="#38BDF8" stroke-width="2.5" opacity="0.75"/>
+  <rect x="55" y="55" width="490" height="790" rx="6" fill="none" stroke="#93C5FD" stroke-width="1" opacity="0.4"/>
+
+  <!-- Central Typographic / Calligraphic Accent -->
+  <g transform="translate(300, 420)" stroke="#38BDF8" stroke-width="2" fill="none" opacity="0.75">
+    <circle r="80"/>
+    <circle r="72" stroke-dasharray="3,5"/>
+    <path d="M-40,-30 L40,-30 L0,40 Z" stroke-width="1.5"/>
+    <circle r="8" fill="#38BDF8"/>
+  </g>
+
+  <!-- Publisher Header -->
+  <text x="300" y="115" font-family="'Cinzel', Georgia, serif" font-size="12" font-weight="700" letter-spacing="4" fill="#38BDF8" text-anchor="middle" opacity="0.9">
+    EBARO • ACADÉMIE DE LA LANGUE SOMALIE
+  </text>
+  <line x1="160" y1="130" x2="440" y2="130" stroke="#38BDF8" stroke-width="1" opacity="0.5"/>
+
+  <!-- Category -->
+  <text x="300" y="165" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#BAE6FD" text-anchor="middle" opacity="0.85">
+    LANGUAGE &amp; LINGUISTICS
+  </text>
+
+  <!-- Title Lines -->
+  <text x="300" y="240" font-family="'Cinzel', Georgia, serif" font-size="34" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    NAXWAHA CASRIGA AH
+  </text>
+  <text x="300" y="285" font-family="'Cinzel', Georgia, serif" font-size="32" font-weight="800" fill="#38BDF8" text-anchor="middle" letter-spacing="1">
+    EE AF-SOOMAALIGA
+  </text>
+  <text x="300" y="325" font-family="Georgia, serif" font-style="italic" font-size="16" fill="#CBD5E1" text-anchor="middle">
+    Aasaaska Qoraalka, Sarfiga iyo Naxwaha Falsafadeed
+  </text>
+
+  <!-- Center Motif Labels -->
+  <text x="300" y="426" font-family="sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    A B T J
+  </text>
+
+  <!-- Subtitle Text -->
+  <text x="300" y="565" font-family="Georgia, serif" font-size="15" fill="#E2E8F0" text-anchor="middle">
+    Guddiga Af-Soomaaliga &amp; Cilmibaadhayaasha Luqadda
+  </text>
+  <text x="300" y="590" font-family="sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">
+    Daabacaaddii 1972 / Dib-u-eegis Casri ah 2026
+  </text>
+
+  <!-- Author Badge -->
+  <rect x="180" y="650" width="240" height="42" rx="21" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="300" y="676" font-family="'Cinzel', Georgia, serif" font-size="13" font-weight="700" fill="#38BDF8" text-anchor="middle">
+    FREE OPEN ACCESS
+  </text>
+
+  <!-- Provenance Footer -->
+  <text x="300" y="780" font-family="sans-serif" font-size="11" font-weight="600" fill="#E2E8F0" text-anchor="middle" opacity="0.8">
+    SOMALI NATIONAL LINGUISTIC HERITAGE ARCHIVE
+  </text>
+  <text x="300" y="802" font-family="sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">
+    Digital Preservation Initiative • eBaro Open Educational Resources
+  </text>
+</svg>

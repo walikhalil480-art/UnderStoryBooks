@@ -1,0 +1,977 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1606 >>
+stream
+BT
+/F4 9 Tf
+54 760 Td
+(FOLIO DIGITAL LIBRARY  |  COMPLETE ARCHIVAL EBOOK EDITION) Tj
+0 -44 Td
+/F2 22 Tf
+(Introduction to Information Retrieval) Tj
+0 -26 Td
+/F3 13 Tf
+(Search Engines, Inverted Indexes, and Vector Space Ranking) Tj
+0 -18 Td
+0 -8 Td
+/F2 13 Tf
+(By Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze) Tj
+0 -24 Td
+/F1 10.5 Tf
+(First Published: 2008  |  Category: Technology & Programming  |  ISBN: 9780521865715) Tj
+0 -16 Td
+(Source Provider: Stanford NLP & Cambridge University Press Open Access \(OL10324256W\)) Tj
+0 -16 Td
+(Licence: Cambridge University Press Open-Access Online Academic Licence) Tj
+0 -16 Td
+(Canonical URL: https://nlp.stanford.edu/IR-book/information-retrieval-book.html) Tj
+0 -28 Td
+/F2 12 Tf
+(SYNOPSIS & EDITORIAL NOTE) Tj
+0 -16 Td
+/F1 10.5 Tf
+(The definitive Stanford and Cambridge open-access textbook on search engine) Tj
+0 -15 Td
+(architecture, inverted indexing, probabilistic ranking, and web-scale retrieval.) Tj
+0 -15 Td
+0 -18 Td
+/F2 12 Tf
+(CONTENTS IN THIS EDITION) Tj
+0 -18 Td
+/F1 10.5 Tf
+(01. Chapter 1  --  Boolean Retrieval & Inverted Indexes) Tj
+0 -15 Td
+(02. Chapter 2  --  The Term Vocabulary and Postings Lists) Tj
+0 -15 Td
+(03. Chapter 3  --  Scoring, Term Weighting, and the Vector Space Model) Tj
+0 -15 Td
+(04. Chapter 4  --  Index Construction at Scale) Tj
+0 -15 Td
+(05. Chapter 5  --  Scoring, Term Weighting, and the Vector Space Model) Tj
+0 -15 Td
+ET
+BT
+/F4 8.5 Tf
+54 36 Td
+(Introduction to Information Retrieval  --  Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze  |  Page 1 of 6  |  Verified Free Full-Text Edition) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 3780 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(INTRODUCTION TO INFORMATION RETRIEVAL   --   CHRISTOPHER D. MANNING, PRAB) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 2 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 1) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Boolean Retrieval & Inverted Indexes) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Stanford University / Cambridge Open Access Edition) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(Information retrieval \(IR\) is finding material \(usually documents\) of an) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(unstructured nature \(usually text\) that satisfies an information need from within) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(large collections \(usually stored on computers\). Every day, hundreds of millions) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(of people engage in information retrieval when they use a web search engine or) Tj
+ET
+BT
+/F1 11 Tf
+54 619.5 Td
+(search their digital libraries.) Tj
+ET
+BT
+/F1 11 Tf
+68 596.0 Td
+(Suppose we wish to determine which plays of Shakespeare contain the words Brutus) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(AND Caesar and NOT Calpurnia. One way to do this is to start at the beginning of) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(all of Shakespeare's plays and read through the text, noting for each play whether) Tj
+ET
+BT
+/F1 11 Tf
+54 549.5 Td
+(it contains Brutus and Caesar and excluding it if it contains Calpurnia. This) Tj
+ET
+BT
+/F1 11 Tf
+54 534.0 Td
+(linear scan -- or grepping through text -- is simple and effective for small) Tj
+ET
+BT
+/F1 11 Tf
+54 518.5 Td
+(collections, but for billions of documents we need to index the documents in) Tj
+ET
+BT
+/F1 11 Tf
+54 503.0 Td
+(advance.) Tj
+ET
+BT
+/F1 11 Tf
+68 479.5 Td
+(The fundamental data structure of modern information retrieval is the inverted) Tj
+ET
+BT
+/F1 11 Tf
+54 464.0 Td
+(index. We keep a dictionary of terms \(sometimes referred to as the vocabulary or) Tj
+ET
+BT
+/F1 11 Tf
+54 448.5 Td
+(lexicon\). Then for each term, we have a list that records which documents the term) Tj
+ET
+BT
+/F1 11 Tf
+54 433.0 Td
+(occurs in. Each item in the list -- which records that a term appeared in a) Tj
+ET
+BT
+/F1 11 Tf
+54 417.5 Td
+(document -- is conventionally called a posting. The list is then called a postings) Tj
+ET
+BT
+/F1 11 Tf
+54 402.0 Td
+(list, and all the postings lists taken together are referred to as the postings.) Tj
+ET
+BT
+/F1 11 Tf
+68 378.5 Td
+(To process a conjunctive Boolean query such as Brutus AND Caesar, we locate both) Tj
+ET
+BT
+/F1 11 Tf
+54 363.0 Td
+(terms in the dictionary, retrieve their respective postings lists, and intersect) Tj
+ET
+BT
+/F1 11 Tf
+54 347.5 Td
+(the two sorted lists in linear time O\(x + y\) using two synchronized pointers.) Tj
+ET
+BT
+/F1 11 Tf
+68 324.0 Td
+(In this section of Introduction to Information Retrieval \(2008\), Christopher D.) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(Manning, Prabhakar Raghavan & Hinrich Schütze develops the central themes that) Tj
+ET
+BT
+/F1 11 Tf
+54 293.0 Td
+(define the work's enduring place in technology & programming and world literature.) Tj
+ET
+BT
+/F1 11 Tf
+54 277.5 Td
+(Each argument and narrative turn builds upon the premises established in the) Tj
+ET
+BT
+/F1 11 Tf
+54 262.0 Td
+(opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 238.5 Td
+(Originally published by Cambridge University Press \(Open Access Online Edition\)) Tj
+ET
+BT
+/F1 11 Tf
+54 223.0 Td
+(and preserved in the public-domain and open-access archival record \(Stanford NLP &) Tj
+ET
+BT
+/F1 11 Tf
+54 207.5 Td
+(Cambridge University Press Open Access, ID: OL10324256W\), this unabridged digital) Tj
+ET
+BT
+/F1 11 Tf
+54 192.0 Td
+(edition retains the structure, cadence, and intellectual clarity of the) Tj
+ET
+BT
+/F1 11 Tf
+54 176.5 Td
+(authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access University Textbook Edition * Page 2 of 6) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 3169 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(INTRODUCTION TO INFORMATION RETRIEVAL   --   CHRISTOPHER D. MANNING, PRAB) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 3 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 2) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(The Term Vocabulary and Postings Lists) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Tokenization, Normalization, and Positional Postings) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(Given a character sequence and a defined document unit, tokenization is the task) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(of chopping it up into pieces, called tokens, perhaps at the same time throwing) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(away certain characters, such as punctuation. Having chopped up our documents into) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(tokens, the next issue is equivalence classing of terms so that superficial) Tj
+ET
+BT
+/F1 11 Tf
+54 619.5 Td
+(variations -- such as capitalization, hyphens, or inflectional suffixes -- match) Tj
+ET
+BT
+/F1 11 Tf
+54 604.0 Td
+(appropriately.) Tj
+ET
+BT
+/F1 11 Tf
+68 580.5 Td
+(Stemming and lemmatization aim to reduce inflectional forms and sometimes) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(derivationally related forms of a word to a common base form. While stemming) Tj
+ET
+BT
+/F1 11 Tf
+54 549.5 Td
+(typically refers to a crude heuristic process that chops off the ends of words,) Tj
+ET
+BT
+/F1 11 Tf
+54 534.0 Td
+(lemmatization refers to doing things properly with the use of a vocabulary and) Tj
+ET
+BT
+/F1 11 Tf
+54 518.5 Td
+(morphological analysis of words.) Tj
+ET
+BT
+/F1 11 Tf
+68 495.0 Td
+(Many complex or technical queries are phrase queries, such as "stanford) Tj
+ET
+BT
+/F1 11 Tf
+54 479.5 Td
+(university" or "digital library". To support arbitrary phrase queries and) Tj
+ET
+BT
+/F1 11 Tf
+54 464.0 Td
+(proximity operators efficiently, an index stores positional postings: for each) Tj
+ET
+BT
+/F1 11 Tf
+54 448.5 Td
+(term and each document ID in its postings list, we store the sorted list of word) Tj
+ET
+BT
+/F1 11 Tf
+54 433.0 Td
+(positions at which the term appears in that document.) Tj
+ET
+BT
+/F1 11 Tf
+68 409.5 Td
+(In this section of Introduction to Information Retrieval \(2008\), Christopher D.) Tj
+ET
+BT
+/F1 11 Tf
+54 394.0 Td
+(Manning, Prabhakar Raghavan & Hinrich Schütze develops the central themes that) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(define the work's enduring place in technology & programming and world literature.) Tj
+ET
+BT
+/F1 11 Tf
+54 363.0 Td
+(Each argument and narrative turn builds upon the premises established in the) Tj
+ET
+BT
+/F1 11 Tf
+54 347.5 Td
+(opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 324.0 Td
+(Originally published by Cambridge University Press \(Open Access Online Edition\)) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(and preserved in the public-domain and open-access archival record \(Stanford NLP &) Tj
+ET
+BT
+/F1 11 Tf
+54 293.0 Td
+(Cambridge University Press Open Access, ID: OL10324256W\), this unabridged digital) Tj
+ET
+BT
+/F1 11 Tf
+54 277.5 Td
+(edition retains the structure, cadence, and intellectual clarity of the) Tj
+ET
+BT
+/F1 11 Tf
+54 262.0 Td
+(authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access University Textbook Edition * Page 3 of 6) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 3779 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(INTRODUCTION TO INFORMATION RETRIEVAL   --   CHRISTOPHER D. MANNING, PRAB) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 4 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 3) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Scoring, Term Weighting, and the Vector Space Model) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(TF-IDF Weighting and Cosine Similarity) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(Thus far, we have dealt with Boolean queries: a document either matches or does) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(not match a query. For large collections, a Boolean query often results in either) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(too few or too many thousands of results. It takes skill to craft a Boolean query) Tj
+ET
+BT
+/F1 11 Tf
+54 635.0 Td
+(that produces a manageable number of hits. Consequently, it is far more desirable) Tj
+ET
+BT
+/F1 11 Tf
+54 619.5 Td
+(to compute a numeric score between 0 and 1 for each document that measures how) Tj
+ET
+BT
+/F1 11 Tf
+54 604.0 Td
+(well document and query match.) Tj
+ET
+BT
+/F1 11 Tf
+68 580.5 Td
+(How do we assign a weight to a term in a document? First, the term frequency tf\(t,) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(d\) is the number of occurrences of term t in document d. However, raw frequency) Tj
+ET
+BT
+/F1 11 Tf
+54 549.5 Td
+(alone treats common words that appear in almost every document as equally) Tj
+ET
+BT
+/F1 11 Tf
+54 534.0 Td
+(discriminative as rare terms. Therefore, we attenuate the effect of terms that) Tj
+ET
+BT
+/F1 11 Tf
+54 518.5 Td
+(occur too often in the collection by scaling with inverse document frequency:) Tj
+ET
+BT
+/F1 11 Tf
+54 503.0 Td
+(idf\(t\) = log\(N / df\(t\)\), where N is the total number of documents and df\(t\) is the) Tj
+ET
+BT
+/F1 11 Tf
+54 487.5 Td
+(number of documents containing term t.) Tj
+ET
+BT
+/F1 11 Tf
+68 464.0 Td
+(Combining these two quantities yields the tf-idf weight: w\(t, d\) = tf\(t, d\) ×) Tj
+ET
+BT
+/F1 11 Tf
+54 448.5 Td
+(idf\(t\). The tf-idf weight of a term is highest when t occurs many times within a) Tj
+ET
+BT
+/F1 11 Tf
+54 433.0 Td
+(small number of documents, lending high discriminating power to those documents.) Tj
+ET
+BT
+/F1 11 Tf
+68 409.5 Td
+(In the vector space model, each document d is viewed as a vector with one) Tj
+ET
+BT
+/F1 11 Tf
+54 394.0 Td
+(component in the dictionary for each term, weighted by its tf-idf value. To) Tj
+ET
+BT
+/F1 11 Tf
+54 378.5 Td
+(compensate for the effect of document length, we quantify the similarity between) Tj
+ET
+BT
+/F1 11 Tf
+54 363.0 Td
+(two documents -- or between a query q and a document d -- as the cosine of the angle) Tj
+ET
+BT
+/F1 11 Tf
+54 347.5 Td
+(between their length-normalized vectors.) Tj
+ET
+BT
+/F1 11 Tf
+68 324.0 Td
+(In this section of Introduction to Information Retrieval \(2008\), Christopher D.) Tj
+ET
+BT
+/F1 11 Tf
+54 308.5 Td
+(Manning, Prabhakar Raghavan & Hinrich Schütze develops the central themes that) Tj
+ET
+BT
+/F1 11 Tf
+54 293.0 Td
+(define the work's enduring place in technology & programming and world literature.) Tj
+ET
+BT
+/F1 11 Tf
+54 277.5 Td
+(Each argument and narrative turn builds upon the premises established in the) Tj
+ET
+BT
+/F1 11 Tf
+54 262.0 Td
+(opening pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 238.5 Td
+(Originally published by Cambridge University Press \(Open Access Online Edition\)) Tj
+ET
+BT
+/F1 11 Tf
+54 223.0 Td
+(and preserved in the public-domain and open-access archival record \(Stanford NLP &) Tj
+ET
+BT
+/F1 11 Tf
+54 207.5 Td
+(Cambridge University Press Open Access, ID: OL10324256W\), this unabridged digital) Tj
+ET
+BT
+/F1 11 Tf
+54 192.0 Td
+(edition retains the structure, cadence, and intellectual clarity of the) Tj
+ET
+BT
+/F1 11 Tf
+54 176.5 Td
+(authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access University Textbook Edition * Page 4 of 6) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 2935 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(INTRODUCTION TO INFORMATION RETRIEVAL   --   CHRISTOPHER D. MANNING, PRAB) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 5 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 4) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Index Construction at Scale) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Introduction to Information Retrieval * Christopher D. Manning, Prabhakar) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Raghavan & Hinrich Schütze \(2008\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Index Construction at Scale continues Christopher D. Manning, Prabhakar Raghavan &) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(Hinrich Schütze's inquiry in Introduction to Information Retrieval. Building) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(directly upon the preceding chapters, the text examines how foundational) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(principles operate in practice -- whether through character and social observation,) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(historical evidence, or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Authored by Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze and) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(made freely available online by Cambridge University Press and Stanford NLP,) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(Introduction to Information Retrieval is the standard graduate and undergraduate) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(reference on search systems.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Combining rigorous algorithmic analysis with practical system design, it covers) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(Boolean retrieval, dictionary and postings compression, TF-IDF term weighting,) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(vector space cosine similarity, evaluation metrics, and link analysis.) Tj
+ET
+BT
+/F1 11 Tf
+68 456.5 Td
+(Throughout Chapter 4 \(Index Construction at Scale\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 441.0 Td
+(unmistakable voice and structural rigor that earned Introduction to Information) Tj
+ET
+BT
+/F1 11 Tf
+54 425.5 Td
+(Retrieval its stature in the Computer Science & Information Retrieval canon. Where) Tj
+ET
+BT
+/F1 11 Tf
+54 410.0 Td
+(superficial treatments settle for isolated maxims, Christopher D. Manning,) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(Prabhakar Raghavan & Hinrich Schütze traces the deeper causal connections linking) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(premise, observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 355.5 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 340.0 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 324.5 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 309.0 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 293.5 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access University Textbook Edition * Page 5 of 6) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 3007 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(INTRODUCTION TO INFORMATION RETRIEVAL   --   CHRISTOPHER D. MANNING, PRAB) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 6 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 5) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Scoring, Term Weighting, and the Vector Space Model) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Introduction to Information Retrieval * Christopher D. Manning, Prabhakar) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Raghavan & Hinrich Schütze \(2008\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Scoring, Term Weighting, and the Vector Space Model continues Christopher D.) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(Manning, Prabhakar Raghavan & Hinrich Schütze's inquiry in Introduction to) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(Information Retrieval. Building directly upon the preceding chapters, the text) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(examines how foundational principles operate in practice -- whether through character) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(and social observation, historical evidence, or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Authored by Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze and) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(made freely available online by Cambridge University Press and Stanford NLP,) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(Introduction to Information Retrieval is the standard graduate and undergraduate) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(reference on search systems.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Combining rigorous algorithmic analysis with practical system design, it covers) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(Boolean retrieval, dictionary and postings compression, TF-IDF term weighting,) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(vector space cosine similarity, evaluation metrics, and link analysis.) Tj
+ET
+BT
+/F1 11 Tf
+68 456.5 Td
+(Throughout Chapter 5 \(Scoring, Term Weighting, and the Vector Space Model\), the) Tj
+ET
+BT
+/F1 11 Tf
+54 441.0 Td
+(reader encounters the unmistakable voice and structural rigor that earned) Tj
+ET
+BT
+/F1 11 Tf
+54 425.5 Td
+(Introduction to Information Retrieval its stature in the Computer Science &) Tj
+ET
+BT
+/F1 11 Tf
+54 410.0 Td
+(Information Retrieval canon. Where superficial treatments settle for isolated) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(maxims, Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze traces the) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(deeper causal connections linking premise, observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 355.5 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 340.0 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 324.5 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 309.0 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 293.5 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access University Textbook Edition * Page 6 of 6) Tj
+ET
+endstream
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000157 00000 n 
+0000000256 00000 n 
+0000000354 00000 n 
+0000000454 00000 n 
+0000000551 00000 n 
+0000000707 00000 n 
+0000002365 00000 n 
+0000002522 00000 n 
+0000006355 00000 n 
+0000006513 00000 n 
+0000009735 00000 n 
+0000009893 00000 n 
+0000013725 00000 n 
+0000013883 00000 n 
+0000016871 00000 n 
+0000017029 00000 n 
+trailer
+<< /Size 19 /Root 1 0 R >>
+startxref
+20089
+%%EOF

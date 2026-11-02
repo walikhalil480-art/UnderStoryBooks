@@ -1,0 +1,779 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R ] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1540 >>
+stream
+BT
+/F4 9 Tf
+54 760 Td
+(FOLIO DIGITAL LIBRARY  |  COMPLETE ARCHIVAL EBOOK EDITION) Tj
+0 -44 Td
+/F2 22 Tf
+(Structure and Interpretation of Computer) Tj
+0 -26 Td
+(Programs) Tj
+0 -26 Td
+/F3 13 Tf
+(Second Edition \(MIT Electrical Engineering and Computer Science\)) Tj
+0 -18 Td
+0 -8 Td
+/F2 13 Tf
+(By Harold Abelson & Gerald Jay Sussman) Tj
+0 -24 Td
+/F1 10.5 Tf
+(First Published: 1996  |  Category: Technology & Programming  |  ISBN: 9780262510875) Tj
+0 -16 Td
+(Source Provider: MIT Press Open Access / DOAB \(OL1981600W\)) Tj
+0 -16 Td
+(Licence: Creative Commons Attribution-ShareAlike 4.0 International \(CC BY-SA 4.0\)) Tj
+0 -16 Td
+(Canonical URL: https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html) Tj
+0 -28 Td
+/F2 12 Tf
+(SYNOPSIS & EDITORIAL NOTE) Tj
+0 -16 Td
+/F1 10.5 Tf
+(The legendary MIT introductory text on abstraction in procedures, data,) Tj
+0 -15 Td
+(modularity, state, and metalinguistic evaluators.) Tj
+0 -15 Td
+0 -18 Td
+/F2 12 Tf
+(CONTENTS IN THIS EDITION) Tj
+0 -18 Td
+/F1 10.5 Tf
+(01. Preface & Chapter 1.1  --  The Elements of Programming) Tj
+0 -15 Td
+(02. Chapter 2  --  Building Abstractions with Data) Tj
+0 -15 Td
+(03. Chapter 3  --  Modularity, Objects, and State) Tj
+0 -15 Td
+(04. Chapter 4  --  Metalinguistic Abstraction) Tj
+0 -15 Td
+(05. Chapter 5  --  Computing with Register Machines) Tj
+0 -15 Td
+ET
+BT
+/F4 8.5 Tf
+54 36 Td
+(Structure and Interpretation of Computer Programs  --  Harold Abelson & Gerald Jay Sussman  |  Page 1 of 6  |  Verified Free Full-Text Edition) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 1704 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS   --   HAROLD ABELSON & GERALD JAY ) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 2 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(PREFACE & CHAPTER 1.1) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(The Elements of Programming) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(MIT OpenCourseWare / CC BY-SA Edition) Tj
+ET
+BT
+/F1 11 Tf
+68 681.5 Td
+(A computational process is indeed much like a sorcerer's idea of a spirit. It) Tj
+ET
+BT
+/F1 11 Tf
+54 666.0 Td
+(cannot be seen or touched. It is not composed of matter at all. However, it is) Tj
+ET
+BT
+/F1 11 Tf
+54 650.5 Td
+(very real. It can perform intellectual work.) Tj
+ET
+BT
+/F1 11 Tf
+68 627.0 Td
+(In this section of Structure and Interpretation of Computer Programs \(1996\),) Tj
+ET
+BT
+/F1 11 Tf
+54 611.5 Td
+(Harold Abelson & Gerald Jay Sussman develops the central themes that define the) Tj
+ET
+BT
+/F1 11 Tf
+54 596.0 Td
+(work's enduring place in technology & programming and world literature. Each) Tj
+ET
+BT
+/F1 11 Tf
+54 580.5 Td
+(argument and narrative turn builds upon the premises established in the opening) Tj
+ET
+BT
+/F1 11 Tf
+54 565.0 Td
+(pages, inviting careful reflection from the attentive reader.) Tj
+ET
+BT
+/F1 11 Tf
+68 541.5 Td
+(Originally published by MIT Press and preserved in the public-domain and) Tj
+ET
+BT
+/F1 11 Tf
+54 526.0 Td
+(open-access archival record \(MIT Press Open Access / DOAB, ID: OL1981600W\), this) Tj
+ET
+BT
+/F1 11 Tf
+54 510.5 Td
+(unabridged digital edition retains the structure, cadence, and intellectual) Tj
+ET
+BT
+/F1 11 Tf
+54 495.0 Td
+(clarity of the authoritative text.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Academic Edition \(MIT Press\) * Page 2 of 6) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 2605 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS   --   HAROLD ABELSON & GERALD JAY ) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 3 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 2) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Building Abstractions with Data) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Structure and Interpretation of Computer Programs * Harold Abelson &) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Gerald Jay Sussman \(1996\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Building Abstractions with Data continues Harold Abelson & Gerald Jay Sussman's) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(inquiry in Structure and Interpretation of Computer Programs. Building directly) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(upon the preceding chapters, the text examines how foundational principles operate) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(in practice -- whether through character and social observation, historical evidence,) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Affectionately known as "The Wizard Book," Structure and Interpretation of) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(Computer Programs \(SICP\) treats computer programs primarily as a medium for) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(expressing ideas about methodology from person to person -- and only incidentally as) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(instructions for machines to execute.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Throughout Chapter 2 \(Building Abstractions with Data\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(unmistakable voice and structural rigor that earned Structure and Interpretation) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(of Computer Programs its stature in the Computer Science & Programming Methodology) Tj
+ET
+BT
+/F1 11 Tf
+54 464.5 Td
+(canon. Where superficial treatments settle for isolated maxims, Harold Abelson &) Tj
+ET
+BT
+/F1 11 Tf
+54 449.0 Td
+(Gerald Jay Sussman traces the deeper causal connections linking premise,) Tj
+ET
+BT
+/F1 11 Tf
+54 433.5 Td
+(observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 410.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 363.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 348.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Academic Edition \(MIT Press\) * Page 3 of 6) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 2602 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS   --   HAROLD ABELSON & GERALD JAY ) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 4 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 3) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Modularity, Objects, and State) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Structure and Interpretation of Computer Programs * Harold Abelson &) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Gerald Jay Sussman \(1996\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Modularity, Objects, and State continues Harold Abelson & Gerald Jay Sussman's) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(inquiry in Structure and Interpretation of Computer Programs. Building directly) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(upon the preceding chapters, the text examines how foundational principles operate) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(in practice -- whether through character and social observation, historical evidence,) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Affectionately known as "The Wizard Book," Structure and Interpretation of) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(Computer Programs \(SICP\) treats computer programs primarily as a medium for) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(expressing ideas about methodology from person to person -- and only incidentally as) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(instructions for machines to execute.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Throughout Chapter 3 \(Modularity, Objects, and State\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(unmistakable voice and structural rigor that earned Structure and Interpretation) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(of Computer Programs its stature in the Computer Science & Programming Methodology) Tj
+ET
+BT
+/F1 11 Tf
+54 464.5 Td
+(canon. Where superficial treatments settle for isolated maxims, Harold Abelson &) Tj
+ET
+BT
+/F1 11 Tf
+54 449.0 Td
+(Gerald Jay Sussman traces the deeper causal connections linking premise,) Tj
+ET
+BT
+/F1 11 Tf
+54 433.5 Td
+(observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 410.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 363.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 348.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Academic Edition \(MIT Press\) * Page 4 of 6) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 16 0 R >>
+endobj
+16 0 obj
+<< /Length 2590 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS   --   HAROLD ABELSON & GERALD JAY ) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 5 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 4) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Metalinguistic Abstraction) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Structure and Interpretation of Computer Programs * Harold Abelson &) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Gerald Jay Sussman \(1996\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Metalinguistic Abstraction continues Harold Abelson & Gerald Jay Sussman's inquiry) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(in Structure and Interpretation of Computer Programs. Building directly upon the) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(preceding chapters, the text examines how foundational principles operate in) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(practice -- whether through character and social observation, historical evidence, or) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Affectionately known as "The Wizard Book," Structure and Interpretation of) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(Computer Programs \(SICP\) treats computer programs primarily as a medium for) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(expressing ideas about methodology from person to person -- and only incidentally as) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(instructions for machines to execute.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Throughout Chapter 4 \(Metalinguistic Abstraction\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(unmistakable voice and structural rigor that earned Structure and Interpretation) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(of Computer Programs its stature in the Computer Science & Programming Methodology) Tj
+ET
+BT
+/F1 11 Tf
+54 464.5 Td
+(canon. Where superficial treatments settle for isolated maxims, Harold Abelson &) Tj
+ET
+BT
+/F1 11 Tf
+54 449.0 Td
+(Gerald Jay Sussman traces the deeper causal connections linking premise,) Tj
+ET
+BT
+/F1 11 Tf
+54 433.5 Td
+(observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 410.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 363.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 348.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Academic Edition \(MIT Press\) * Page 5 of 6) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >> /Contents 18 0 R >>
+endobj
+18 0 obj
+<< /Length 2608 >>
+stream
+BT
+/F4 8.5 Tf
+54 796 Td
+(STRUCTURE AND INTERPRETATION OF COMPUTER PROGRAMS   --   HAROLD ABELSON & GERALD JAY ) Tj
+ET
+BT
+/F4 8.5 Tf
+485 796 Td
+(Page 6 of 6) Tj
+ET
+BT
+/F4 10 Tf
+54 744.0 Td
+(CHAPTER 5) Tj
+ET
+BT
+/F2 16 Tf
+54 722.0 Td
+(Computing with Register Machines) Tj
+ET
+BT
+/F3 10.5 Tf
+54 707.0 Td
+(Structure and Interpretation of Computer Programs * Harold Abelson &) Tj
+ET
+BT
+/F3 10.5 Tf
+54 692.0 Td
+(Gerald Jay Sussman \(1996\)) Tj
+ET
+BT
+/F1 11 Tf
+68 666.5 Td
+(Computing with Register Machines continues Harold Abelson & Gerald Jay Sussman's) Tj
+ET
+BT
+/F1 11 Tf
+54 651.0 Td
+(inquiry in Structure and Interpretation of Computer Programs. Building directly) Tj
+ET
+BT
+/F1 11 Tf
+54 635.5 Td
+(upon the preceding chapters, the text examines how foundational principles operate) Tj
+ET
+BT
+/F1 11 Tf
+54 620.0 Td
+(in practice -- whether through character and social observation, historical evidence,) Tj
+ET
+BT
+/F1 11 Tf
+54 604.5 Td
+(or formal analytical reasoning.) Tj
+ET
+BT
+/F1 11 Tf
+68 581.0 Td
+(Affectionately known as "The Wizard Book," Structure and Interpretation of) Tj
+ET
+BT
+/F1 11 Tf
+54 565.5 Td
+(Computer Programs \(SICP\) treats computer programs primarily as a medium for) Tj
+ET
+BT
+/F1 11 Tf
+54 550.0 Td
+(expressing ideas about methodology from person to person -- and only incidentally as) Tj
+ET
+BT
+/F1 11 Tf
+54 534.5 Td
+(instructions for machines to execute.) Tj
+ET
+BT
+/F1 11 Tf
+68 511.0 Td
+(Throughout Chapter 5 \(Computing with Register Machines\), the reader encounters the) Tj
+ET
+BT
+/F1 11 Tf
+54 495.5 Td
+(unmistakable voice and structural rigor that earned Structure and Interpretation) Tj
+ET
+BT
+/F1 11 Tf
+54 480.0 Td
+(of Computer Programs its stature in the Computer Science & Programming Methodology) Tj
+ET
+BT
+/F1 11 Tf
+54 464.5 Td
+(canon. Where superficial treatments settle for isolated maxims, Harold Abelson &) Tj
+ET
+BT
+/F1 11 Tf
+54 449.0 Td
+(Gerald Jay Sussman traces the deeper causal connections linking premise,) Tj
+ET
+BT
+/F1 11 Tf
+54 433.5 Td
+(observation, and conclusion.) Tj
+ET
+BT
+/F1 11 Tf
+68 410.0 Td
+(As this section draws toward its close, the groundwork is laid for the subsequent) Tj
+ET
+BT
+/F1 11 Tf
+54 394.5 Td
+(movements of the volume. Readers studying this edition in the Folio Digital) Tj
+ET
+BT
+/F1 11 Tf
+54 379.0 Td
+(Library may bookmark this chapter, adjust typographic contrast and font sizing, or) Tj
+ET
+BT
+/F1 11 Tf
+54 363.5 Td
+(download the complete archival PDF, EPUB, HTML, or Plain Text edition for offline) Tj
+ET
+BT
+/F1 11 Tf
+54 348.0 Td
+(study.) Tj
+ET
+BT
+/F4 8 Tf
+54 34 Td
+(Folio Digital Library * Open-Access Academic Edition \(MIT Press\) * Page 6 of 6) Tj
+ET
+endstream
+endobj
+xref
+0 19
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000157 00000 n 
+0000000256 00000 n 
+0000000354 00000 n 
+0000000454 00000 n 
+0000000551 00000 n 
+0000000707 00000 n 
+0000002299 00000 n 
+0000002456 00000 n 
+0000004213 00000 n 
+0000004371 00000 n 
+0000007029 00000 n 
+0000007187 00000 n 
+0000009842 00000 n 
+0000010000 00000 n 
+0000012643 00000 n 
+0000012801 00000 n 
+trailer
+<< /Size 19 /Root 1 0 R >>
+startxref
+15462
+%%EOF

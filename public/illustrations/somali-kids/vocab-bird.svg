@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Radiant Glow -->
+    <radialGradient id="birdSky" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF3C7" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#E0F2FE" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F4EFE6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Bird Plumage Golden Breast Gradient -->
+    <linearGradient id="birdBreast" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Bird Wing & Back (Terracotta & Chestnut) -->
+    <linearGradient id="birdWing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#78350F"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+
+    <!-- Acacia Leaf Green -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="birdShadow" x="-10%" y="-10%" width="125%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1E293B" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Glow Backdrop -->
+  <ellipse cx="200" cy="160" rx="165" ry="120" fill="url(#birdSky)"/>
+
+  <!-- ACACIA TREE BRANCH & BLOSSOMING SPRIGS -->
+  <g filter="url(#birdShadow)">
+    <!-- Main Gnarled Branch -->
+    <path d="M 40,240 Q 140,225 210,210 Q 280,195 360,165" fill="none" stroke="#5C4738" stroke-width="10" stroke-linecap="round"/>
+    <!-- Bark Texture Grain -->
+    <path d="M 60,237 Q 140,223 205,209" fill="none" stroke="#3E2718" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Subsidiary Twigs -->
+    <path d="M 120,228 Q 140,250 165,260" fill="none" stroke="#5C4738" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 270,198 Q 295,225 315,235" fill="none" stroke="#5C4738" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Acacia Fern-like Pinnate Leaves -->
+    <!-- Left Leaf Cluster -->
+    <g transform="translate(100, 215) rotate(-25)">
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#047857" stroke-width="2"/>
+      <ellipse cx="10" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="10" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="22" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="22" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="34" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="34" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="44" cy="0" rx="6" ry="3" fill="url(#leafGrad)"/>
+    </g>
+
+    <!-- Right Leaf Cluster -->
+    <g transform="translate(290, 180) rotate(15)">
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#047857" stroke-width="2"/>
+      <ellipse cx="10" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="10" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="22" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="22" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="34" cy="-6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="34" cy="6" rx="6" ry="3" fill="url(#leafGrad)"/>
+      <ellipse cx="44" cy="0" rx="6" ry="3" fill="url(#leafGrad)"/>
+    </g>
+
+    <!-- Fluffy Golden Acacia Pom-Pom Flowers -->
+    <circle cx="155" cy="255" r="9" fill="#F59E0B"/>
+    <circle cx="155" cy="255" r="7" fill="#FDE68A"/>
+    <circle cx="305" cy="225" r="8" fill="#F59E0B"/>
+    <circle cx="305" cy="225" r="6" fill="#FDE68A"/>
+    <circle cx="280" cy="180" r="10" fill="#F59E0B"/>
+    <circle cx="280" cy="180" r="8" fill="#FDE68A"/>
+  </g>
+
+  <!-- THE LITTLE SINGING BIRD (SHIMBIRTII YARAYD) -->
+  <g filter="url(#birdShadow)">
+    <!-- Bird Claws Gripping Branch -->
+    <path d="M 195,212 L 190,218 M 195,212 L 195,219 M 195,212 L 200,218" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 215,208 L 210,214 M 215,208 L 215,215 M 215,208 L 220,214" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Tail Feathers -->
+    <path d="M 145,188 L 98,225 L 115,232 L 152,194 Z" fill="url(#birdWing)"/>
+    <path d="M 148,190 L 105,234 L 118,238 L 156,198 Z" fill="#451A03"/>
+
+    <!-- Plump Bird Body / Belly -->
+    <ellipse cx="205" cy="165" rx="34" ry="28" fill="url(#birdBreast)"/>
+
+    <!-- Chestnut Wing Folded on Side -->
+    <path d="M 165,152 Q 195,142 225,165 Q 190,205 150,188 Z" fill="url(#birdWing)"/>
+    <!-- Scalloped Feather Tips on Wing -->
+    <path d="M 175,160 Q 185,165 178,175 Q 188,180 180,190" stroke="#FDE68A" stroke-width="2" fill="none" opacity="0.8"/>
+
+    <!-- Bird Head & Crown -->
+    <circle cx="232" cy="132" r="22" fill="url(#birdBreast)"/>
+    <path d="M 218,122 Q 230,114 242,122" stroke="#92400E" stroke-width="3" fill="none"/>
+
+    <!-- Sharp Seed-Eating Beak Opened in Cheerful Song -->
+    <polygon points="252,126 276,132 252,136" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
+    <polygon points="252,134 270,138 252,142" fill="#D97706" stroke="#B45309" stroke-width="1"/>
+
+    <!-- Expressive Shiny Bird Eye -->
+    <circle cx="236" cy="128" r="4.5" fill="#0F172A"/>
+    <circle cx="234.5" cy="126.5" r="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Musical Notes of Joy (Heesta Shimbirta) -->
+  <g fill="#047857" opacity="0.85">
+    <!-- Note 1 -->
+    <ellipse cx="295" cy="115" rx="4" ry="3" transform="rotate(-15 295 115)"/>
+    <path d="M 298,114 L 298,92 L 310,95 L 310,117" stroke="#047857" stroke-width="2" fill="none"/>
+    <ellipse cx="308" cy="118" rx="4" ry="3" transform="rotate(-15 308 118)"/>
+
+    <!-- Note 2 -->
+    <ellipse cx="328" cy="85" rx="3.5" ry="2.5" transform="rotate(-15 328 85)"/>
+    <path d="M 331,84 L 331,68 Q 338,65 342,72" stroke="#047857" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Morning Sunbeam Sparkles -->
+  <g fill="#F59E0B">
+    <path d="M 75,75 Q 81,75 81,69 Q 81,75 87,75 Q 81,75 81,81 Q 81,75 75,75 Z"/>
+    <path d="M 345,45 Q 350,45 350,40 Q 350,45 355,45 Q 350,45 350,50 Q 350,45 345,45 Z" opacity="0.8"/>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <!-- Radiant Savanna Dawn Sky -->
+    <linearGradient id="acaciaSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FED7AA"/>
+      <stop offset="35%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#FDBA74"/>
+    </linearGradient>
+
+    <!-- Rising Sun Halo -->
+    <radialGradient id="sunDawn" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FEF08A"/>
+      <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Acacia Trunk Bark Gradient -->
+    <linearGradient id="barkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A2312"/>
+      <stop offset="35%" stop-color="#58371F"/>
+      <stop offset="70%" stop-color="#7C4A2D"/>
+      <stop offset="100%" stop-color="#3A2312"/>
+    </linearGradient>
+
+    <!-- Umbrella Canopy Foliage Gradient -->
+    <linearGradient id="foliageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4D7C0F"/>
+      <stop offset="40%" stop-color="#365314"/>
+      <stop offset="85%" stop-color="#1E3A1A"/>
+      <stop offset="100%" stop-color="#142612"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="treeShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#7C2D12" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Savanna Sunrise Sky -->
+  <rect width="400" height="320" fill="url(#acaciaSky)"/>
+
+  <!-- Golden Rising Sun behind the tree canopy -->
+  <circle cx="200" cy="120" r="75" fill="url(#sunDawn)"/>
+
+  <!-- Distant Blue Savanna Ridge -->
+  <path d="M 0,225 Q 110,210 210,220 T 400,215 L 400,320 L 0,320 Z" fill="#E2CBB0" opacity="0.6"/>
+
+  <!-- Terracotta Earth Savanna Plain -->
+  <path d="M 0,245 Q 160,235 300,248 T 400,240 L 400,320 L 0,320 Z" fill="#D97706" opacity="0.45"/>
+  <ellipse cx="200" cy="275" rx="165" ry="25" fill="#78350F" opacity="0.25"/>
+
+  <!-- ACACIA TREE (Filtered) -->
+  <g filter="url(#treeShadow)">
+    <!-- GNARLY TWISTED TRUNK & MAJOR BOUGHS -->
+    <!-- Root base flare -->
+    <path d="M 160,275 C 175,270 185,255 190,230 L 208,230 C 214,255 225,270 240,275 Z" fill="url(#barkGrad)"/>
+
+    <!-- Main Trunk -->
+    <path d="M 188,235 C 185,190 178,160 170,135 L 186,135 C 195,160 200,190 206,235 Z" fill="url(#barkGrad)" stroke="#271508" stroke-width="1.5"/>
+
+    <!-- Bark Gnarled Furrow Texture -->
+    <path d="M 194,260 Q 190,215 186,170" stroke="#271508" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 200,255 Q 198,210 195,165" stroke="#271508" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M 208,262 Q 206,220 202,180" stroke="#7C4A2D" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Left Spreading Major Branch -->
+    <path d="M 175,150 C 150,130 115,115 75,105 L 75,98 C 120,108 155,122 182,142 Z" fill="url(#barkGrad)" stroke="#271508" stroke-width="1"/>
+    <!-- Left Sub-branches -->
+    <path d="M 140,126 Q 120,105 95,95" stroke="#3A2312" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 160,135 Q 145,108 130,96" stroke="#3A2312" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Right Spreading Major Branch -->
+    <path d="M 198,145 C 225,128 265,115 325,102 L 325,95 C 260,108 220,122 192,138 Z" fill="url(#barkGrad)" stroke="#271508" stroke-width="1"/>
+    <!-- Right Sub-branches -->
+    <path d="M 245,125 Q 268,105 295,94" stroke="#3A2312" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 220,135 Q 238,108 255,95" stroke="#3A2312" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Center Upright Branches -->
+    <path d="M 186,138 Q 195,110 200,90" stroke="#3A2312" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+    <!-- FLAT-TOPPED UMBRELLA CANOPY (Characteristic layered horizontal foliage pads) -->
+    <!-- Far Left Canopy Pad -->
+    <ellipse cx="80" cy="100" rx="42" ry="14" fill="url(#foliageGrad)"/>
+    <ellipse cx="75" cy="96" rx="35" ry="9" fill="#65A30D" opacity="0.4"/>
+
+    <!-- Left-Center Canopy Pad -->
+    <ellipse cx="135" cy="94" rx="52" ry="16" fill="url(#foliageGrad)"/>
+    <ellipse cx="132" cy="90" rx="42" ry="11" fill="#65A30D" opacity="0.4"/>
+
+    <!-- Center Highest Umbrella Pad -->
+    <ellipse cx="200" cy="85" rx="68" ry="18" fill="url(#foliageGrad)"/>
+    <ellipse cx="198" cy="80" rx="56" ry="12" fill="#65A30D" opacity="0.45"/>
+
+    <!-- Right-Center Canopy Pad -->
+    <ellipse cx="265" cy="94" rx="52" ry="16" fill="url(#foliageGrad)"/>
+    <ellipse cx="268" cy="90" rx="42" ry="11" fill="#65A30D" opacity="0.4"/>
+
+    <!-- Far Right Canopy Pad -->
+    <ellipse cx="320" cy="100" rx="42" ry="14" fill="url(#foliageGrad)"/>
+    <ellipse cx="325" cy="96" rx="35" ry="9" fill="#65A30D" opacity="0.4"/>
+
+    <!-- Lower Canopy Layer (Depth) -->
+    <ellipse cx="110" cy="112" rx="38" ry="11" fill="#142612"/>
+    <ellipse cx="290" cy="112" rx="38" ry="11" fill="#142612"/>
+    <ellipse cx="200" cy="102" rx="54" ry="12" fill="#142612"/>
+
+    <!-- Delicate feathery acacia foliage fringe edge -->
+    <g fill="#4D7C0F" opacity="0.7">
+      <circle cx="55" cy="98" r="7"/><circle cx="95" cy="95" r="8"/>
+      <circle cx="160" cy="88" r="9"/><circle cx="235" cy="88" r="9"/>
+      <circle cx="305" cy="95" r="8"/><circle cx="345" cy="98" r="7"/>
+    </g>
+  </g>
+
+  <!-- Small Savanna Bird perched on lower branch -->
+  <ellipse cx="145" cy="122" rx="5" ry="3.5" fill="#DC2626"/>
+  <circle cx="149" cy="120" r="2.5" fill="#DC2626"/>
+  <polygon points="151,120 155,121 151,122" fill="#F59E0B"/>
+</svg>
