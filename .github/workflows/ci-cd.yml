@@ -1,4 +1,4 @@
-name: "UnderStoryBooks CI/CD Pipeline"
+name: "Understory CI/CD Pipeline"
 
 on:
   push:
@@ -193,3 +193,4 @@ jobs:
           tags: ${{ steps.meta-backend.outputs.tags }}
           labels: ${{ steps.meta-backend.outputs.labels }}
           cache-from: type=gha,scope=backend
+
