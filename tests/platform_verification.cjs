@@ -4,8 +4,41 @@
  */
 
 const http = require('http');
+const { spawn } = require('child_process');
 
-const BASE_URL = 'http://localhost:5173';
+const BASE_URL = process.env.TEST_BASE_URL || 'http://localhost:5173';
+let spawnedServer = null;
+
+async function ensureServerRunning() {
+  try {
+    await request({ path: '/api/health', method: 'GET' });
+    return;
+  } catch (_) {
+    const port = new URL(BASE_URL).port || '5173';
+    console.log(`Starting standalone API server for CI verification on port ${port}...`);
+    spawnedServer = spawn('npx', ['tsx', 'server/standalone.ts'], {
+      env: { ...process.env, PORT: String(port), HOST: '127.0.0.1' },
+      stdio: 'ignore',
+      shell: true
+    });
+    for (let i = 0; i < 30; i++) {
+      await new Promise((r) => setTimeout(r, 500));
+      try {
+        const res = await request({ path: '/api/health', method: 'GET' });
+        if (res.statusCode === 200) return;
+      } catch (_) {}
+    }
+    throw new Error('Timed out waiting for standalone API server on port 5173');
+  }
+}
+
+function cleanupServer() {
+  if (spawnedServer) {
+    try {
+      spawnedServer.kill();
+    } catch (_) {}
+  }
+}
 
 function request(options, postData = null) {
   return new Promise((resolve, reject) => {
@@ -70,6 +103,7 @@ async function runTests() {
   }
 
   try {
+    await ensureServerRunning();
     // 1. Admin Sign-in & Role Verification
     console.log('[1/7] Testing Admin Authentication & Role Propagation:');
     const adminSignIn = await request(
@@ -359,12 +393,14 @@ async function runTests() {
     console.log(`Test Summary: ${passed}/${total} Passed (${Math.round((passed / total) * 100)}%)`);
     console.log(`========================================\n`);
 
+    cleanupServer();
     if (passed === total) {
       process.exit(0);
     } else {
       process.exit(1);
     }
   } catch (err) {
+    cleanupServer();
     console.error('Test execution error:', err);
     process.exit(1);
   }
