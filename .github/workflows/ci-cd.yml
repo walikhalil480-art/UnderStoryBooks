@@ -1,4 +1,4 @@
-name: "eBaro CI/CD Pipeline"
+name: "UnderStoryBooks CI/CD Pipeline"
 
 on:
   push:
