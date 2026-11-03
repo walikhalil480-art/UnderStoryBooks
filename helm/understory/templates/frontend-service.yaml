@@ -17,3 +17,20 @@ spec:
       {{- end }}
   selector:
     {{- include "understory.frontendSelectorLabels" . | nindent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    {{- include "understory.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frontend
+spec:
+  type: {{ .Values.frontend.service.type | default "NodePort" }}
+  ports:
+    - port: {{ .Values.frontend.service.port | default 80 }}
+      targetPort: {{ .Values.frontend.service.targetPort | default 80 }}
+      protocol: TCP
+      name: http-web
+  selector:
+    {{- include "understory.frontendSelectorLabels" . | nindent 4 }}
