@@ -3,7 +3,7 @@ import type { Plugin } from 'vite';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { db, generateToken, hashPassword, verifyPassword, MANUSCRIPTS_DIR } from './db';
+import { db, generateToken, hashPassword, verifyPassword, checkPostgresConnection, MANUSCRIPTS_DIR } from './db';
 import { BOOKS } from '../src/data/books';
 import { CHILDREN_STORIES, applyVerifiedAlignmentToStory } from '../src/data/childrenStories';
 import { runImageDuplicationAudit } from '../src/data/imageRegistry';
@@ -645,9 +645,17 @@ export async function handleApiMiddleware(
     // 0. HEALTH CHECK ENDPOINT (DOCKER / KUBERNETES LIVENESS)
     // ==================================================================
     if (pathname === '/api/health' && method === 'GET') {
+      const pgStatus = await checkPostgresConnection();
+      const usersCount = (db.prepare('SELECT COUNT(*) as c FROM users').get() as any)?.c || 0;
+      const booksCount = (db.prepare('SELECT COUNT(*) as c FROM books').get() as any)?.c || 0;
       return sendJson(res, 200, {
         status: 'healthy',
-        service: 'ebaro-backend-api',
+        service: 'understory-backend-api',
+        database: {
+          postgres: pgStatus,
+          usersCount,
+          booksCount
+        },
         uptime: process.uptime(),
         timestamp: new Date().toISOString()
       });

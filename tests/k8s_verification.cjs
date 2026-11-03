@@ -38,7 +38,7 @@ try {
   const svcJson = run("kubectl get svc -n understory -o json");
   const svcs = JSON.parse(svcJson).items;
   const backendSvc = svcs.find(s => s.metadata.name === 'backend');
-  const frontendSvc = svcs.find(s => s.metadata.name.includes('frontend'));
+  const frontendSvc = svcs.find(s => s.metadata.name === 'frontend');
   const postgresSvc = svcs.find(s => s.metadata.name === 'postgres');
   assert(
     backendSvc && backendSvc.spec.type === 'ClusterIP' && backendSvc.spec.ports[0].port === 5000,

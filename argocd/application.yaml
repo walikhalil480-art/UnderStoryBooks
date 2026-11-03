@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: understory
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/khalilart/understory.git
+    targetRevision: HEAD
+    path: helm/understory
+    helm:
+      releaseName: understory
+      valueFiles:
+        - values.yaml
+        - values-minikube.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: understory
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true

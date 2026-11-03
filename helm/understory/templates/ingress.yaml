@@ -33,7 +33,7 @@ spec:
             pathType: {{ .pathType }}
             backend:
               service:
-                name: {{ include "understory.fullname" $ }}-frontend
+                name: frontend
                 port:
                   number: {{ $.Values.frontend.service.port | default 80 }}
           {{- end }}

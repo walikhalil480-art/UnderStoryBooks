@@ -1,15 +1,14 @@
 {{- if .Values.postgresql.enabled }}
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "understory.fullname" . }}-postgres
   labels:
     {{- include "understory.labels" . | nindent 4 }}
     app.kubernetes.io/component: database
 spec:
+  serviceName: postgres
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "understory.name" . }}-postgres

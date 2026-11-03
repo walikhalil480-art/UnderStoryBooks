@@ -1,13 +1,41 @@
 services:
   # ============================================================================
-  # 1. Backend API Service
+  # 1. PostgreSQL Database Service
+  # ============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: understory-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-understory_db}
+      POSTGRES_USER: ${POSTGRES_USER:-understory_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-UnderstoryDBPass2026!}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - understory_pg_data:/var/lib/postgresql/data
+    networks:
+      understory_net:
+        aliases:
+          - postgres
+          - db
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-understory_user} -d ${POSTGRES_DB:-understory_db} || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  # ============================================================================
+  # 2. Backend API Service
   # ============================================================================
   backend:
-    image: khalilart/ebaro-backend:${TAG:-latest}
+    image: khalilart/ebaro-backend:${TAG:-v1.0.1}
     build:
       context: .
       dockerfile: Dockerfile.backend
-    container_name: ebaro-backend
+    container_name: understory-backend
     restart: unless-stopped
     environment:
       - NODE_ENV=production
@@ -15,11 +43,22 @@ services:
       - HOST=0.0.0.0
       - SIFALO_SANDBOX=${SIFALO_SANDBOX:-true}
       - MPESA_SANDBOX=${MPESA_SANDBOX:-true}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-understory_db}
+      - POSTGRES_USER=${POSTGRES_USER:-understory_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-UnderstoryDBPass2026!}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-understory_user}:${POSTGRES_PASSWORD:-UnderstoryDBPass2026!}@postgres:5432/${POSTGRES_DB:-understory_db}
     volumes:
-      - ebaro_db_data:/app/server/data
-      - ebaro_manuscripts:/app/server/storage/manuscripts
+      - understory_db_data:/app/server/data
+      - understory_manuscripts:/app/server/storage/manuscripts
+    depends_on:
+      postgres:
+        condition: service_healthy
     networks:
-      - ebaro_net
+      understory_net:
+        aliases:
+          - backend
     expose:
       - "5000"
     healthcheck:
@@ -30,22 +69,24 @@ services:
       start_period: 10s
 
   # ============================================================================
-  # 2. Frontend Web Server (Reverse Proxy + SPA)
+  # 3. Frontend Web Server (Reverse Proxy + SPA)
   # ============================================================================
   frontend:
     image: khalilart/ebaro-frontend:${TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile.frontend
-    container_name: ebaro-frontend
+    container_name: understory-frontend
     restart: unless-stopped
     ports:
-      - "${FRONTEND_PORT:-8080}:80"
+      - "${FRONTEND_PORT:-8088}:80"
     depends_on:
       backend:
         condition: service_healthy
     networks:
-      - ebaro_net
+      understory_net:
+        aliases:
+          - frontend
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:80/healthz || exit 1"]
       interval: 15s
@@ -57,17 +98,20 @@ services:
 # Persistent Named Volumes
 # ==============================================================================
 volumes:
-  ebaro_db_data:
-    name: ebaro_db_data
+  understory_db_data:
+    name: understory_db_data
     driver: local
-  ebaro_manuscripts:
-    name: ebaro_manuscripts
+  understory_manuscripts:
+    name: understory_manuscripts
+    driver: local
+  understory_pg_data:
+    name: understory_pg_data
     driver: local
 
 # ==============================================================================
 # Internal Bridge Network
 # ==============================================================================
 networks:
-  ebaro_net:
-    name: ebaro_network
+  understory_net:
+    name: understory_network
     driver: bridge

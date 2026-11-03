@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+    - name: http-web
+      port: 80
+      targetPort: 80
+      protocol: TCP
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: frontend
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 10.244.0.23
+    ports:
+      - name: http-web
+        port: 80
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+    - name: http-api
+      port: 5000
+      targetPort: 5000
+      protocol: TCP
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: backend
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 10.244.0.36
+    ports:
+      - name: http-api
+        port: 5000
+        protocol: TCP
