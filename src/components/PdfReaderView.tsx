@@ -23,9 +23,32 @@ import { Book, UserProfile } from '../types';
 import { folioApi } from '../services/api';
 import { CheckoutModal } from './CheckoutModal';
 
-// Configure PDF.js Worker to use the local public asset (cache-busted for MIME fix)
+// Configure PDF.js Worker via an explicit application/javascript Blob URL to prevent MIME or cache issues
+let cachedWorkerBlobUrl: string | null = null;
+
+async function ensurePdfWorkerReady(): Promise<void> {
+  if (typeof window === 'undefined') return;
+  if (cachedWorkerBlobUrl) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = cachedWorkerBlobUrl;
+    return;
+  }
+  try {
+    const res = await fetch(`/pdf.worker.min.js?v=${Date.now()}`, { cache: 'no-store' });
+    if (res.ok) {
+      const code = await res.text();
+      if (code && code.length > 1000) {
+        const workerBlob = new Blob([code], { type: 'application/javascript' });
+        cachedWorkerBlobUrl = URL.createObjectURL(workerBlob);
+        pdfjsLib.GlobalWorkerOptions.workerSrc = cachedWorkerBlobUrl;
+        return;
+      }
+    }
+  } catch {}
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js?v=4';
+}
+
 if (typeof window !== 'undefined') {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs?v=2';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js?v=4';
 }
 
 interface PdfReaderViewProps {
@@ -85,6 +108,7 @@ export const PdfReaderView: React.FC<PdfReaderViewProps> = ({
         if (!active) return;
 
         try {
+          await ensurePdfWorkerReady();
           const blob = new Blob([data], { type: 'application/pdf' });
           createdBlobUrl = URL.createObjectURL(blob);
           setPdfBlobUrl(createdBlobUrl);
