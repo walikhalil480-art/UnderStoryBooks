@@ -23,9 +23,9 @@ import { Book, UserProfile } from '../types';
 import { folioApi } from '../services/api';
 import { CheckoutModal } from './CheckoutModal';
 
-// Configure PDF.js Worker to use the local public asset
-if (typeof window !== 'undefined' && !pdfjsLib.GlobalWorkerOptions.workerSrc) {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+// Configure PDF.js Worker to use the local public asset (cache-busted for MIME fix)
+if (typeof window !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs?v=2';
 }
 
 interface PdfReaderViewProps {

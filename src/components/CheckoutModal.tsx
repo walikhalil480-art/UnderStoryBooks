@@ -172,7 +172,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         setReceiptDetails({
           orderId: res.orderId || `REC-${Date.now().toString().slice(-6)}`,
           transactionRef: res.transactionRef || 'ACTIVE_ENTITLEMENT',
-          email: user?.email || guestEmail || 'reader@ebaro.org'
+          email: user?.email || guestEmail || 'reader@understory.org'
         });
         onSuccess(book.id);
         return;
@@ -184,7 +184,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         setReceiptDetails({
           orderId: res.orderId || `ORD-${Date.now().toString().slice(-6)}`,
           transactionRef: res.transactionRef || `REF-${Date.now().toString().slice(-6)}`,
-          email: user?.email || guestEmail || 'reader@ebaro.org'
+          email: user?.email || guestEmail || 'reader@understory.org'
         });
         onSuccess(book.id);
         return;
@@ -210,7 +210,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               setReceiptDetails({
                 orderId: res.orderId!,
                 transactionRef: vRes.transactionRef || res.transactionRef || 'VERIFIED',
-                email: user?.email || guestEmail || 'reader@ebaro.org'
+                email: user?.email || guestEmail || 'reader@understory.org'
               });
               onSuccess(book.id);
             } else if (vRes.status === 'failed') {
@@ -248,7 +248,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       setReceiptDetails({
         orderId: `SIM-${Date.now().toString().slice(-6)}`,
         transactionRef: `SIM-REF-${Date.now().toString().slice(-6)}`,
-        email: user?.email || guestEmail || 'reader@ebaro.org'
+        email: user?.email || guestEmail || 'reader@understory.org'
       });
       onSuccess(book.id);
       return;
@@ -260,7 +260,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       setReceiptDetails({
         orderId: activeOrderId,
         transactionRef: v.transactionRef || 'SIM-DEMO-REF',
-        email: user?.email || guestEmail || 'reader@ebaro.org'
+        email: user?.email || guestEmail || 'reader@understory.org'
       });
       onSuccess(book.id);
     } catch {
@@ -279,22 +279,47 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const modalContent = (
     <div
       className="ebaro-checkout-backdrop"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: 'auto',
+        height: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 0,
+        padding: '1.25rem',
+        zIndex: 2147483647
+      }}
       onClick={(e) => {
         if (e.target === e.currentTarget && step !== 'processing') onClose();
       }}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="ebaro-checkout-title"
+      aria-labelledby="understory-checkout-title"
     >
-      <div className="ebaro-checkout-dialog">
+      <div
+        className="ebaro-checkout-dialog"
+        style={{
+          margin: 'auto',
+          position: 'relative',
+          width: '100%',
+          maxWidth: '540px'
+        }}
+      >
         {/* Header */}
         <div className="ebaro-checkout-header">
           <div className="ebaro-checkout-header-branding">
-            <div className="ebaro-checkout-header-logo">eB</div>
+            <div className="ebaro-checkout-header-logo" aria-hidden="true">
+              <BookOpen size={18} strokeWidth={2.2} />
+            </div>
             <div>
-              <span className="ebaro-checkout-header-eyebrow">Direct Author Payment</span>
-              <h3 id="ebaro-checkout-title" className="ebaro-checkout-header-title">
-                Purchase eBook Edition
+              <span className="ebaro-checkout-header-eyebrow">Understory Literary Editions • Direct Author Payout</span>
+              <h3 id="understory-checkout-title" className="ebaro-checkout-header-title">
+                Complete Digital Edition Purchase
               </h3>
             </div>
           </div>
@@ -304,11 +329,11 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             className="ebaro-checkout-btn-close"
             aria-label="Close checkout"
           >
-            <X size={20} />
+            <X size={19} />
           </button>
         </div>
 
-        {/* Scrollable Body */}
+        {/* Body */}
         <div className="ebaro-checkout-body">
           {step === 'success' ? (
             /* Success Receipt Screen */
@@ -448,7 +473,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             </div>
           ) : (
             /* Input Form Screen */
-            <form onSubmit={handleStartCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
+            <form onSubmit={handleStartCheckout} style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
               {/* Book Overview Card */}
               <div className="ebaro-checkout-book-card">
                 {book.coverUrl || (book as any).coverImageUrl ? (
@@ -469,16 +494,19 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                       fontWeight: 800
                     }}
                   >
-                    eB
+                    <BookOpen size={20} />
                   </div>
                 )}
                 <div className="ebaro-checkout-book-info">
-                  <span className="ebaro-checkout-book-badge">Verified Original Manuscript</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
+                    <span className="ebaro-checkout-book-badge" style={{ marginBottom: 0 }}>Verified Master Edition</span>
+                    <span style={{ fontSize: '0.65rem', fontWeight: 600, color: '#64748B' }}>PDF + EPUB Included</span>
+                  </div>
                   <h4 className="ebaro-checkout-book-title">{book.title}</h4>
                   <p className="ebaro-checkout-book-author">by {book.author}</p>
                 </div>
                 <div className="ebaro-checkout-book-price-col">
-                  <span className="ebaro-checkout-book-price-main">{priceDisplay}</span>
+                  <span className="ebaro-checkout-book-price-main">{priceDisplay} <small style={{ fontSize: '0.72rem', fontWeight: 700, fontFamily: 'Inter, sans-serif', color: '#475569' }}>{currency}</small></span>
                   <span className="ebaro-checkout-book-price-sub">85% directly to author</span>
                 </div>
               </div>
@@ -487,8 +515,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               {user ? (
                 <div className="ebaro-checkout-account-strip">
                   <div className="ebaro-checkout-account-left">
-                    <UserCheck size={16} />
-                    <span>Purchasing as {user.fullName || 'Reader'}</span>
+                    <UserCheck size={15} />
+                    <span>Purchasing as <strong>{user.fullName || 'Reader'}</strong></span>
                   </div>
                   <span className="ebaro-checkout-account-email">{user.email}</span>
                 </div>
@@ -686,7 +714,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
               {/* Dynamic Inputs according to Payment Method */}
               {method === 'card' ? (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                   <div className="ebaro-checkout-field-wrap">
                     <label className="ebaro-checkout-label">Card Number</label>
                     <div className="ebaro-checkout-input-with-prefix">
@@ -704,7 +732,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
                     <div className="ebaro-checkout-field-wrap">
                       <label className="ebaro-checkout-label">Expiry Date</label>
                       <input
@@ -742,7 +770,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         ? 'Golis Mobile Number'
                         : 'Safaricom M-Pesa Mobile Number'}
                     </span>
-                    <span style={{ color: '#059669', fontSize: '0.7rem' }}>Prompt dispatched on submit</span>
+                    <span style={{ color: '#059669', fontSize: '0.7rem', fontWeight: 600 }}>Instant USSD Push</span>
                   </label>
                   <div className="ebaro-checkout-input-with-prefix">
                     <span className="ebaro-checkout-input-prefix">
@@ -766,7 +794,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     />
                   </div>
                   <p className="ebaro-checkout-helper-text">
-                    You will receive an automated USSD popup screen on your phone. Enter your 4-digit PIN to approve.
+                    An automated USSD prompt will appear on your handset. Enter your 4-digit PIN to authorize.
                   </p>
                 </div>
               )}
@@ -775,37 +803,37 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               {errorMessage && (
                 <div
                   style={{
-                    padding: '0.75rem 1rem',
+                    padding: '0.65rem 0.9rem',
                     background: '#FEF2F2',
                     border: '1px solid #FEE2E2',
                     borderRadius: '10px',
                     color: '#B91C1C',
-                    fontSize: '0.8rem',
+                    fontSize: '0.78rem',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.5rem'
                   }}
                 >
-                  <AlertCircle size={16} style={{ flexShrink: 0 }} />
+                  <AlertCircle size={15} style={{ flexShrink: 0 }} />
                   <span>{errorMessage}</span>
                 </div>
               )}
 
               {/* Pay Submit Button */}
               <button type="submit" className="ebaro-checkout-btn-pay">
-                <Lock size={16} />
-                <span>Pay {priceDisplay} Securely</span>
+                <Lock size={15} />
+                <span>Complete Purchase • {priceDisplay} {currency}</span>
               </button>
 
               {/* Trust Bar */}
               <div className="ebaro-checkout-trust-bar">
                 <div className="ebaro-checkout-trust-item">
                   <ShieldCheck size={14} style={{ color: '#059669' }} />
-                  <span>256-Bit Encrypted</span>
+                  <span>256-Bit TLS Encrypted</span>
                 </div>
                 <div className="ebaro-checkout-trust-item">
                   <CheckCircle2 size={14} style={{ color: '#059669' }} />
-                  <span>Permanent Full-Text Entitlement</span>
+                  <span>Instant Lifetime Access (PDF & EPUB)</span>
                 </div>
               </div>
             </form>

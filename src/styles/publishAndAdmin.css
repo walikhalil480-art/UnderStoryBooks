@@ -2411,20 +2411,22 @@
 /* Modal Overlay & Fixed Backdrop */
 .ebaro-checkout-backdrop {
   position: fixed !important;
+  inset: 0 !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background-color: rgba(248, 246, 239, 0.55) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(5px) !important;
-  z-index: 999999 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  background-color: rgba(15, 29, 22, 0.62) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 2147483647 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 1rem !important;
+  padding: 1.25rem !important;
   box-sizing: border-box !important;
   animation: ebaroModalFadeIn 0.22s ease-out forwards;
 }
@@ -2435,11 +2437,12 @@
   background-color: #FFFFFF;
   color: #202820;
   width: 100%;
-  max-width: 580px;
-  max-height: 92vh;
+  max-width: 540px;
+  max-height: 94vh;
+  margin: auto;
   border-radius: 20px;
   border: 1px solid #E3E6DF;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 28px 70px -12px rgba(10, 22, 16, 0.45), 0 0 0 1px rgba(23, 61, 45, 0.08);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -2452,9 +2455,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.15rem 1.45rem;
-  background-color: #F8F6EF;
-  border-bottom: 1px solid #E3E6DF;
+  padding: 1rem 1.35rem;
+  background: linear-gradient(180deg, #FBF9F4 0%, #F4F1E8 100%);
+  border-bottom: 1px solid #E5E2D9;
 }
 
 .ebaro-checkout-header-branding {
@@ -2464,29 +2467,26 @@
 }
 
 .ebaro-checkout-header-logo {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: linear-gradient(135deg, #173D2D 0%, #0F281E 100%);
   color: #FEF3C7;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: -0.02em;
-  box-shadow: 0 2px 6px rgba(23, 61, 45, 0.25);
+  box-shadow: 0 3px 8px rgba(23, 61, 45, 0.22);
   flex-shrink: 0;
 }
 
 .ebaro-checkout-header-eyebrow {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #065F46;
+  margin-bottom: 1px;
 }
 
 .ebaro-checkout-header-title {
@@ -2498,11 +2498,12 @@
 }
 
 .ebaro-checkout-btn-close {
-  background: transparent;
-  border: none;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   cursor: pointer;
-  color: #64748B;
-  padding: 0.45rem;
+  color: #475569;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -2515,31 +2516,32 @@
   color: #0F172A;
 }
 
-/* Scrollable Body Content */
+/* Modal Body Content */
 .ebaro-checkout-body {
-  padding: 1.35rem 1.45rem;
+  padding: 1.15rem 1.35rem 1.25rem;
   overflow-y: auto;
+  scrollbar-width: thin;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 0.9rem;
   box-sizing: border-box;
 }
 
 /* Book Summary Card */
 .ebaro-checkout-book-card {
   display: flex;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
   background-color: #FDFBF7;
-  border: 1px solid #E8DFC8;
+  border: 1px solid #E6DEC8;
   border-radius: 14px;
   align-items: center;
 }
 
 .ebaro-checkout-book-thumb {
-  width: 58px;
-  height: 82px;
+  width: 52px;
+  height: 74px;
   border-radius: 6px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
@@ -2554,22 +2556,22 @@
 
 .ebaro-checkout-book-badge {
   display: inline-block;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #DCE6DC;
   color: #173D2D;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 4px;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .ebaro-checkout-book-title {
   font-size: 0.95rem;
   font-weight: 700;
   color: #0F172A;
-  margin: 0 0 0.2rem 0;
+  margin: 0 0 0.15rem 0;
   line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
@@ -2577,7 +2579,7 @@
 }
 
 .ebaro-checkout-book-author {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: #64748B;
   margin: 0;
 }
@@ -2588,14 +2590,14 @@
 }
 
 .ebaro-checkout-book-price-main {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #173D2D;
   font-family: 'Playfair Display', Georgia, serif;
 }
 
 .ebaro-checkout-book-price-sub {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   color: #059669;
   font-weight: 600;
   display: block;
@@ -2607,24 +2609,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 0.95rem;
-  background-color: #F0FDF4;
-  border: 1px solid #BBF7D0;
+  padding: 0.6rem 0.85rem;
+  background-color: #F2F9F4;
+  border: 1px solid #C6E6D0;
   border-radius: 10px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
 }
 
 .ebaro-checkout-account-left {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   color: #166534;
   font-weight: 600;
 }
 
 .ebaro-checkout-account-email {
-  color: #0F172A;
+  color: #334155;
   font-weight: 500;
+  font-size: 0.74rem;
 }
 
 /* Guest Reader Fields in Checkout */
@@ -2632,10 +2635,10 @@
   background-color: #F8F6EF;
   border: 1px solid #E3E6DF;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .ebaro-checkout-guest-header {
@@ -2645,7 +2648,7 @@
 }
 
 .ebaro-checkout-guest-title {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: #202820;
   text-transform: uppercase;
@@ -2655,7 +2658,7 @@
 .ebaro-checkout-guest-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 @media (max-width: 480px) {
@@ -2666,29 +2669,35 @@
 
 /* Section Subhead */
 .ebaro-checkout-section-title {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #475569;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
-/* Payment Method Cards Grid */
+/* Payment Method Cards Grid — Clean 5-Column Single Row */
 .ebaro-checkout-methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
-  gap: 0.55rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+@media (max-width: 520px) {
+  .ebaro-checkout-methods-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .ebaro-checkout-method-card {
   position: relative;
   border: 1.5px solid #E2E8F0;
   border-radius: 10px;
-  padding: 0.65rem 0.45rem;
+  padding: 0.55rem 0.35rem;
   text-align: center;
   cursor: pointer;
   background-color: #FFFFFF;
@@ -2696,7 +2705,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   box-sizing: border-box;
 }
 
@@ -2708,30 +2717,30 @@
 
 .ebaro-checkout-method-card.active {
   border-color: #173D2D;
-  background-color: #F0F4F0;
+  background-color: #F1F6F2;
   box-shadow: 0 0 0 1px #173D2D;
 }
 
 .ebaro-checkout-method-icon-wrap {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
 }
 
 .ebaro-checkout-method-name {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #0F172A;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .ebaro-checkout-method-badge {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   color: #64748B;
   font-weight: 500;
 }
